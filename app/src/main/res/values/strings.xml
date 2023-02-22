@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Cinemax</string>
+    <string name="header_onboarding_first">The biggest international and local film streaming
+</string>
+    <string name="header_onboarding_second">Offers ad-free viewing of high quality
+</string>
+    <string name="header_onboarding_third">Our service brings together your favorite series
+</string>
+    <string name="body_onboarding_first">No matter your mood or preference, we\'ve got something for everyone. Browse by genre, country, or popularity to find your next binge-worthy film
+</string>
+    <string name="body_onboarding_second">From the smallest details to the grandest set pieces, every frame is optimized for your viewing pleasure. Enjoy every moment to the fullest with Cinemax
+</string>
+    <string name="body_onboarding_third">With multiple seasons and episodes available, you\'ll never have to wait to see what happens next. Follow your favorite characters on their epic journeys
+</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

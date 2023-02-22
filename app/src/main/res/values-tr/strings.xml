@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cinemax</string>
+    <string name="header_onboarding_first">En büyük uluslararası ve yerel film yayın servisi
+</string>
+    <string name="header_onboarding_second">Yüksek kaliteli reklamsız görüntüleme sunuyor
+</string>
+    <string name="header_onboarding_third">Hizmetimiz favori dizilerinizi bir araya getiriyor
+</string>
+    <string name="body_onboarding_first">Herhangi bir ruh haline veya tercihe göre bir şeylerimiz var. Tür, ülke veya popülerlik sıralamasına göre arama yaparak sonraki izleyeceğiniz filminizi bulun
+</string>
+    <string name="body_onboarding_second">En küçük detaylardan en büyük set parçalarına kadar, her kare sizin görüntüleme keyfiniz için optimize edilmiştir. Cinemax ile her anın tadını en iyi şekilde çıkarın
+</string>
+    <string name="body_onboarding_third">Birden fazla sezon ve bölüm mevcut olduğundan, bir sonraki ne olacağını görmek için asla beklemek zorunda kalmayacaksınız. Karakterlerin epik yolculuklarını takip edin
+</string>
+</resources>
