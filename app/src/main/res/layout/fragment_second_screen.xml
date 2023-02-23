@@ -12,24 +12,22 @@
         android:layout_height="match_parent"
         android:background="@color/soft">
 
-
         <ImageView
-            android:id="@+id/image_onboarding_first"
+            android:id="@+id/image_onboarding_second"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_350sdp"
             android:scaleType="fitXY"
-            android:src="@drawable/onboarding_first"
+            android:src="@drawable/onboarding_second"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardview_onboarding_first"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:backgroundTint="@color/dark"
-            app:layout_constraintTop_toBottomOf="@id/image_onboarding_first"
+            app:layout_constraintTop_toBottomOf="@id/image_onboarding_second"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -40,7 +38,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textview_onboarding_header_first"
+                    android:id="@+id/textview_onboarding_header_second"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_27sdp"
@@ -57,7 +55,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textview_onboarding_body_first"
+                    android:id="@+id/textview_onboarding_body_second"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_27sdp"
@@ -70,7 +68,7 @@
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textview_onboarding_header_first" />
+                    app:layout_constraintTop_toBottomOf="@id/textview_onboarding_header_second" />
 
                 <ImageView
                     android:id="@+id/button_next_onboarding"
@@ -80,10 +78,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="@dimen/_20sdp"
                     android:layout_marginBottom="@dimen/_20sdp"
-                    android:src="@drawable/button_onboarding_first" />
+                    android:src="@drawable/button_onboarding_second" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

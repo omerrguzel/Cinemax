@@ -11,17 +11,16 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cinemax.R
 import com.example.cinemax.databinding.FragmentViewPagerBinding
+import com.example.cinemax.onboarding.screens.SecondScreen
+import com.example.cinemax.onboarding.screens.ThirdScreen
+import com.google.android.material.tabs.TabLayout.Tab
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ViewPagerFragment : Fragment() {
 
-    private lateinit var mViewPager: ViewPager2
-
 
 
     private var _binding: FragmentViewPagerBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -37,53 +36,22 @@ class ViewPagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mViewPager = binding.viewPager
-        mViewPager.adapter = ViewPagerAdapter(requireActivity().supportFragmentManager,lifecycle,requireContext())
-//        TabLayoutMediator(binding.pageIndicator, mViewPager) { _, _ -> }.attach()
+        val fragmentList = arrayListOf<Fragment>(
+            FirstScreen(),
+            SecondScreen(),
+            ThirdScreen()
+        )
 
-        binding.buttonNextOnboarding.setOnClickListener {
-            if(getItem() > mViewPager.childCount){
-                findNavController().navigate(R.id.action_viewPagerFragment_to_entryFragment)
-                onBoardingFinished()
-            }
+        val adapter = ViewPagerAdapter(
+            fragmentList,
+            requireActivity().supportFragmentManager,
+            lifecycle
+        )
+
+        with(binding){
+            viewPager.adapter = adapter
+            viewPager.isUserInputEnabled = false
+            TabLayoutMediator(pageIndicator,viewPager) {_,_ ->}.attach()
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    companion object {
-        // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-        private const val ARG_PARAM1 = "param1"
-        private const val ARG_PARAM2 = "param2"
-        private const val ARG_PARAM3 = "param3"
-        private const val ARG_PARAM4 = "param4"
-        fun newInstance(
-            title: String?,
-            description: String?,
-            imageResource: Int,
-            buttonResource: Int
-        ): ViewPagerFragment {
-            val fragment = ViewPagerFragment()
-            val args = Bundle()
-            args.putString(ARG_PARAM1, title)
-            args.putString(ARG_PARAM2, description)
-            args.putInt(ARG_PARAM3, imageResource)
-            args.putInt(ARG_PARAM4,buttonResource)
-            fragment.arguments = args
-            return fragment
-        }
-    }
-    private fun getItem(): Int {
-        return mViewPager.currentItem
-    }
-
-    private fun onBoardingFinished(){
-        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        val editor = sharedPref.edit()
-        editor.putBoolean("Finished", true)
-        editor.apply()
     }
 }
