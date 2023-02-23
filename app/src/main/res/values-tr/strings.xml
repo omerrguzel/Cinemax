@@ -13,4 +13,26 @@
 </string>
     <string name="body_onboarding_third">Birden fazla sezon ve bölüm mevcut olduğundan, bir sonraki ne olacağını görmek için asla beklemek zorunda kalmayacaksınız. Karakterlerin epik yolculuklarını takip edin
 </string>
+    <string name="cinemax">CINEMAX</string>
+    <string name="enter_your_registered_n_phone_number_to_sign_up">Kaydolmak için \n telefon numaranızı girin</string>
+    <string name="sign_up">Kayıt Ol</string>
+    <string name="i_already_have_an_account">Zaten hesabım var! </string>
+    <string name="login">Giriş Yap</string>
+    <string name="or_sign_up_with">Ya da</string>
+    <string name="welcome_back_please_enter_your_details">Tekrar hoşgeldiniz! Lütfen bilgilerinizi giriniz.</string>
+    <string name="let_s_get_started">Hadi Baslayalım</string>
+    <string name="the_latest_movies_and_series_are_here">Son çıkan filmler ve diziler burada</string>
+    <string name="full_name">Tam İsim</string>
+    <string name="i_agree_to_the_terms_and_services_and_privacy_policy">I agree to the Terms and Services and Privacy Policy</string>
+    <string name="forgot_password">Şifremi unuttum</string>
+    <string name="reset_password">Şifreni Sıfırla</string>
+    <string name="recover_your_account_password">Hesap şifrenizi kurtarın</string>
+    <string name="next">Devam</string>
+    <string name="we_have_just_sent_you_4_digit_code_via_your_email_example_gmail_com">Az önce e-postanız aracılığıyla size 4 haneli bir\n kod gönderdik</string>
+    <string name="didn_t_receive_code">Kod gelmedi mi?</string>
+    <string name="resend">Yeniden Gönder</string>
+    <string name="verifying_your_account">Hesabınız Doğrulama</string>
+    <string name="create_new_password">Yeni Şifre Oluştur</string>
+    <string name="enter_your_new_password">Yeni şifrenizi giriniz</string>
+    <string name="reset">Sıfırla</string>
 </resources>

@@ -13,5 +13,27 @@
     <string name="body_onboarding_third">With multiple seasons and episodes available, you\'ll never have to wait to see what happens next. Follow your favorite characters on their epic journeys
 </string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cinemax">CINEMAX</string>
+    <string name="enter_your_registered_n_phone_number_to_sign_up">Enter your registered \n Phone number to sign up</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="i_already_have_an_account">I already have an account? </string>
+    <string name="login">Login</string>
+    <string name="or_sign_up_with"> Or Sign Up With </string>
+    <string name="welcome_back_please_enter_your_details">Welcome back! Please enter \n your details.</string>
+    <string name="let_s_get_started">Let\'s Get Started</string>
+    <string name="the_latest_movies_and_series_are_here">The latest movies and series\n are here</string>
+    <string name="full_name">Full Name</string>
+    <string name="i_agree_to_the_terms_and_services_and_privacy_policy">I agree to the Terms and Services \n and Privacy Policy</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="recover_your_account_password">Recover your account password</string>
+    <string name="next">Next</string>
+    <string name="we_have_just_sent_you_4_digit_code_via_your_email_example_gmail_com">We have just sent you 4 digit code via your\n email.</string>
+    <string name="didn_t_receive_code">Didn\'t receive code? </string>
+    <string name="resend">Resend</string>
+    <string name="verifying_your_account">Verifying Your Account</string>
+    <string name="create_new_password">Create New Password</string>
+    <string name="enter_your_new_password">Enter your new password</string>
+    <string name="reset">Reset</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>
