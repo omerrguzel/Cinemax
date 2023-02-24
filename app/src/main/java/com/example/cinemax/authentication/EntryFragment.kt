@@ -16,15 +16,19 @@ class EntryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_entry,container,false)
-        val view = binding.root
-        return view
+    ): View {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_entry, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.signUpButton.setOnClickListener {
-            findNavController().navigate(R.id.action_entryFragment_to_signUpFragment)
+        with(binding){
+            signUpButton.setOnClickListener {
+                findNavController().navigate(R.id.action_entryFragment_to_signUpFragment)
+            }
+            textViewLoginEntry.setOnClickListener {
+                findNavController().navigate(R.id.action_entryFragment_to_loginFragment)
+            }
         }
     }
 }

@@ -9,3 +9,23 @@ P
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 e
 5app/src/main/java/com/example/cinemax/MainActivity.kt,2\5\252a6ed083a83b01b7e59a49c4a38c470a719dac
+w
+G.idea/sonarlint/issuestore/f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164,3\1\31073cf3a12b082ef2fe0f9403916a4db3811c89
+w
+G.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35,b\f\bfb9453d49af9bc40f5f7a5f034be3c7ef8fa6bf
+w
+G.idea/sonarlint/issuestore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4,5\1\516e730a14e71f02fa73f3acd6dc7cea9a9fe002
+w
+G.idea/sonarlint/issuestore/0/5/05efc8b1657769a27696d478ded1e95f38737233,3\c\3c8c56407c35e5f5ebbd6c7250a79af8128a13a6
+w
+G.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,3\2\32813322c99a6c8a141ab2dc12bc10af3425f1b4
+x
+Happ/src/main/java/com/example/cinemax/onboarding/screens/SecondScreen.kt,7\b\7b93e53de6dc4ee33ecc8498f8104b5fc98a42ae
+w
+Gapp/src/main/java/com/example/cinemax/onboarding/screens/FirstScreen.kt,9\f\9fcd380c0f7599638dce35a1e0ac35e89f7c1a9f
+t
+Dapp/src/main/java/com/example/cinemax/onboarding/ViewPagerAdapter.kt,8\a\8a45aeb0ed4cce753a3cc7e8326a469c4b0fe3e1
+w
+Gapp/src/main/java/com/example/cinemax/onboarding/screens/ThirdScreen.kt,5\b\5be200b1dd501454757670afece2a99d6918a38b
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
