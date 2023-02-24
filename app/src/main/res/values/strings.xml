@@ -39,7 +39,10 @@
     <string name="email_address">Email Address</string>
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm Password</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="facebook_app_id" translatable="false">946781372990618</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb946781372990618</string>
+    <string name="facebook_client_token" translatable="false">67167c5be1ef1ae97ac55c4fd4b1e9d2</string>
+
+
 </resources>
