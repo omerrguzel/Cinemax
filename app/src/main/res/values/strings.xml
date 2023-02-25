@@ -44,5 +44,5 @@
     <string name="fb_login_protocol_scheme" translatable="false">fb946781372990618</string>
     <string name="facebook_client_token" translatable="false">67167c5be1ef1ae97ac55c4fd4b1e9d2</string>
 
-
+    <string name="web_client_id" translatable="false">724749198522-9a6olol8vectfobtjs8ptvpfu08nv30o.apps.googleusercontent.com</string>
 </resources>

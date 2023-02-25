@@ -77,7 +77,13 @@ dependencies {
     implementation "androidx.room:room-runtime:2.5.0"
     kapt "androidx.room:room-compiler:2.5.0"
     //Facebook
-    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+    implementation("com.facebook.android:facebook-android-sdk:16.0.0")
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:31.2.2')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    //Google
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
 
 }
 
