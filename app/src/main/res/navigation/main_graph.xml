@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.cinemax.SplashFragment"
+        android:name="com.example.cinemax.presentation.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.example.cinemax.onboarding.ViewPagerFragment"
+        android:name="com.example.cinemax.presentation.onboarding.ViewPagerFragment"
         android:label="ViewPagerFragment" >
         <action
             android:id="@+id/action_viewPagerFragment_to_entryFragment"
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/entryFragment"
-        android:name="com.example.cinemax.authentication.EntryFragment"
+        android:name="com.example.cinemax.presentation.authentication.entry.EntryFragment"
         android:label="fragment_entry"
         tools:layout="@layout/fragment_entry" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.cinemax.authentication.SignUpFragment"
+        android:name="com.example.cinemax.presentation.authentication.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cinemax.authentication.LoginFragment"
+        android:name="com.example.cinemax.presentation.authentication.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.example.cinemax.authentication.NewPasswordFragment"
+        android:name="com.example.cinemax.presentation.authentication.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" >
         <action
@@ -75,7 +75,7 @@
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
-        android:name="com.example.cinemax.authentication.ResetPasswordFragment"
+        android:name="com.example.cinemax.presentation.authentication.ResetPasswordFragment"
         android:label="fragment_reset_password"
         tools:layout="@layout/fragment_reset_password" >
         <action
@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="com.example.cinemax.authentication.VerificationFragment"
+        android:name="com.example.cinemax.presentation.authentication.VerificationFragment"
         android:label="fragment_verification"
         tools:layout="@layout/fragment_verification" >
         <action
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.cinemax.HomeFragment"
+        android:name="com.example.cinemax.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>

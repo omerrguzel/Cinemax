@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/dark"
         android:backgroundTint="@color/dark"
-        tools:context=".authentication.LoginFragment">
+        tools:context=".presentation.authentication.LoginFragment">
 
         <ImageView
             android:id="@+id/buttonBackLoginScreen"

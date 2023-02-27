@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dark"
-        tools:context=".authentication.EntryFragment">
+        tools:context=".presentation.authentication.entry.EntryFragment">
 
         <ImageView
             android:id="@+id/imageView_logo"
@@ -154,13 +154,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/logoGoogle"
             app:layout_constraintTop_toBottomOf="@id/orSignUpWith" />
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/sign_in_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/logoGoogle"
-            app:layout_constraintStart_toStartOf="@id/logoGoogle"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
