@@ -39,4 +39,6 @@
     <string name="email_address">E-mail Adresi</string>
     <string name="new_password">Yeni Şifre</string>
     <string name="confirm_password">Şifreni Doğrula</string>
+    <string name="hello">Merhaba</string>
+    <string name="let_s_stream_your_favorite_movie">Favori filmini izle!</string>
 </resources>

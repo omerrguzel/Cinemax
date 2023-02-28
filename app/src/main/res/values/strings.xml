@@ -45,4 +45,6 @@
     <string name="facebook_client_token" translatable="false">67167c5be1ef1ae97ac55c4fd4b1e9d2</string>
 
     <string name="web_client_id" translatable="false">112589014002-dligpfcq8bfubnd5osalk74scpoa95qp.apps.googleusercontent.com</string>
+    <string name="hello">Hello</string>
+    <string name="let_s_stream_your_favorite_movie">Let’s stream your favorite movie</string>
 </resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="DateUtils"
+            type="com.example.cinemax.utils.DateUtils" />
+        <variable
+            name="MovieItemResponse"
+            type="com.example.cinemax.data.entity.movielist.MovieItemResponse"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewUpcomingMovie"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_150sdp"
+        app:cardCornerRadius="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewUpcoming"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:downloadImageUrl="@{MovieItemResponse.posterPath}"/>
+
+            <TextView
+                android:id="@+id/textViewUpcomingMovieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:maxWidth="@dimen/_220sdp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:textSize="@dimen/_16ssp"
+                android:text="@{MovieItemResponse.title.toString()}"
+                android:layout_above="@id/textViewUpcomingReleaseDate"
+                android:maxLines="2"
+                tools:textColor="@color/dark"
+                tools:text="Movie Name" />
+
+            <TextView
+                android:id="@+id/textViewUpcomingReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/_12ssp"
+                android:text="@{DateUtils.getDateToFormat(MovieItemResponse).toString()}"
+                android:textColor="@color/white_grey"
+                tools:textColor="@color/dark"
+                tools:text="Release Date" />
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
