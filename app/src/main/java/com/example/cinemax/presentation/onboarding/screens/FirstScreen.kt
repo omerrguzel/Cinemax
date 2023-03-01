@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cinemax.R
 import com.example.cinemax.databinding.FragmentFirstScreenBinding
@@ -22,7 +21,7 @@ class FirstScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_first_screen, container, false)
+        binding = FragmentFirstScreenBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }

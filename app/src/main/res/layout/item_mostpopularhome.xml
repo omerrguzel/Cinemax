@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewMostPopular"
+    android:backgroundTint="@color/soft"
+    android:layout_width="@dimen/_135sdp"
+    android:layout_height="@dimen/_231sdp"
+    app:cardCornerRadius="@dimen/_12sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_178sdp" >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewMostPopularPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewRatingMostPopular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/imageViewMostPopularPoster"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/background_rating_textview"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/_12ssp"
+                app:drawableLeftCompat="@drawable/ic_star"
+                app:drawableTint="@color/orange"
+                tools:text="4.5" />
+        </RelativeLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewTitleMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/white"
+            tools:text="Movie Title"
+            android:layout_marginTop="@dimen/_7sdp" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewGenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/grey"
+            tools:text="Genre"
+            android:layout_marginTop="@dimen/_2sdp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

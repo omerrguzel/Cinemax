@@ -41,4 +41,7 @@
     <string name="confirm_password">Şifreni Doğrula</string>
     <string name="hello">Merhaba</string>
     <string name="let_s_stream_your_favorite_movie">Favori filmini izle!</string>
+    <string name="categories">Türler</string>
+    <string name="most_popular">En Popüler</string>
+    <string name="see_all">Hepsini Gör</string>
 </resources>

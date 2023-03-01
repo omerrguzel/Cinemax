@@ -6,11 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.ViewPager2
 import com.example.cinemax.R
-import com.example.cinemax.databinding.FragmentFirstScreenBinding
 import com.example.cinemax.databinding.FragmentThirdScreenBinding
 
 class ThirdScreen : Fragment() {
@@ -23,7 +20,7 @@ class ThirdScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_third_screen, container, false)
+        binding = FragmentThirdScreenBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }

@@ -1,89 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/soft">
 
-    <data>
 
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/image_onboarding_first"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/soft">
+        android:layout_height="@dimen/_450sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/onboarding_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageView
-            android:id="@+id/image_onboarding_first"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardview_onboarding_first"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_onboarding_first">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_cardview_onboarding_first"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_350sdp"
-            android:scaleType="fitXY"
-            android:src="@drawable/onboarding_first"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent">
 
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview_onboarding_first"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:backgroundTint="@color/dark"
-            app:layout_constraintTop_toBottomOf="@id/image_onboarding_first"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/const_cardview_onboarding_first"
+            <TextView
+                android:id="@+id/textview_onboarding_header_first"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_27sdp"
+                android:layout_marginTop="@dimen/_27sdp"
+                android:layout_marginEnd="@dimen/_27sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center|center_vertical"
+                android:lineSpacingExtra="@dimen/_6sdp"
+                android:text="@string/header_onboarding_first"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textview_onboarding_header_first"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_27sdp"
-                    android:layout_marginTop="@dimen/_27sdp"
-                    android:layout_marginEnd="@dimen/_27sdp"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:gravity="center|center_vertical"
-                    android:lineSpacingExtra="@dimen/_6sdp"
-                    android:text="@string/header_onboarding_first"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textview_onboarding_body_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_27sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_27sdp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center|center_vertical"
+                android:text="@string/body_onboarding_first"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_onboarding_header_first" />
 
-                <TextView
-                    android:id="@+id/textview_onboarding_body_first"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_27sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginEnd="@dimen/_27sdp"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="center|center_vertical"
-                    android:text="@string/body_onboarding_first"
-                    android:textColor="@color/grey"
-                    android:textSize="@dimen/_12ssp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textview_onboarding_header_first" />
+            <ImageView
+                android:id="@+id/button_next_onboarding"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:src="@drawable/button_onboarding_first"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-                <ImageView
-                    android:id="@+id/button_next_onboarding"
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_70sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:layout_marginBottom="@dimen/_20sdp"
-                    android:src="@drawable/button_onboarding_first" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>

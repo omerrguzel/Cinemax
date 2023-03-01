@@ -1,7 +1,6 @@
 package com.example.cinemax.data.entity.movielist
 
 import com.google.gson.annotations.SerializedName
-import java.text.SimpleDateFormat
 
 data class MovieItemResponse(
     @SerializedName("id")
@@ -16,4 +15,6 @@ data class MovieItemResponse(
     val voteAverage: Double,
     @SerializedName("release_date")
     val releaseDate: String,
+    @SerializedName("backdrop_path")
+    val backdropPath: String
 )
