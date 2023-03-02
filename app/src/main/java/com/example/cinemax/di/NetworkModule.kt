@@ -3,6 +3,8 @@ package com.example.cinemax.di
 import androidx.viewbinding.BuildConfig
 import com.example.cinemax.data.remote.MovieApiService
 import com.example.cinemax.data.remote.RemoteDataSource
+import com.example.cinemax.data.remote.repository.MovieRepositoryImp
+import com.example.cinemax.domain.repository.MovieRepository
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -13,6 +15,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Qualifier
+import javax.inject.Singleton
 
 @Module
 @InstallIn(ActivityRetainedComponent::class)
@@ -54,7 +57,7 @@ class NetworkModule {
 
     @Provides
     fun provideEndPoint(): EndPoint {
-        return EndPoint("https://api.themoviedb.org/3/movie/")
+        return EndPoint("https://api.themoviedb.org/3/")
     }
 
     @Provides
@@ -63,6 +66,12 @@ class NetworkModule {
     ): RemoteDataSource {
         return RemoteDataSource(networkApiService)
     }
+
+    @Provides
+    fun provideMovieRepository(remoteDataSource: RemoteDataSource): MovieRepository {
+        return MovieRepositoryImp(remoteDataSource)
+    }
+
 }
 
 data class EndPoint(val url: String)

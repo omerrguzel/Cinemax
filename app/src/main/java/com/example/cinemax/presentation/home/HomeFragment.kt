@@ -13,8 +13,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cinemax.R
+import com.example.cinemax.data.entity.moviedetail.GenreList
 import com.example.cinemax.databinding.FragmentHomeBinding
+import com.example.cinemax.presentation.adapter.CategoriesAdapter
 import com.example.cinemax.presentation.adapter.MovieListAdapter
+import com.example.cinemax.utils.Resource
+import com.example.cinemax.utils.gone
+import com.example.cinemax.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
@@ -24,6 +29,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private var movieListAdapter: MovieListAdapter = MovieListAdapter()
     private val viewModel : HomeViewModel by viewModels()
+    private val genreAdapter : CategoriesAdapter = CategoriesAdapter(GenreList(arrayListOf()))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +44,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         getMoviesBySource("upcoming")
-
+        getGenres()
     }
 
     private fun getMoviesBySource(sourceName: String) {
@@ -65,5 +71,24 @@ class HomeFragment : Fragment() {
 //                    findNavController().navigate(action)
 //                }
 //            })
+    }
+
+    private fun getGenres() {
+        viewModel.getGenres().observe(viewLifecycleOwner){
+            when(it.status){
+                Resource.Status.LOADING -> {
+                    binding.progressBar.show()
+                }
+                Resource.Status.ERROR -> {
+                    Log.d(TAG,"Fetch Info Error: ${it.message}")
+                }
+                Resource.Status.SUCCESS -> {
+                    Log.d(TAG,"Genres: ${it.data}")
+                    binding.progressBar.gone()
+                    genreAdapter.setData(it.data)
+                    binding.recyclerViewCategories.adapter = genreAdapter
+                }
+            }
+        }
     }
 }
