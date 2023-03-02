@@ -7,11 +7,10 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.example.cinemax.data.entity.moviedetail.Genre
-import com.example.cinemax.data.entity.moviedetail.GenreList
-import com.example.cinemax.data.entity.movielist.MovieItemResponse
-import com.example.cinemax.data.remote.MovieApiService
+import com.example.cinemax.data.entity.moviedetail.GenreListResponse
+import com.example.cinemax.data.entity.movielist.MovieItemUIModel
 import com.example.cinemax.domain.usecase.movie.GenreUseCase
+import com.example.cinemax.domain.usecase.movie.MovieListUseCase
 import com.example.cinemax.presentation.paging.MoviePagingSource
 import com.example.cinemax.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,22 +19,22 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor (
-    private val movieApiService: MovieApiService,
+    private val movieListUseCase: MovieListUseCase,
     private val genreUseCase: GenreUseCase
     ) : ViewModel() {
 
-    fun getMoviesBySource(sourceName: String): Flow<PagingData<MovieItemResponse>> {
+    fun getMoviesBySource(sourceName: String,viewType:Int): Flow<PagingData<MovieItemUIModel>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 20
             ),
             pagingSourceFactory = {
-                MoviePagingSource(movieApiService,sourceName)
+                MoviePagingSource(movieListUseCase,sourceName,viewType)
             }
         ).flow.cachedIn(viewModelScope)
     }
 
-    fun getGenres() : LiveData<Resource<GenreList>>{
+    fun getGenres() : LiveData<Resource<GenreListResponse>>{
         return genreUseCase.invoke()
     }
 }

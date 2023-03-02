@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardViewUpcomingMovie"
-    android:layout_width="@dimen/_300sdp"
-    android:layout_height="@dimen/_150sdp"
+    android:layout_width="@dimen/_240sdp"
+    android:layout_height="@dimen/_120sdp"
     android:layout_marginHorizontal="@dimen/_12sdp"
     app:cardCornerRadius="@dimen/_16sdp">
 
@@ -30,10 +30,9 @@
             android:maxWidth="@dimen/_220sdp"
             android:maxLines="2"
             android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_12ssp"
             tools:text="Movie Name"
             tools:textColor="@color/dark" />
-        <!--            android:text="@{MovieItemResponse.title.toString()}"-->
 
 
         <TextView
@@ -45,10 +44,9 @@
             android:layout_marginBottom="@dimen/_16sdp"
             android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/white_grey"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_10ssp"
             tools:text="Release Date"
             tools:textColor="@color/dark" />
-        <!--            android:text="@{DateUtils.getDateToFormat(MovieItemResponse).toString()}"-->
 
     </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

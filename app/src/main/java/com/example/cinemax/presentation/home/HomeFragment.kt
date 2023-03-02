@@ -11,9 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cinemax.R
-import com.example.cinemax.data.entity.moviedetail.GenreList
+import androidx.recyclerview.widget.RecyclerView
+import com.example.cinemax.data.entity.moviedetail.GenreListResponse
 import com.example.cinemax.databinding.FragmentHomeBinding
 import com.example.cinemax.presentation.adapter.CategoriesAdapter
 import com.example.cinemax.presentation.adapter.MovieListAdapter
@@ -27,9 +26,10 @@ import kotlinx.coroutines.flow.collectLatest
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-    private var movieListAdapter: MovieListAdapter = MovieListAdapter()
+    private var upComingMovieListAdapter: MovieListAdapter = MovieListAdapter()
+    private var popularMovieListAdapter: MovieListAdapter = MovieListAdapter()
     private val viewModel : HomeViewModel by viewModels()
-    private val genreAdapter : CategoriesAdapter = CategoriesAdapter(GenreList(arrayListOf()))
+    private val genreAdapter : CategoriesAdapter = CategoriesAdapter(GenreListResponse(arrayListOf()))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,25 +43,29 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        getMoviesBySource("upcoming")
+        getMoviesBySource(binding.recyclerViewUpcoming,upComingMovieListAdapter,"upcoming",
+            MovieListAdapter.VIEW_TYPE_UPCOMING
+        )
+        getMoviesBySource(binding.recyclerViewMostPopular,popularMovieListAdapter,"popular",
+            MovieListAdapter.VIEW_TYPE_POPULAR
+        )
         getGenres()
     }
 
-    private fun getMoviesBySource(sourceName: String) {
+    private fun getMoviesBySource(recyclerView: RecyclerView,listAdapter: MovieListAdapter, sourceName: String,viewtype : Int) {
         lifecycleScope.launchWhenCreated {
-            viewModel.getMoviesBySource(sourceName = sourceName).collectLatest {
-                movieListAdapter.submitData(it)
+            viewModel.getMoviesBySource(sourceName = sourceName,viewtype).collectLatest {
+                listAdapter.submitData(it)
                 Log.d(TAG,"result : $it")
-                movieListAdapter.loadStateFlow.collect { loadStates ->
+                listAdapter.loadStateFlow.collect { loadStates ->
                     binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
                     binding.errorImageView.isVisible  = loadStates.refresh is LoadState.Error
-//                    binding.chipGroupSources.isInvisible = loadStates.refresh is LoadState.Error
 
                 }
             }
         }
-        binding.recyclerViewUpcoming.apply {
-            adapter = movieListAdapter
+        recyclerView.apply {
+            adapter = listAdapter
             setHasFixedSize(true)
         }
 //        adapter.setMovieOnClickListener(

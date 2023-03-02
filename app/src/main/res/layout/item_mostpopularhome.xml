@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardViewMostPopular"
     android:backgroundTint="@color/soft"
+    android:layout_marginHorizontal="@dimen/_10sdp"
     android:layout_width="@dimen/_135sdp"
     android:layout_height="@dimen/_231sdp"
     app:cardCornerRadius="@dimen/_12sdp">
@@ -18,6 +19,7 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageViewMostPopularPoster"
                 android:layout_width="match_parent"
+                android:scaleType="fitXY"
                 android:layout_height="match_parent"/>
 
 
@@ -46,8 +48,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
+            android:maxLines="1"
             android:layout_marginHorizontal="@dimen/_8sdp"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/white"
             tools:text="Movie Title"
             android:layout_marginTop="@dimen/_7sdp" />
@@ -57,7 +60,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
             android:layout_marginHorizontal="@dimen/_8sdp"
-            android:textSize="@dimen/_10ssp"
+            android:textSize="@dimen/_9ssp"
             android:textColor="@color/grey"
             tools:text="Genre"
             android:layout_marginTop="@dimen/_2sdp" />

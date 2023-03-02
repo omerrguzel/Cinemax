@@ -8,5 +8,5 @@ data class MovieDetails(
     val vote_average: Double,
     val release_date: String,
     val runtime: Int,
-    val genres: List<Genre>,
+    val genres: List<GenreResponse>,
 )

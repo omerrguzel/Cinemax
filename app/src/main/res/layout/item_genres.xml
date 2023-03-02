@@ -8,11 +8,12 @@
     android:layout_height="wrap_content"
     android:backgroundTint="@color/chip_genre_color"
     android:includeFontPadding="false"
-    android:textColor="@color/blue_accent"
+    android:textColor="@color/chip_genre_text_color"
     android:checkable="true"
+    android:textSize="@dimen/_12ssp"
     app:chipCornerRadius="@dimen/_8sdp"
-    app:textEndPadding="@dimen/_32sdp"
-    app:textStartPadding="@dimen/_32sdp"
+    app:textEndPadding="@dimen/_20sdp"
+    app:textStartPadding="@dimen/_20sdp"
     tools:text="All">
 
 </com.google.android.material.chip.Chip>
