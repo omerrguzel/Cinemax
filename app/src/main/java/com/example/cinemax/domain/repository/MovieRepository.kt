@@ -1,5 +1,6 @@
 package com.example.cinemax.domain.repository
 
+import androidx.lifecycle.LiveData
 import com.example.cinemax.data.entity.moviedetail.GenreListResponse
 import com.example.cinemax.data.entity.movielist.MoviesResponse
 import com.example.cinemax.utils.Resource

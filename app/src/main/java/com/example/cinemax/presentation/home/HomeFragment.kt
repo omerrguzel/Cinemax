@@ -12,7 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cinemax.data.entity.moviedetail.GenreListResponse
+import com.example.cinemax.data.entity.moviedetail.GenreResponse
 import com.example.cinemax.databinding.FragmentHomeBinding
 import com.example.cinemax.presentation.adapter.CategoriesAdapter
 import com.example.cinemax.presentation.adapter.MovieListAdapter
@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     private var upComingMovieListAdapter: MovieListAdapter = MovieListAdapter()
     private var popularMovieListAdapter: MovieListAdapter = MovieListAdapter()
     private val viewModel : HomeViewModel by viewModels()
-    private val genreAdapter : CategoriesAdapter = CategoriesAdapter(GenreListResponse(arrayListOf()))
+    private val genreAdapter : CategoriesAdapter = CategoriesAdapter(arrayListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -89,7 +89,9 @@ class HomeFragment : Fragment() {
                 Resource.Status.SUCCESS -> {
                     Log.d(TAG,"Genres: ${it.data}")
                     binding.progressBar.gone()
-                    genreAdapter.setData(it.data)
+                    val list : MutableList<GenreResponse>? = it.data?.genres?.toMutableList()
+                    list?.add(0,GenreResponse(0,"All"))
+                    genreAdapter.setData(list?.toList())
                     binding.recyclerViewCategories.adapter = genreAdapter
                 }
             }

@@ -117,42 +117,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchBarHomeScreen"
         tools:listitem="@layout/item_upcoming" />
-    
+
     <TextView
         android:id="@+id/textViewTitleCategories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewUpcoming"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_24sdp"
-        android:text="@string/categories"
+        android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/montserrat"
+        android:text="@string/categories"
+        android:textColor="@color/white"
         android:textSize="@dimen/_16ssp"
-        android:textColor="@color/white"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewUpcoming" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCategories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textViewTitleCategories"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/_16sdp"
         android:orientation="horizontal"
-        tools:listitem="@layout/item_genres"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitleCategories"
+        tools:listitem="@layout/item_genres" />
 
     <TextView
         android:id="@+id/textViewTitleMostPopular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewCategories"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/_24sdp"
-        android:text="@string/most_popular"
         android:fontFamily="@font/montserrat"
+        android:text="@string/most_popular"
+        android:textColor="@color/white"
         android:textSize="@dimen/_16ssp"
-        android:textColor="@color/white"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewCategories" />
 
     <TextView
         android:id="@+id/textViewTitleSeeAllMostPopular"
@@ -165,16 +165,16 @@
         android:textSize="@dimen/_14ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recyclerViewCategories" />
-    
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMostPopular"
-        tools:listitem="@layout/item_mostpopularhome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textViewTitleMostPopular"
         android:layout_marginTop="@dimen/_16sdp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitleMostPopular"
+        tools:listitem="@layout/item_mostpopularhome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

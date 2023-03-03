@@ -6,9 +6,7 @@
     android:id="@+id/chipGenres"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/chip_genre_color"
     android:includeFontPadding="false"
-    android:textColor="@color/chip_genre_text_color"
     android:checkable="true"
     android:textSize="@dimen/_12ssp"
     app:chipCornerRadius="@dimen/_8sdp"
@@ -17,3 +15,6 @@
     tools:text="All">
 
 </com.google.android.material.chip.Chip>
+
+<!--    android:textColor="@color/chip_genre_text_color"-->
+<!--    android:backgroundTint="@color/chip_genre_color"-->

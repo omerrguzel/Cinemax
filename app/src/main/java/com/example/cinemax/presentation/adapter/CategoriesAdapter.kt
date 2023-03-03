@@ -1,17 +1,25 @@
 package com.example.cinemax.presentation.adapter
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.CompoundButton
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.cinemax.R
 import com.example.cinemax.data.entity.moviedetail.GenreResponse
-import com.example.cinemax.data.entity.moviedetail.GenreListResponse
 import com.example.cinemax.databinding.ItemGenresBinding
 
+
 class CategoriesAdapter(
-    private var genreListResponse: GenreListResponse,
-    private var checkedPosition: Int = -1
+    private var genreListResponse: List<GenreResponse>,
 //    private val filterMoviesByGenre : (() -> Unit)? = null
 ) : RecyclerView.Adapter<CategoriesAdapter.GenreListViewHolder>() {
+
+    var selectedItemPos = -1
+    var lastItemSelectedPos = -1
+
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -23,30 +31,64 @@ class CategoriesAdapter(
     }
 
     override fun getItemCount(): Int {
-        return genreListResponse.genres.size
+        return genreListResponse.size
     }
 
+
     override fun onBindViewHolder(holder: GenreListViewHolder, position: Int) {
-        genreListResponse.genres[position].let {
-            holder.bindGenre(it, position+1)
-        }
+        val genre = genreListResponse[position]
+        holder.bindGenre(genre, position)
     }
 
     inner class GenreListViewHolder(private val binding: ItemGenresBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+        ViewHolder(binding.root) {
 
         fun bindGenre(genre: GenreResponse, position: Int) = with(binding) {
-            if (position == 0) {
-                chipGenres.text = "All"
-            } else chipGenres.text = genre.name
+            chipGenres.text = genre.name
+            if(position == selectedItemPos){
+                chipGenres.setChipBackgroundColorResource(R.color.soft)
+                chipGenres.setTextColor(this.chipGenres.context.resources.getColor(R.color.blue_accent))
+            }
+            else{
+                chipGenres.setChipBackgroundColorResource(R.color.dark)
+                chipGenres.setTextColor(this.chipGenres.context.resources.getColor(R.color.white))            }
 
+
+
+            chipGenres.setOnClickListener {
+                selectedItemPos = position
+                if (lastItemSelectedPos == -1)
+                    lastItemSelectedPos = selectedItemPos
+                else {
+                    notifyItemChanged(lastItemSelectedPos)
+                    lastItemSelectedPos = selectedItemPos
+                }
+                notifyItemChanged(selectedItemPos)
+            }
+
+
+//
+//            chipGenres.setOnCheckedChangeListener { _, isChecked ->
+//                selectedItemPos = position
+//                if (lastItemSelectedPos == -1)
+//                    lastItemSelectedPos = selectedItemPos
+//                else {
+//                    notifyItemChanged(lastItemSelectedPos)
+//                    lastItemSelectedPos = selectedItemPos
+//                }
+//                notifyItemChanged(selectedItemPos)
+//            }
         }
+
+
     }
 
-    fun setData(newList: GenreListResponse?) {
+
+    fun setData(newList: List<GenreResponse>?) {
         if (newList != null) {
             genreListResponse = newList
+            notifyDataSetChanged()
         }
-        notifyDataSetChanged()
     }
+
 }

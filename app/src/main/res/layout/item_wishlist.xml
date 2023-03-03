@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:backgroundTint="@color/soft"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="@dimen/_16sdp"
+    app:cardCornerRadius="@dimen/_16sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewWishListImageHolder"
+            android:layout_width="@dimen/_121sdp"
+            android:layout_height="@dimen/_83sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="@dimen/_8sdp"
+            android:layout_margin="@dimen/_12sdp">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewWishlistItem"
+                android:layout_width="@dimen/_121sdp"
+                android:layout_height="@dimen/_83sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewGenreWishlistItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Action"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white_grey"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginStart="@dimen/_16sdp"
+            app:layout_constraintStart_toEndOf="@id/cardViewWishListImageHolder"
+            app:layout_constraintTop_toTopOf="@id/cardViewWishListImageHolder" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewTitleWishlistItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Spider-Man No Way Home"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textColor="@color/white_grey"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintStart_toStartOf="@id/textViewGenreWishlistItem"
+            app:layout_constraintTop_toBottomOf="@id/textViewGenreWishlistItem" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewMediaTypeWishlistItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Movie"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintStart_toStartOf="@id/textViewTitleWishlistItem"
+            app:layout_constraintTop_toBottomOf="@id/textViewTitleWishlistItem" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewRatingWishlistItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="4.5"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginStart="@dimen/_20sdp"
+            app:drawableLeftCompat="@drawable/ic_star"
+            app:drawableTint="@color/orange"
+            android:textColor="@color/orange"
+            android:drawablePadding="@dimen/_3sdp"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintStart_toEndOf="@id/textViewMediaTypeWishlistItem"
+            app:layout_constraintTop_toBottomOf="@id/textViewTitleWishlistItem" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewWishListWishListScreen"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/wishlist_home" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

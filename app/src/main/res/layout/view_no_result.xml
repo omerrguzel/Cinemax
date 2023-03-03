@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewNoResults"
+    android:layout_width="match_parent"
+    android:background="@color/dark"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewNoResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_no_results"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewNoResultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@id/imageViewNoResults"
+        android:text="@string/we_are_sorry_we_can_not_find_the_movie"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:letterSpacing="0.12" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/grey"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/find_your_movie_by_type_title_categories_years_etc"
+        app:layout_constraintTop_toBottomOf="@id/textViewNoResultTitle"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
