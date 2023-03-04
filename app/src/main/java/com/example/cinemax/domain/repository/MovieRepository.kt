@@ -9,5 +9,5 @@ interface MovieRepository {
 
     suspend fun getGenreList() : Resource<GenreListResponse>
 
-    suspend fun getMoviesBySource(source:String,query:Int) : MoviesResponse
+    suspend fun getMoviesBySource(source:String,query:Int,genreId : Int?) : MoviesResponse
 }

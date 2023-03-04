@@ -23,13 +23,13 @@ class HomeViewModel @Inject constructor (
     private val genreUseCase: GenreUseCase
     ) : ViewModel() {
 
-    fun getMoviesBySource(sourceName: String,viewType:Int): Flow<PagingData<MovieItemUIModel>> {
+    fun getMoviesBySource(sourceName: String,viewType:Int,genreId : Int?): Flow<PagingData<MovieItemUIModel>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 20
             ),
             pagingSourceFactory = {
-                MoviePagingSource(movieListUseCase,sourceName,viewType)
+                MoviePagingSource(movieListUseCase,sourceName,viewType,genreId)
             }
         ).flow.cachedIn(viewModelScope)
     }

@@ -10,10 +10,11 @@ import retrofit2.http.Query
 
 interface MovieApiService {
 
-    @GET("movie/{source}?api_key=$API_KEY&language=en-US")
+    @GET("movie/{source}?api_key=$API_KEY&language=tr&sort_by=popularity.desc")
     suspend fun getMoviesBySource(
         @Path("source") sourceName: String,
-        @Query("page") page: Int
+        @Query("page") page: Int,
+        @Query("with_genres") genreId : Int?
     ): MoviesResponse
 
 

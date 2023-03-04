@@ -14,8 +14,8 @@ class MovieRepositoryImp @Inject constructor(
         return remoteDataSource.getGenreList()
     }
 
-    override suspend fun getMoviesBySource(source:String,query:Int): MoviesResponse {
-        return remoteDataSource.getMoviesBySource(source,query)
+    override suspend fun getMoviesBySource(source:String,query:Int,genreId : Int?): MoviesResponse {
+        return remoteDataSource.getMoviesBySource(source,query,genreId)
     }
 
 

@@ -18,6 +18,7 @@ import com.example.cinemax.presentation.adapter.CategoriesAdapter
 import com.example.cinemax.presentation.adapter.MovieListAdapter
 import com.example.cinemax.utils.Resource
 import com.example.cinemax.utils.gone
+import com.example.cinemax.utils.scrollToStart
 import com.example.cinemax.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -44,23 +45,29 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         getMoviesBySource(binding.recyclerViewUpcoming,upComingMovieListAdapter,"upcoming",
-            MovieListAdapter.VIEW_TYPE_UPCOMING
+            MovieListAdapter.VIEW_TYPE_UPCOMING,null
         )
         getMoviesBySource(binding.recyclerViewMostPopular,popularMovieListAdapter,"popular",
-            MovieListAdapter.VIEW_TYPE_POPULAR
+            MovieListAdapter.VIEW_TYPE_POPULAR,null
         )
         getGenres()
+
+        genreAdapter.filterMoviesByGenre = {
+            getMoviesBySource(binding.recyclerViewMostPopular,popularMovieListAdapter,"popular",
+                MovieListAdapter.VIEW_TYPE_POPULAR,it
+            )
+        }
     }
 
-    private fun getMoviesBySource(recyclerView: RecyclerView,listAdapter: MovieListAdapter, sourceName: String,viewtype : Int) {
+    private fun getMoviesBySource(recyclerView: RecyclerView,listAdapter: MovieListAdapter, sourceName: String,viewtype : Int,genreId : Int?) {
         lifecycleScope.launchWhenCreated {
-            viewModel.getMoviesBySource(sourceName = sourceName,viewtype).collectLatest {
+            viewModel.getMoviesBySource(sourceName = sourceName,viewtype,genreId).collectLatest {
                 listAdapter.submitData(it)
+                binding.recyclerViewMostPopular.smoothScrollToPosition(0)
                 Log.d(TAG,"result : $it")
                 listAdapter.loadStateFlow.collect { loadStates ->
                     binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
-                    binding.errorImageView.isVisible  = loadStates.refresh is LoadState.Error
-
+//                    binding.errorImageView.isVisible  = loadStates.refresh is LoadState.Error
                 }
             }
         }
@@ -68,13 +75,6 @@ class HomeFragment : Fragment() {
             adapter = listAdapter
             setHasFixedSize(true)
         }
-//        adapter.setMovieOnClickListener(
-//            object : IMovieClickListener {
-//                override fun onClick(moviesItem: MoviesItem) {
-//                    val action = MovieListFragmentDirections.actionMovieListFragmentToMovieDetailFragment(moviesItem.id)
-//                    findNavController().navigate(action)
-//                }
-//            })
     }
 
     private fun getGenres() {
@@ -90,7 +90,7 @@ class HomeFragment : Fragment() {
                     Log.d(TAG,"Genres: ${it.data}")
                     binding.progressBar.gone()
                     val list : MutableList<GenreResponse>? = it.data?.genres?.toMutableList()
-                    list?.add(0,GenreResponse(0,"All"))
+                    list?.add(0,GenreResponse(name = "All"))
                     genreAdapter.setData(list?.toList())
                     binding.recyclerViewCategories.adapter = genreAdapter
                 }

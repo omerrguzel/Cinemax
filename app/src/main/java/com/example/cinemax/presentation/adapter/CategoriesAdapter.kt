@@ -13,10 +13,10 @@ import com.example.cinemax.databinding.ItemGenresBinding
 
 
 class CategoriesAdapter(
-    private var genreListResponse: List<GenreResponse>,
-//    private val filterMoviesByGenre : (() -> Unit)? = null
+    private var genreListResponse: List<GenreResponse>
 ) : RecyclerView.Adapter<CategoriesAdapter.GenreListViewHolder>() {
 
+    var filterMoviesByGenre : ((id:Int?) -> Unit)? = null
     var selectedItemPos = -1
     var lastItemSelectedPos = -1
 
@@ -45,18 +45,16 @@ class CategoriesAdapter(
 
         fun bindGenre(genre: GenreResponse, position: Int) = with(binding) {
             chipGenres.text = genre.name
-            if(position == selectedItemPos){
+            if (position == selectedItemPos) {
                 chipGenres.setChipBackgroundColorResource(R.color.soft)
                 chipGenres.setTextColor(this.chipGenres.context.resources.getColor(R.color.blue_accent))
-            }
-            else{
+            } else {
                 chipGenres.setChipBackgroundColorResource(R.color.dark)
-                chipGenres.setTextColor(this.chipGenres.context.resources.getColor(R.color.white))            }
-
-
-
-            chipGenres.setOnClickListener {
+                chipGenres.setTextColor(this.chipGenres.context.resources.getColor(R.color.white))
+            }
+            chipGenres.setOnCheckedChangeListener { _, _ ->
                 selectedItemPos = position
+                filterMoviesByGenre?.invoke(genre.id)
                 if (lastItemSelectedPos == -1)
                     lastItemSelectedPos = selectedItemPos
                 else {
@@ -65,22 +63,7 @@ class CategoriesAdapter(
                 }
                 notifyItemChanged(selectedItemPos)
             }
-
-
-//
-//            chipGenres.setOnCheckedChangeListener { _, isChecked ->
-//                selectedItemPos = position
-//                if (lastItemSelectedPos == -1)
-//                    lastItemSelectedPos = selectedItemPos
-//                else {
-//                    notifyItemChanged(lastItemSelectedPos)
-//                    lastItemSelectedPos = selectedItemPos
-//                }
-//                notifyItemChanged(selectedItemPos)
-//            }
         }
-
-
     }
 
 

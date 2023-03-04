@@ -14,9 +14,10 @@ class MovieListUseCase @Inject constructor(
     suspend fun getMoviesBySource(
         source: String,
         query: Int,
-        viewType: Int
+        viewType: Int,
+        genreId : Int?
     ): MoviesUIModel {
-        val moviesResponse = movieRepository.getMoviesBySource(source, query)
+        val moviesResponse = movieRepository.getMoviesBySource(source, query,genreId)
         val genreResponse = movieRepository.getGenreList().data
         return MoviesMapper().mapResponse(moviesResponse, viewType, genreResponse)
     }
