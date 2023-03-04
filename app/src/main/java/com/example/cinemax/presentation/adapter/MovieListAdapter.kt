@@ -12,6 +12,7 @@ import com.example.cinemax.data.entity.movielist.MovieItemResponse
 import com.example.cinemax.data.entity.movielist.MovieItemUIModel
 import com.example.cinemax.databinding.ItemMostpopularhomeBinding
 import com.example.cinemax.databinding.ItemUpcomingBinding
+import com.example.cinemax.utils.showImage
 import java.text.SimpleDateFormat
 
 class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
@@ -24,33 +25,35 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
         parent: ViewGroup,
         viewType: Int
     ): RecyclerView.ViewHolder {
-        return when(viewType){
+        return when (viewType) {
             VIEW_TYPE_UPCOMING -> MovieListViewHolder(
                 ItemUpcomingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             )
             VIEW_TYPE_POPULAR -> MostPopularViewHolder(
-                ItemMostpopularhomeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+                ItemMostpopularhomeBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
             )
             else -> throw IllegalArgumentException("There is no ViewHolder to inflate for type: $viewType")
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder) {
+        when (holder) {
             is MovieListViewHolder -> getItem(position)?.let { holder.bindMovies(it) }
             is MostPopularViewHolder -> getItem(position)?.let { holder.bindMovies(it) }
         }
     }
 
-    override fun getItemViewType(position: Int):Int {
-        return when(getItem(position)?.viewType){
+    override fun getItemViewType(position: Int): Int {
+        return when (getItem(position)?.viewType) {
             0 -> VIEW_TYPE_UPCOMING
             1 -> VIEW_TYPE_POPULAR
-            2 -> VIEW_TYPE_SEARCH_RESULT
             else -> throw IllegalArgumentException("There is no ViewType")
         }
     }
-
 
 
     inner class MovieListViewHolder(private val binding: ItemUpcomingBinding) :
@@ -66,34 +69,20 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
 
             textViewUpcomingMovieTitle.text = moviesItem.title
             textViewUpcomingReleaseDate.text = "Release Date: $outputDateStr"
-            Glide.with(imageViewUpcoming.context)
-                .load("https://image.tmdb.org/t/p/w500" + moviesItem.backdropPath)
-                .apply (
-                    RequestOptions()
-                        .placeholder(R.drawable.loading_animation)
-                        .error(R.drawable.error)
-                        )
-                .into(imageViewUpcoming)
+            imageViewUpcoming.showImage(moviesItem.backdropPath)
         }
     }
 
-    inner class MostPopularViewHolder(private val binding :  ItemMostpopularhomeBinding) :
-            RecyclerView.ViewHolder(binding.root){
+    inner class MostPopularViewHolder(private val binding: ItemMostpopularhomeBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-                fun bindMovies(moviesItem: MovieItemUIModel) = with(binding){
-                    textViewTitleMovie.text = moviesItem.title
-                    textViewGenre.text = moviesItem.genreIds?.get(0) ?: ""
-                    textViewRatingMostPopular.text = moviesItem.voteAverage.toString()
-                    Glide.with(imageViewMostPopularPoster.context)
-                        .load("https://image.tmdb.org/t/p/w500" + moviesItem.posterPath)
-                        .apply (
-                            RequestOptions()
-                                .placeholder(R.drawable.loading_animation)
-                                .error(R.drawable.error)
-                        )
-                        .into(imageViewMostPopularPoster)
-                }
-            }
+        fun bindMovies(moviesItem: MovieItemUIModel) = with(binding) {
+            textViewTitleMovie.text = moviesItem.title
+            textViewGenre.text = moviesItem.genreIds?.get(0) ?: ""
+            textViewRatingMostPopular.text = moviesItem.voteAverage.toString()
+            imageViewMostPopularPoster.showImage(moviesItem.posterPath)
+        }
+    }
 
     object MoviesComparator : DiffUtil.ItemCallback<MovieItemUIModel>() {
         override fun areItemsTheSame(
@@ -111,9 +100,8 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
         }
     }
 
-    companion object{
+    companion object {
         const val VIEW_TYPE_UPCOMING = 0
         const val VIEW_TYPE_POPULAR = 1
-        const val VIEW_TYPE_SEARCH_RESULT = 2
     }
 }

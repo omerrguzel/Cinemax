@@ -66,6 +66,7 @@
                 android:paddingEnd="@dimen/_8sdp"/>
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewReleaseDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_calendar"
@@ -82,6 +83,7 @@
                 android:layout_marginTop="@dimen/_50sdp"
                 android:layout_height="wrap_content">
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewGenre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_genre"
@@ -91,10 +93,11 @@
                     android:textSize="@dimen/_12ssp"
                     tools:text="Action  |"/>
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewMediaType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="@dimen/_6sdp"
-                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
                     android:textColor="@color/white"
                     android:fontFamily="@font/montserrat"
                     android:textSize="@dimen/_12ssp"

@@ -1,42 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:background="@color/dark"
-    android:layout_height="match_parent"
-    tools:context=".presentation.DetailFragment">
+    android:layout_height="match_parent">
 
-
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/dark"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_552sdp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/background_example"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_height="match_parent"
+        tools:context=".presentation.DetailFragment">
 
-        <com.google.android.material.imageview.ShapeableImageView
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_552sdp"
-            android:scaleType="fitXY"
+            android:layout_height="@dimen/_500sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/mask_gradient"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:background="@drawable/background_example"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-            android:id="@+id/buttonBackDetailScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_44sdp"
-            android:src="@drawable/button_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_552sdp"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:src="@drawable/mask_gradient"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/buttonBackDetailScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_44sdp"
+                android:src="@drawable/button_back" />
 
-    
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewNowPlaying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginHorizontal="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_44sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:letterSpacing="0.12"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:textSize="@dimen/_16ssp"
+                tools:text="Spider-Man No Way Home" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewWishListHome"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_44sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/wishlist_home" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewForegroundDetailPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_100sdp"
+                android:layout_marginHorizontal="@dimen/_95sdp"
+                android:layout_marginBottom="@dimen/_150sdp"
+                tools:src="@drawable/background_example"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@id/imageViewForegroundDetailPoster"
+                android:layout_alignParentStart="true"
+                android:layout_marginHorizontal="@dimen/_60sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/_minus35sdp"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewReleaseDateDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/montserrat"
+                    tools:text="2021"
+                    android:drawableStart="@drawable/ic_calendar"/>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/firstDividerDetail"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_height="match_parent"
+                    app:dividerColor="@color/dark_grey"
+                    app:dividerThickness="@dimen/_1sdp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/montserrat"
+                    tools:text="148 Minutes"
+                    android:drawableStart="@drawable/ic_duration"/>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/secondDividerDetail"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    app:dividerColor="@color/dark_grey"
+                    app:dividerThickness="@dimen/_1sdp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewGenreDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/montserrat"
+                    tools:text="Action"
+                    android:drawableStart="@drawable/ic_genre"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonTrailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="@dimen/_140sdp"
+                android:backgroundTint="@color/orange"
+                app:cornerRadius="@dimen/_32sdp"
+                android:fontFamily="@font/montserrat"
+                app:icon="@android:drawable/ic_media_play"
+                app:iconPadding="1dp"
+                app:iconSize="15dp"
+                tools:text="Trailer" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewRatingDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/buttonTrailer"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_minus40sdp"
+                android:background="@drawable/background_rating_textview"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/_12ssp"
+                app:drawableLeftCompat="@drawable/ic_star"
+                app:drawableTint="@color/orange"
+                tools:text="4.5" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

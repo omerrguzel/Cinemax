@@ -8,6 +8,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.example.cinemax.data.entity.moviedetail.GenreListResponse
+import com.example.cinemax.data.entity.moviedetail.GenreResponse
 import com.example.cinemax.data.entity.movielist.MovieItemUIModel
 import com.example.cinemax.domain.usecase.movie.GenreUseCase
 import com.example.cinemax.domain.usecase.movie.MovieListUseCase

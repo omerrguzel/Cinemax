@@ -8,6 +8,6 @@ class GenreUseCase @Inject constructor(
     private val movieRepository: MovieRepository
 ) {
     operator fun invoke() = performNetworkOperation {
-        movieRepository.getGenreList()
+        movieRepository.getGenreList("movie")
     }
 }

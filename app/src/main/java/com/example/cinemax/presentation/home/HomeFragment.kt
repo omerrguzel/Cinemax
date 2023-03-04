@@ -29,6 +29,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private var upComingMovieListAdapter: MovieListAdapter = MovieListAdapter()
     private var popularMovieListAdapter: MovieListAdapter = MovieListAdapter()
+    private var topRatedMovieListAdapter : MovieListAdapter = MovieListAdapter()
     private val viewModel : HomeViewModel by viewModels()
     private val genreAdapter : CategoriesAdapter = CategoriesAdapter(arrayListOf())
 
@@ -50,12 +51,16 @@ class HomeFragment : Fragment() {
         getMoviesBySource(binding.recyclerViewMostPopular,popularMovieListAdapter,"popular",
             MovieListAdapter.VIEW_TYPE_POPULAR,null
         )
+        getMoviesBySource(binding.recyclerViewTopRated,topRatedMovieListAdapter,"top_rated",
+            MovieListAdapter.VIEW_TYPE_POPULAR,null)
         getGenres()
 
         genreAdapter.filterMoviesByGenre = {
             getMoviesBySource(binding.recyclerViewMostPopular,popularMovieListAdapter,"popular",
                 MovieListAdapter.VIEW_TYPE_POPULAR,it
             )
+            getMoviesBySource(binding.recyclerViewTopRated,topRatedMovieListAdapter,"top_rated",
+                MovieListAdapter.VIEW_TYPE_POPULAR,it)
         }
     }
 

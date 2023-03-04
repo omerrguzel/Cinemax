@@ -103,12 +103,26 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.cinemax.presentation.SearchFragment"
+        android:name="com.example.cinemax.presentation.search.SearchFragment"
         android:label="searchFragment"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/wishlistFragment"
         android:name="com.example.cinemax.presentation.WishlistFragment"
         android:label="wishlistFragment"
         tools:layout="@layout/fragment_wishlist" />
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.example.cinemax.presentation.searchresult.SearchResultFragment"
+        android:label="fragment_search_result"
+        tools:layout="@layout/fragment_search_result" >
+        <argument
+            android:name="searchQuery"
+            app:argType="string" />
+    </fragment>
+
 </navigation>
