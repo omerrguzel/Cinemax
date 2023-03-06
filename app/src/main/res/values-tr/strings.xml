@@ -51,4 +51,8 @@
     <string name="find_your_movie_by_type_title_categories_years_etc">Filmin ismini aratarak arama yapın</string>
     <string name="actors">Oyuncular</string>
     <string name="wishlist">İstek Listesi</string>
+    <string name="trailer">Fragman</string>
+    <string name="overview">Konu</string>
+    <string name="cast_and_crew">Kadro</string>
+    <string name="episode">Bölümler</string>
 </resources>

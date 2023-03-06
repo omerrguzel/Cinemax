@@ -2,8 +2,11 @@ package com.example.cinemax.data.remote.repository
 
 import com.example.cinemax.data.entity.moviedetail.GenreListResponse
 import com.example.cinemax.data.entity.moviedetail.GenreResponse
+import com.example.cinemax.data.entity.moviedetail.MovieDetailItemResponse
 import com.example.cinemax.data.entity.movielist.MoviesResponse
 import com.example.cinemax.data.entity.search.SearchResponse
+import com.example.cinemax.data.entity.tvdetail.TvDetailItemResponse
+import com.example.cinemax.data.entity.tvdetail.TvSeasonItemResponse
 import com.example.cinemax.data.remote.RemoteDataSource
 import com.example.cinemax.domain.repository.MovieRepository
 import com.example.cinemax.utils.Resource
@@ -24,5 +27,16 @@ class MovieRepositoryImp @Inject constructor(
         return remoteDataSource.getSearchResult(searchQuery,page)
     }
 
+    override suspend fun getTVDetailResult(id : Int) : Resource<TvDetailItemResponse> {
+        return remoteDataSource.getTVDetailResult(id)
+    }
+
+    override suspend fun getSeasonDetails(id: Int,seasonNumber : Int) : Resource<TvSeasonItemResponse> {
+        return remoteDataSource.getSeasonDetails(id,seasonNumber)
+    }
+
+    override suspend fun getMovieDetailResult(id: Int) : Resource<MovieDetailItemResponse> {
+        return remoteDataSource.getMovieDetailResult(id)
+    }
 
 }

@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.cinemax.R
-import com.example.cinemax.data.entity.movielist.MovieItemUIModel
 import com.example.cinemax.data.entity.search.SearchMediaItemUIModel
 import com.example.cinemax.data.entity.search.SearchPersonItemUIModel
 import com.example.cinemax.databinding.ItemActorBinding

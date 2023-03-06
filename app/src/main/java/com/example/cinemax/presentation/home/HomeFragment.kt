@@ -6,20 +6,23 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cinemax.R
 import com.example.cinemax.data.entity.moviedetail.GenreResponse
 import com.example.cinemax.databinding.FragmentHomeBinding
 import com.example.cinemax.presentation.adapter.CategoriesAdapter
 import com.example.cinemax.presentation.adapter.MovieListAdapter
 import com.example.cinemax.utils.Resource
 import com.example.cinemax.utils.gone
-import com.example.cinemax.utils.scrollToStart
 import com.example.cinemax.utils.show
+import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
@@ -45,6 +48,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        detectSearchAction(binding.textViewSearchTextHomeScreen)
+        navigateToMovieDetail()
+        navigateToWishList()
+        setRvAdapters()
+    }
+
+    private fun setRvAdapters(){
         getMoviesBySource(binding.recyclerViewUpcoming,upComingMovieListAdapter,"upcoming",
             MovieListAdapter.VIEW_TYPE_UPCOMING,null
         )
@@ -100,6 +110,42 @@ class HomeFragment : Fragment() {
                     binding.recyclerViewCategories.adapter = genreAdapter
                 }
             }
+        }
+    }
+
+    private fun detectSearchAction(textInputEditText : TextInputEditText){
+        textInputEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                navigateToSearchResult(textInputEditText)
+                true
+            } else {
+                false
+            }
+        }
+    }
+    private fun navigateToSearchResult(textInputEditText : TextInputEditText){
+        val searchQuery = textInputEditText.text.toString().trim()
+        if(searchQuery.isNotEmpty()){
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSearchResultFragment(searchQuery))
+        }
+        textInputEditText.setText("")
+    }
+
+    private fun navigateToMovieDetail(){
+        upComingMovieListAdapter.movieClickListener = { id  ->
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment("movie",id))
+        }
+        popularMovieListAdapter.movieClickListener = { id  ->
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment("movie",id))
+        }
+        topRatedMovieListAdapter.movieClickListener = { id  ->
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment("movie",id))
+        }
+    }
+
+    private fun navigateToWishList(){
+        binding.imageViewWishListHome.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_wishlistFragment)
         }
     }
 }

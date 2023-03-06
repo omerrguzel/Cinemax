@@ -1,10 +1,11 @@
 package com.example.cinemax.data.remote
 
 import com.example.cinemax.data.entity.moviedetail.GenreListResponse
-import com.example.cinemax.data.entity.moviedetail.GenreResponse
-import com.example.cinemax.data.entity.moviedetail.MovieDetails
+import com.example.cinemax.data.entity.moviedetail.MovieDetailItemResponse
 import com.example.cinemax.data.entity.movielist.MoviesResponse
 import com.example.cinemax.data.entity.search.SearchResponse
+import com.example.cinemax.data.entity.tvdetail.TvDetailItemResponse
+import com.example.cinemax.data.entity.tvdetail.TvSeasonItemResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -26,7 +27,14 @@ interface MovieApiService {
     ) : SearchResponse
 
     @GET("movie/{id}?api_key=$API_KEY&language=en-US")
-    suspend fun getMovieDetails(@Path("id") id: Int): Response<MovieDetails>
+    suspend fun getMovieDetails(@Path("id") id: Int): Response<MovieDetailItemResponse>
+
+    @GET("tv/{id}?api_key=$API_KEY&language=en-US")
+    suspend fun getTvDetails(@Path("id") id: Int): Response<TvDetailItemResponse>
+
+    @GET("tv/{id}/season/{seasonNumber}?api_key=$API_KEY&language=en-US")
+    suspend fun getSeasonDetails(@Path("id") id: Int,@Path("seasonNumber") seasonNumber : Int): Response<TvSeasonItemResponse>
+
 
     @GET("genre/{mediaType}/list?api_key=$API_KEY&language=en-US")
     suspend fun getGenreList(

@@ -5,17 +5,15 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.example.cinemax.R
 import com.example.cinemax.data.entity.search.SearchMediaItemUIModel
 import com.example.cinemax.databinding.ItemMovieGenericBinding
+import com.example.cinemax.utils.roundRating
 import com.example.cinemax.utils.showImage
 
 class SearchResultMediaAdapter : PagingDataAdapter<SearchMediaItemUIModel,
         SearchResultMediaAdapter.MediaListViewHolder>(MediaComparator) {
 
-    val mediaClickListener: (() -> Unit)? = null
+    var mediaClickListener: ((mediaItem : SearchMediaItemUIModel) -> Unit)? = null
 
 
     override fun onCreateViewHolder(
@@ -36,7 +34,7 @@ class SearchResultMediaAdapter : PagingDataAdapter<SearchMediaItemUIModel,
 
         fun bindMedia(mediaItem: SearchMediaItemUIModel) {
             binding.apply {
-                textViewRatingGeneric.text = mediaItem.voteAverage.toString()
+                textViewRatingGeneric.text = mediaItem.voteAverage?.roundRating()
                 if(mediaItem.mediaType == MOVIE_MEDIA_TYPE){
                     textViewTitle.text = mediaItem.movieName
                     textViewReleaseDate.text = mediaItem.releaseDate
@@ -49,6 +47,9 @@ class SearchResultMediaAdapter : PagingDataAdapter<SearchMediaItemUIModel,
                     textViewGenre.text = mediaItem.genreTvIds?.get(0)
                 }
                 imageViewGenericPoster.showImage(mediaItem.posterPath.toString())
+                cardViewMovieGeneric.setOnClickListener {
+                    mediaClickListener?.invoke(mediaItem)
+                }
             }
         }
     }

@@ -10,6 +10,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.cinemax.R
 import com.example.cinemax.databinding.FragmentSearchBinding
+import com.google.android.material.textfield.TextInputEditText
 
 class SearchFragment : Fragment() {
 
@@ -25,9 +26,13 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.searchBarTextBoxSearchScreen.setOnEditorActionListener { _, actionId, _ ->
+        detectSearchAction(binding.searchBarTextBoxSearchScreen)
+    }
+
+    private fun detectSearchAction(textInputEditText : TextInputEditText){
+        textInputEditText.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                navigateToSearchResult()
+                navigateToSearchResult(textInputEditText)
                 true
             } else {
                 false
@@ -35,11 +40,11 @@ class SearchFragment : Fragment() {
         }
     }
 
-    private fun navigateToSearchResult(){
-        val searchQuery = binding.searchBarTextBoxSearchScreen.text.toString().trim()
+    private fun navigateToSearchResult(textInputEditText : TextInputEditText){
+        val searchQuery = textInputEditText.text.toString().trim()
         if(searchQuery.isNotEmpty()){
             findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToSearchResultFragment(searchQuery))
         }
-        binding.searchBarTextBoxSearchScreen.setText("")
+        textInputEditText.setText("")
     }
 }

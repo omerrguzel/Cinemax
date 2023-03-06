@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="@dimen/_92sdp"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="0dp"
     app:cardElevation="0dp"
     android:layout_marginEnd="@dimen/_20sdp"
@@ -14,30 +14,44 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageViewActor"
-            android:layout_width="@dimen/_55sdp"
+            android:id="@+id/imageViewCast"
+            android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_64sdp"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             tools:src="@mipmap/ic_launcher" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/textViewActorName"
+            android:id="@+id/textViewCastName"
             android:layout_width="wrap_content"
             android:textAlignment="center"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/imageViewActor"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewCast"
             android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:textColor="@color/white"
             android:paddingHorizontal="@dimen/_3sdp"
-            android:fontFamily="@font/montserrat_semibold"
+            android:fontFamily="@font/montserrat_medium"
             android:textSize="@dimen/_12ssp"
             tools:text="John Wilson"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewCastRole"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textViewCastName"
+            app:layout_constraintStart_toEndOf="@id/imageViewCast"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/grey"
+            android:paddingHorizontal="@dimen/_3sdp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="@dimen/_12ssp"
+            tools:text="Director"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

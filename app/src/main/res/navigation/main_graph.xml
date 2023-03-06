@@ -95,7 +95,17 @@
         android:id="@+id/homeFragment"
         android:name="com.example.cinemax.presentation.home.HomeFragment"
         android:label="homeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_wishlistFragment"
+            app:destination="@id/wishlistFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.cinemax.presentation.ProfileFragment"
@@ -109,12 +119,19 @@
         <action
             android:id="@+id/action_searchFragment_to_searchResultFragment"
             app:destination="@id/searchResultFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/wishlistFragment"
         android:name="com.example.cinemax.presentation.WishlistFragment"
         android:label="wishlistFragment"
-        tools:layout="@layout/fragment_wishlist" />
+        tools:layout="@layout/fragment_wishlist" >
+        <action
+            android:id="@+id/action_wishlistFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchResultFragment"
         android:name="com.example.cinemax.presentation.searchresult.SearchResultFragment"
@@ -123,6 +140,20 @@
         <argument
             android:name="searchQuery"
             app:argType="string" />
+        <action
+            android:id="@+id/action_searchResultFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.cinemax.presentation.detail.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name = "mediaType"
+            app:argType="string"/>
+        <argument
+            android:name = "id"
+            app:argType="integer"/>
     </fragment>
 
 </navigation>

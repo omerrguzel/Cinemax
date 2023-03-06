@@ -8,8 +8,6 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor(private val movieApiService: MovieApiService) :
     BaseDataSource() {
 
-    suspend fun getMovieDetails(id: Int) = getResult { movieApiService.getMovieDetails(id) }
-
     suspend fun getGenreList(mediaType : String) = getResult { movieApiService.getGenreList(mediaType) }
 
     suspend fun getMoviesBySource(source: String, page: Int,genreId : Int?) : MoviesResponse =
@@ -17,4 +15,11 @@ class RemoteDataSource @Inject constructor(private val movieApiService: MovieApi
 
     suspend fun getSearchResult(searchQuery:String,page:Int) : SearchResponse =
         movieApiService.getSearchResult(searchQuery,page)
+
+    suspend fun getTVDetailResult(id:Int) = getResult { movieApiService.getTvDetails(id) }
+
+    suspend fun getSeasonDetails(id:Int,seasonNumber : Int) = getResult { movieApiService.getSeasonDetails(id,seasonNumber) }
+
+    suspend fun getMovieDetailResult(id: Int) = getResult { movieApiService.getMovieDetails(id) }
+
 }

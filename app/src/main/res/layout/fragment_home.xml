@@ -104,10 +104,12 @@
             app:startIconTint="@color/grey">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textViewSearchTextHomeScreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/soft"
                 android:backgroundTintMode="add"
+                android:imeOptions="actionSearch"
                 android:hint="Search"
                 android:inputType="text"
                 android:textColor="@color/white" />

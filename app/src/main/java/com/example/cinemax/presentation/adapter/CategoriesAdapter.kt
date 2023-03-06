@@ -17,8 +17,8 @@ class CategoriesAdapter(
 ) : RecyclerView.Adapter<CategoriesAdapter.GenreListViewHolder>() {
 
     var filterMoviesByGenre : ((id:Int?) -> Unit)? = null
-    var selectedItemPos = -1
-    var lastItemSelectedPos = -1
+    var selectedItemPos = 0
+    var lastItemSelectedPos = 0
 
 
     override fun onCreateViewHolder(

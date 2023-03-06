@@ -8,7 +8,7 @@ data class MovieItemUIModel(
     val title: String,
     val voteAverage: Double,
     val releaseDate: String,
-    val backdropPath: String,
+    val backdropPath: String? = null,
     val viewType : Int,
-    val genreIds : ArrayList<String>?
+    val genreIds : ArrayList<String>? = arrayListOf()
 )

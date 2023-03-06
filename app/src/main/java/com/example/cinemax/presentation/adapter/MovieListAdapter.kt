@@ -12,6 +12,7 @@ import com.example.cinemax.data.entity.movielist.MovieItemResponse
 import com.example.cinemax.data.entity.movielist.MovieItemUIModel
 import com.example.cinemax.databinding.ItemMostpopularhomeBinding
 import com.example.cinemax.databinding.ItemUpcomingBinding
+import com.example.cinemax.utils.roundRating
 import com.example.cinemax.utils.showImage
 import java.text.SimpleDateFormat
 
@@ -19,7 +20,7 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
         RecyclerView.ViewHolder
         >(MoviesComparator) {
 
-    val movieClickListener: (() -> Unit)? = null
+    var movieClickListener: ((id : Int) -> Unit)? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -59,9 +60,9 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
     inner class MovieListViewHolder(private val binding: ItemUpcomingBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bindMovies(moviesItem: MovieItemUIModel) = with(binding) {
-            cardViewUpcomingMovie.setOnClickListener { movieClickListener?.invoke() }
 
+        fun bindMovies(moviesItem: MovieItemUIModel) = with(binding) {
+            cardViewUpcomingMovie.setOnClickListener { movieClickListener?.invoke(moviesItem.id) }
             val inputFormat = SimpleDateFormat("yyyy-MM-dd")
             val outputFormat = SimpleDateFormat("dd MMM yyyy")
             val outputDateStr: String =
@@ -69,7 +70,7 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
 
             textViewUpcomingMovieTitle.text = moviesItem.title
             textViewUpcomingReleaseDate.text = "Release Date: $outputDateStr"
-            imageViewUpcoming.showImage(moviesItem.backdropPath)
+            imageViewUpcoming.showImage(moviesItem.backdropPath ?:"")
         }
     }
 
@@ -77,10 +78,11 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindMovies(moviesItem: MovieItemUIModel) = with(binding) {
+            cardViewMostPopular.setOnClickListener { movieClickListener?.invoke(moviesItem.id) }
             textViewTitleMovie.text = moviesItem.title
             textViewGenre.text = moviesItem.genreIds?.get(0) ?: ""
-            textViewRatingMostPopular.text = moviesItem.voteAverage.toString()
-            imageViewMostPopularPoster.showImage(moviesItem.posterPath)
+            textViewRatingMostPopular.text = moviesItem.voteAverage.roundRating()
+            imageViewMostPopularPoster.showImage(moviesItem.posterPath ?:"")
         }
     }
 
