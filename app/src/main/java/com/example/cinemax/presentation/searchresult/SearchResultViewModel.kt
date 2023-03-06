@@ -31,6 +31,7 @@ class SearchResultViewModel @Inject constructor(
         ).flow.cachedIn(viewModelScope)
     }
 
+
     fun getSearchPersonResults(searchQuery: String): Flow<PagingData<SearchPersonItemUIModel>> {
         return Pager(
             config = PagingConfig(
@@ -41,14 +42,14 @@ class SearchResultViewModel @Inject constructor(
             }
         ).flow.cachedIn(viewModelScope)
     }
-//
-//    fun getIfMediaEmpty(searchQuery: String): Boolean {
-//        var isEmpty: Boolean = false
-//        SearchMediaPagingSource(searchUseCase, searchQuery).isMediaEmpty = {
-//            if (it == 0) {
-//                isEmpty = true
-//            }
-//        }
-//        return isEmpty
-//    }
+
+    fun getIfMediaEmpty(searchQuery: String): Boolean {
+        var isEmpty: Boolean = false
+        SearchMediaPagingSource(searchUseCase, searchQuery).isEmptyCheck = {
+            if (it) {
+                isEmpty = true
+            }
+        }
+        return isEmpty
+    }
 }

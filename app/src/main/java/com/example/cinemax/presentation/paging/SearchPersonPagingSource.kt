@@ -21,7 +21,7 @@ class SearchPersonPagingSource @Inject constructor(
             LoadResult.Page(
                 data = response.personList,
                 prevKey = if (pageNumber > 0) pageNumber - 1 else null,
-                nextKey = if (pageNumber < response.totalPages) pageNumber + 1 else null
+                nextKey = if (pageNumber < response.totalPagesPerson) pageNumber + 1 else null
             )
         } catch (e: Exception) {
             LoadResult.Error(e)

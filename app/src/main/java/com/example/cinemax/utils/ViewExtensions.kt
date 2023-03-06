@@ -5,12 +5,17 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.cinemax.R
+import kotlinx.coroutines.launch
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
@@ -49,6 +54,17 @@ fun ImageView.showImage(imgUrl : String){
         .into(this)
 }
 
+fun ImageView.showProfileImage(imgUrl : String){
+    Glide.with(context)
+        .load(imgUrl)
+        .apply (
+            RequestOptions()
+                .placeholder(R.drawable.loading_animation)
+                .error(R.drawable.error)
+        )
+        .into(this)
+}
+
 fun String.showOnlyYear(): String {
     val inputFormat = SimpleDateFormat("yyyy-MM-dd")
     val outputFormat = SimpleDateFormat("yyyy")
@@ -78,6 +94,16 @@ fun TextView.makeExpandable(text: String?) {
         }
     }
 }
+
+fun LifecycleOwner.observe(state: Lifecycle.State = Lifecycle.State.RESUMED, action: suspend () -> Unit) {
+    lifecycleScope.launch {
+        this@observe.repeatOnLifecycle(state) {
+            action()
+        }
+    }
+}
+
+
 
 
 

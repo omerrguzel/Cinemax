@@ -10,8 +10,10 @@ import com.example.cinemax.databinding.ItemMovieGenericBinding
 import com.example.cinemax.utils.roundRating
 import com.example.cinemax.utils.showImage
 
-class SearchResultMediaAdapter : PagingDataAdapter<SearchMediaItemUIModel,
-        SearchResultMediaAdapter.MediaListViewHolder>(MediaComparator) {
+class SearchResultMediaAdapter(
+    diffCallback : DiffUtil.ItemCallback<SearchMediaItemUIModel
+            >) : PagingDataAdapter<SearchMediaItemUIModel,
+        SearchResultMediaAdapter.MediaListViewHolder>(diffCallback) {
 
     var mediaClickListener: ((mediaItem : SearchMediaItemUIModel) -> Unit)? = null
 

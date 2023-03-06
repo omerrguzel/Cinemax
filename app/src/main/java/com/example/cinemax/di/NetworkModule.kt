@@ -6,6 +6,7 @@ import com.example.cinemax.data.remote.RemoteDataSource
 import com.example.cinemax.data.remote.repository.MovieRepositoryImp
 import com.example.cinemax.domain.repository.MovieRepository
 import com.google.gson.Gson
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,6 +37,7 @@ class NetworkModule {
         return Retrofit.Builder()
             .baseUrl(endPoint.url)
             .addConverterFactory(GsonConverterFactory.create(gson))
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .client(okHttpClient)
             .build()
     }

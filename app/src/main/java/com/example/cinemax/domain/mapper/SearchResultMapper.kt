@@ -4,6 +4,7 @@ import com.example.cinemax.data.entity.moviedetail.GenreListResponse
 import com.example.cinemax.data.entity.moviedetail.GenreResponse
 import com.example.cinemax.data.entity.search.*
 import javax.inject.Inject
+import kotlin.math.ceil
 
 class SearchResultMapper @Inject constructor() {
 
@@ -12,16 +13,20 @@ class SearchResultMapper @Inject constructor() {
         genreListMovie: GenreListResponse?,
         genreListTV: GenreListResponse?
     ): SearchItemUIModel {
+        val newMediaList = mapMediaResponse(
+            searchResponse,
+            genreListMovie = genreListMovie,
+            genreListTV = genreListTV
+        )
         return SearchItemUIModel(
-            mediaList = mapMediaResponse(
-                searchResponse,
-                genreListMovie = genreListMovie,
-                genreListTV = genreListTV
-            ),
+            mediaList = newMediaList,
             personList = mapPersonResponse(searchResponse),
-            page = searchResponse.page,
-            totalResults = searchResponse.totalResults,
-            totalPages = searchResponse.totalPages
+            pageMedia = searchResponse.page,
+            pagePerson = searchResponse.page,
+            totalResultsMedia = newMediaList.size,
+            totalResultsPerson = mapPersonResponse(searchResponse).size,
+            totalPagesMedia = mapTotalPages(newMediaList.size),
+            totalPagesPerson = mapTotalPages(mapPersonResponse(searchResponse).size)
         )
     }
 
@@ -64,7 +69,7 @@ class SearchResultMapper @Inject constructor() {
                 genreMovieIds = if(it.mediaType == "movie") mapGenreMovieList(it.genreIds, genreListMovie = genreListMovie) else null,
                 genreTvIds = if(it.mediaType == "tv") mapGenreTvList(it.genreIds, genreListTV = genreListTV) else null,
                 seriesName = it.seriesName,
-                firstAirDate = it.firstAirDate
+                firstAirDate = it.firstAirDate,
             )
         }
     }
@@ -105,5 +110,14 @@ class SearchResultMapper @Inject constructor() {
             }?.name?.let { genreNameList.add(it) }
         }
         return genreNameList
+    }
+
+    private fun mapTotalPages(num: Int): Int {
+        val result = num.toDouble() / 20.0
+        return if (result % 1.0 > 0) {
+            ceil(result).toInt()
+        } else {
+            result.toInt()
+        }
     }
 }

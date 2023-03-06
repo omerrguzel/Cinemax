@@ -19,10 +19,11 @@ import com.example.cinemax.data.entity.moviedetail.GenreResponse
 import com.example.cinemax.databinding.FragmentHomeBinding
 import com.example.cinemax.presentation.adapter.CategoriesAdapter
 import com.example.cinemax.presentation.adapter.MovieListAdapter
-import com.example.cinemax.utils.Resource
-import com.example.cinemax.utils.gone
-import com.example.cinemax.utils.show
+import com.example.cinemax.utils.*
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
@@ -52,6 +53,21 @@ class HomeFragment : Fragment() {
         navigateToMovieDetail()
         navigateToWishList()
         setRvAdapters()
+        setUserData()
+
+
+
+    }
+
+    private fun setUserData(){
+        val auth : FirebaseAuth = Firebase.auth
+        binding.imageViewProfile.showProfileImage(auth.currentUser?.photoUrl.toString())
+        println("UserProfilePic ${auth.currentUser?.photoUrl.toString()}:" )
+
+        val firstName = auth.currentUser?.displayName.toString().substringBefore(" ")
+        val helloString = getString(R.string.hello)
+
+        binding.textViewHelloHome.text = "$helloString $firstName"
     }
 
     private fun setRvAdapters(){
@@ -83,6 +99,10 @@ class HomeFragment : Fragment() {
                 listAdapter.loadStateFlow.collect { loadStates ->
                     binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
 //                    binding.errorImageView.isVisible  = loadStates.refresh is LoadState.Error
+                    if(sourceName == "top_rated" && listAdapter.itemCount == 0){
+                        binding.textViewTitleTopRated.gone()
+                    }
+                    else binding.textViewTitleTopRated.show()
                 }
             }
         }

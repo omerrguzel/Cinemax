@@ -174,11 +174,11 @@
                 android:layout_marginHorizontal="@dimen/_140sdp"
                 android:backgroundTint="@color/orange"
                 android:fontFamily="@font/montserrat"
+                android:text="@string/trailer"
                 app:cornerRadius="@dimen/_32sdp"
                 app:icon="@android:drawable/ic_media_play"
                 app:iconPadding="1dp"
                 app:iconSize="15dp"
-                android:text="@string/trailer"
                 tools:text="Trailer" />
 
             <com.google.android.material.textview.MaterialTextView

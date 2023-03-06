@@ -55,4 +55,16 @@
     <string name="overview">Konu</string>
     <string name="cast_and_crew">Kadro</string>
     <string name="episode">Bölümler</string>
+    <string name="profile">Profil</string>
+
+    <string name="member">Üyelik Bilgileri</string>
+    <string name="changePassword">Şifreni Değiştir</string>
+    <string name="notification">Bildirimler</string>
+    <string name="language">Dil Ayarları</string>
+    <string name="country">Ülke</string>
+    <string name="clearCache">Önbelleği Temizle</string>
+    <string name="legalPolicy">Yasal Bilgiler</string>
+    <string name="helpFeedback">Yardım</string>
+    <string name="aboutUs">Hakkımızda</string>
+    <string name="logOut">Çıkış Yap</string>
 </resources>

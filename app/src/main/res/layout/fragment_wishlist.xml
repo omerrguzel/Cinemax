@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_40sdp"
         android:text="@string/wishlist"
-        android:fontFamily="@font/montserrat_semibold"
+        android:fontFamily="@font/montserrat_medium"
         android:textSize="@dimen/_16ssp"
         android:textColor="@color/white"/>
 
