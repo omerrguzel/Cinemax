@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/dark"
         android:backgroundTintMode="multiply"
-        tools:context=".presentation.ProfileFragment">
+        tools:context=".presentation.profile.ProfileFragment">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewProfileTitle"

@@ -19,7 +19,7 @@ class ProfileAdapter(
     private var profileList: List<ProfileModel>
 ) : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() {
 
-    var profileItemClickLListener : ((id:Int?) -> Unit)? = null
+    var profileItemClickLListener : ((position : Int) -> Unit)? = null
 
 
     override fun onCreateViewHolder(
@@ -47,6 +47,9 @@ class ProfileAdapter(
         fun bindProfile(profileModel: ProfileModel, position: Int) = with(binding) {
             imageViewLogoMember.setImageDrawable(ContextCompat.getDrawable(binding.root.context,profileModel.resId))
             textViewProfileItem.text=profileModel.profileString
+            binding.cardViewProfile.setOnClickListener {
+                profileItemClickLListener?.invoke(position)
+            }
         }
     }
 

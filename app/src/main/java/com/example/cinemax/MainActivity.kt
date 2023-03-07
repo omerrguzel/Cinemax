@@ -1,6 +1,8 @@
 package com.example.cinemax
 
 
+import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -17,6 +19,7 @@ import com.example.cinemax.utils.gone
 import com.example.cinemax.utils.show
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 
 @AndroidEntryPoint
@@ -29,6 +32,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        detectLanguage()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -66,6 +72,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.viewPagerFragment -> bottomNavigationView.gone()
                 R.id.searchResultFragment -> bottomNavigationView.gone()
                 R.id.detailFragment -> bottomNavigationView.gone()
+                R.id.countryFragment -> bottomNavigationView.gone()
+                R.id.languageFragment -> bottomNavigationView.gone()
+                R.id.editProfileFragment -> bottomNavigationView.gone()
+                R.id.policyFragment -> bottomNavigationView.gone()
                 else -> bottomNavigationView.show()
             }
         }
@@ -91,4 +101,45 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun detectLanguage(){
+        val sharedPreferences = getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
+        val language = sharedPreferences?.getString("language", null) // default value is "en"
+        if(language == "tr"){
+            // Current language is Turkish
+            changeToTurkish()
+        } else if ( language == "en"){
+            // Current language is English
+         changeToEnglish()
+        }
+    }
+
+    private fun changeToTurkish(){
+//        val locale = Locale("tr")
+//        val resources = context?.resources
+//        val configuration = resources?.configuration
+//        configuration?.setLocale(locale)
+
+        val locale = Locale("tr")
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale = locale
+        applicationContext.resources.updateConfiguration(config, resources.displayMetrics)
+    }
+
+    private fun changeToEnglish(){
+
+        val locale = Locale("en")
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale = locale
+        applicationContext.resources.updateConfiguration(config, resources.displayMetrics)
+
+//        val locale = Locale("en")
+//        val resources = context?.resources
+//        val configuration = resources?.configuration
+//        Locale.setDefault(Locale.ENGLISH)
+
+    }
+
 }

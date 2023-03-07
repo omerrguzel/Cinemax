@@ -214,7 +214,6 @@ class DetailFragment : Fragment() {
                 voteAverage = selectedWishlistModel.voteAverage,
                 backdropPath = selectedWishlistModel.backdropPath,
                 genre = selectedWishlistModel.genre
-
             )
         )
         sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())

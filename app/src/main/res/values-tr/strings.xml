@@ -61,10 +61,22 @@
     <string name="changePassword">Şifreni Değiştir</string>
     <string name="notification">Bildirimler</string>
     <string name="language">Dil Ayarları</string>
-    <string name="country">Ülke</string>
+    <string name="country">Ülke Tercihi</string>
     <string name="clearCache">Önbelleği Temizle</string>
     <string name="legalPolicy">Yasal Bilgiler</string>
     <string name="helpFeedback">Yardım</string>
     <string name="aboutUs">Hakkımızda</string>
     <string name="logOut">Çıkış Yap</string>
+    <string name="edit_profile">Profil Bilgilerini Düzenle</string>
+    <string name="save_changes">Değişiklikleri Kaydet</string>
+    <string name="terms">Şartlar</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget ornare quam vel facilisis feugiat amet sagittis arcu, tortor. Sapien, consequat ultrices morbi orci semper sit nulla. Leo auctor ut etiam est, amet aliquet ut vivamus. Odio vulputate est id tincidunt fames. \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget ornare quam vel facilisis feugiat amet sagittis arcu, tortor. Sapien, consequat ultrices morbi orci semper sit nulla. Leo auctor ut etiam est, amet aliquet ut vivamus. Odio vulputate est id tincidunt fames.</string>
+    <string name="changes_to_the_service_and_or_terms">Hizmet ve/veya terimlerdeki değişiklikler::</string>
+    <string name="privacy_policy">Gizlilik Politikası</string>
+    <string name="languages">Dil Seçenekleri</string>
+    <string name="english">İngilizce</string>
+    <string name="turkish">Türkçe</string>
+    <string name="countries">Ülkeler</string>
+    <string name="usa">ABD</string>
+    <string name="t_rkiye">Türkiye</string>
 </resources>

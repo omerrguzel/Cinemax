@@ -74,7 +74,7 @@ fun String.showOnlyYear(): String {
 fun Double.roundRating(): String {
     val df = DecimalFormat("#.#")
     df.roundingMode = RoundingMode.FLOOR
-    return df.format(this).toDouble().toString()
+    return df.format(this).toString()
 }
 
 fun TextView.makeExpandable(text: String?) {

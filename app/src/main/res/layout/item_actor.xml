@@ -18,11 +18,11 @@
             android:layout_width="@dimen/_55sdp"
             android:layout_height="@dimen/_64sdp"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher"
             android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:src="@mipmap/ic_launcher" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewActorName"

@@ -108,9 +108,22 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.cinemax.presentation.ProfileFragment"
+        android:name="com.example.cinemax.presentation.profile.ProfileFragment"
         android:label="profileFragment"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_countryFragment"
+            app:destination="@id/countryFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_policyFragment"
+            app:destination="@id/policyFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.cinemax.presentation.search.SearchFragment"
@@ -155,5 +168,21 @@
             android:name = "id"
             app:argType="integer"/>
     </fragment>
-
+    <fragment
+        android:id="@+id/countryFragment"
+        android:name="com.example.cinemax.presentation.profile.CountryFragment"
+        android:label="CountryFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.cinemax.presentation.profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/policyFragment"
+        android:name="com.example.cinemax.presentation.profile.PolicyFragment"
+        android:label="PolicyFragment" />
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.cinemax.presentation.profile.LanguageFragment"
+        android:label="LanguageFragment" />
 </navigation>

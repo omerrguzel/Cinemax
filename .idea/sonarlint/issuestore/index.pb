@@ -79,10 +79,6 @@ Tapp/src/main/java/com/example/cinemax/presentation/onboarding/screens/ThirdScre
 Yapp/src/main/java/com/example/cinemax/presentation/authentication/VerificationFragment.kt,9\0\90e71031678bb6ce467c8350e13925d6d5e02186
 ‚
 Rapp/src/main/java/com/example/cinemax/presentation/onboarding/ViewPagerFragment.kt,1\e\1ed9f50a6abac9bc9edf400dc1e207726280ae43
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-f
-6app/src/main/java/com/example/cinemax/di/AuthModule.kt,2\0\20e55c64dd6e43bdc5ca2e239765c3454d64c6fa
 w
 G.idea/sonarlint/issuestore/0/a/0a2032de36a06c43b6cdbbc7379378a8cd1a1b29,c\f\cf4df54e8c6327ab8d1dd7f88cb187d2201a9ea5
 w
@@ -97,8 +93,6 @@ w
 G.idea/sonarlint/issuestore/f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164,3\1\31073cf3a12b082ef2fe0f9403916a4db3811c89
 w
 G.idea/sonarlint/issuestore/a/2/a2d8c464aa03a57e0c26f28929d4dd93a10885a2,3\3\338d5fd0338f2de49ccb633021968b05f495cb30
-w
-G.idea/sonarlint/issuestore/e/e/eed9d437205666d93acb785f7c4977c0c78a9324,3\f\3fef03384f1b1d8d6597ba86725708b54a9e8937
 w
 G.idea/sonarlint/issuestore/0/1/0113e8264ce94ef7178649e7840f40b958c78481,e\3\e3bf4d5f090cd6471f297c65ee472d7d66e5e0cd
 w
@@ -135,12 +129,8 @@ w
 G.idea/sonarlint/issuestore/2/8/28b98374a1e1b251f1ba4c96efafc26bdf32a4cb,d\0\d0704c789e415bd8c34e48808e7edbd3a12f79c0
 ˆ
 Xapp/src/main/java/com/example/cinemax/domain/usecase/auth/SignInWithCredentialUseCase.kt,7\1\71ec1ba4a93be866ddf843d0c3d3b32bb01814c8
-m
-=app/src/main/java/com/example/cinemax/utils/BaseDataSource.kt,f\d\fd3ba09a72a5470d3206fbd05b16abb449ad3333
 h
 8app/src/main/java/com/example/cinemax/utils/DateUtils.kt,6\b\6bc84d77c71d101e727623037b55444d8bde0ff0
-q
-Aapp/src/main/java/com/example/cinemax/utils/DataAccessStrategy.kt,6\c\6c5a62bdeeb88ada2bff3373b4ed39a176ee0225
 y
 Iapp/src/main/java/com/example/cinemax/domain/repository/AuthRepository.kt,e\4\e4d7a6610a3765ca0b7f6f3ed0fdb8b19954523e
 ‚
@@ -155,8 +145,6 @@ g
 7app/src/main/java/com/example/cinemax/utils/Resource.kt,6\c\6c31da9838cca0e60c632489f3b37d6339ccf02a
 ~
 Napp/src/main/java/com/example/cinemax/data/entity/moviedetail/GenreResponse.kt,d\e\de494cbdb814388278323eab2c42b8cc2beaf7d0
-‚
-Rapp/src/main/java/com/example/cinemax/presentation/authentication/LoginFragment.kt,e\e\eed9d437205666d93acb785f7c4977c0c78a9324
 y
 Iapp/src/main/java/com/example/cinemax/presentation/adapter/CrewAdapter.kt,2\1\21c2f4d0d5bb33cae972d6b3f1090640eb704ade
 v
@@ -165,8 +153,6 @@ Fapp/src/main/java/com/example/cinemax/data/entity/tvdetail/CrewItem.kt,1\d\1df
 Lapp/src/main/java/com/example/cinemax/presentation/detail/DetailViewModel.kt,2\a\2a9deaf539e68748ceecf435bcfe45673384d879
 |
 Lapp/src/main/java/com/example/cinemax/presentation/adapter/EpisodeAdapter.kt,6\a\6a9cde6bdb02905530b964211d80f5f04999151c
-e
-5app/src/main/java/com/example/cinemax/MainActivity.kt,2\5\252a6ed083a83b01b7e59a49c4a38c470a719dac
 z
 Japp/src/main/java/com/example/cinemax/domain/usecase/MovieDetailUseCase.kt,b\c\bcad5405a1ad3e088445ad81e47af76878a2beb8
 ‡
@@ -189,20 +175,12 @@ Xapp/src/main/java/com/example/cinemax/presentation/authentication/entry/EntryFr
 Rapp/src/main/java/com/example/cinemax/data/entity/search/SearchMediaItemUIModel.kt,5\0\5018052e69d7dd490539e25dfba2f3d074b15cf1
 s
 Capp/src/main/java/com/example/cinemax/domain/mapper/MoviesMapper.kt,8\3\8312ea728b19a00fea8ff51d9316c8a94258548d
-i
-9app/src/main/java/com/example/cinemax/di/NetworkModule.kt,6\9\69700c9d694165f7e3d71ab6a213a7956095df93
-|
-Lapp/src/main/java/com/example/cinemax/presentation/adapter/ProfileAdapter.kt,8\5\85e71fb7de5a656d3c27f8819d678667a9f819ff
-u
-Eapp/src/main/java/com/example/cinemax/presentation/ProfileFragment.kt,f\a\fa577e69f12aa11762e8509920134570e4cc1874
 y
 Iapp/src/main/java/com/example/cinemax/data/entity/profile/ProfileModel.kt,1\b\1b18e4ba36ff4e35f8d60f64a92ea96e72fedb13
 ƒ
 Sapp/src/main/java/com/example/cinemax/data/entity/search/SearchPersonItemUIModel.kt,c\1\c111e2038a19e6e63dd340b30c9eaeb7eb4c77ec
 †
 Vapp/src/main/java/com/example/cinemax/presentation/adapter/SearchResultMediaAdapter.kt,c\4\c40def174639637e919d7d1ff43aecb0332456fa
-m
-=app/src/main/java/com/example/cinemax/utils/ViewExtensions.kt,1\a\1ac972339edc5ae1889606829d6378a5c7a07af8
 ~
 Napp/src/main/java/com/example/cinemax/data/entity/search/SearchItemResponse.kt,e\6\e610c0e71b9f09c5fa9875f42908e018ca6d358d
 z
