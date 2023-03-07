@@ -7,6 +7,7 @@ import com.example.cinemax.data.entity.movielist.MoviesResponse
 import com.example.cinemax.data.entity.search.SearchResponse
 import com.example.cinemax.data.entity.tvdetail.TvDetailItemResponse
 import com.example.cinemax.data.entity.tvdetail.TvSeasonItemResponse
+import com.example.cinemax.data.entity.video.MovieVideoResponse
 import com.example.cinemax.data.remote.RemoteDataSource
 import com.example.cinemax.domain.repository.MovieRepository
 import com.example.cinemax.utils.Resource
@@ -45,6 +46,10 @@ class MovieRepositoryImp @Inject constructor(
 
     override suspend fun getMovieDetailResult(id: Int) : Resource<MovieDetailItemResponse> {
         return remoteDataSource.getMovieDetailResult(id)
+    }
+
+    override suspend fun getMovieVideo(id: Int): Resource<MovieVideoResponse> {
+        return remoteDataSource.getMovieVideo(id)
     }
 
 }

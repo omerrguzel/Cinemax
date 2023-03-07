@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.cinemax.presentation.SplashFragment"
+        android:name="com.example.cinemax.presentation.splash.SplashFragment"
         android:label="splashFragment"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -167,6 +167,9 @@
         <argument
             android:name = "id"
             app:argType="integer"/>
+        <action
+            android:id="@+id/action_detailFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
     </fragment>
     <fragment
         android:id="@+id/countryFragment"
@@ -185,4 +188,13 @@
         android:id="@+id/languageFragment"
         android:name="com.example.cinemax.presentation.profile.LanguageFragment"
         android:label="LanguageFragment" />
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.cinemax.presentation.video.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video" >
+        <argument
+            android:name = "id"
+            app:argType="integer"/>
+    </fragment>
 </navigation>

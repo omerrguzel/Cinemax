@@ -6,6 +6,7 @@ import com.example.cinemax.data.entity.movielist.MoviesResponse
 import com.example.cinemax.data.entity.search.SearchResponse
 import com.example.cinemax.data.entity.tvdetail.TvDetailItemResponse
 import com.example.cinemax.data.entity.tvdetail.TvSeasonItemResponse
+import com.example.cinemax.data.entity.video.MovieVideoResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -49,6 +50,12 @@ interface MovieApiService {
     suspend fun getGenreList(
         @Path("mediaType") mediaType : String
     ) : Response<GenreListResponse>
+
+    @GET("movie/{movieId}/videos?api_key=$API_KEY")
+    suspend fun getMovieVideo(
+        @Path("movieId") movieId : Int
+    ) : Response<MovieVideoResponse>
+
 
     companion object{
         const val API_KEY = "721a8eed90ae677f0f8e7b6b81b314f7"

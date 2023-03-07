@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.cinemax.R
 import com.example.cinemax.data.entity.wishlist.WishlistModel
 import com.example.cinemax.databinding.FragmentDetailBinding
 import com.example.cinemax.presentation.adapter.CrewAdapter
@@ -49,9 +50,7 @@ class DetailFragment : Fragment() {
         backButtonController()
         initDetailMediaType()
         setFavButton()
-        binding.buttonTrailer.setOnClickListener {
-            emptyList()
-        }
+        navigateToVideo()
     }
 
     private fun emptyList() {
@@ -247,6 +246,12 @@ class DetailFragment : Fragment() {
         return !wishList.none { it.id == navArgs.id }
     }
 
+
+    private fun navigateToVideo(){
+        binding.buttonTrailer.setOnClickListener {
+            findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToVideoFragment(navArgs.id))
+        }
+    }
 
     companion object {
         const val RECO = "RECO"

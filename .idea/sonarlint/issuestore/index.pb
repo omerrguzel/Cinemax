@@ -150,11 +150,7 @@ Iapp/src/main/java/com/example/cinemax/presentation/adapter/CrewAdapter.kt,2\1\
 v
 Fapp/src/main/java/com/example/cinemax/data/entity/tvdetail/CrewItem.kt,1\d\1df3a242da57b2b0f404b4ebccd1a98a9fb19b73
 |
-Lapp/src/main/java/com/example/cinemax/presentation/detail/DetailViewModel.kt,2\a\2a9deaf539e68748ceecf435bcfe45673384d879
-|
 Lapp/src/main/java/com/example/cinemax/presentation/adapter/EpisodeAdapter.kt,6\a\6a9cde6bdb02905530b964211d80f5f04999151c
-z
-Japp/src/main/java/com/example/cinemax/domain/usecase/MovieDetailUseCase.kt,b\c\bcad5405a1ad3e088445ad81e47af76878a2beb8
 ‡
 Wapp/src/main/java/com/example/cinemax/presentation/adapter/SearchResultPersonAdapter.kt,0\8\08bb4442c48e5b80ff3eda9168d8ee7171a57b61
 €
@@ -195,7 +191,5 @@ z
 Japp/src/main/java/com/example/cinemax/domain/usecase/movie/GenreUseCase.kt,1\5\1562d282086ff63e81dbfd0bf43b7494c189d6db
 ‡
 Wapp/src/main/java/com/example/cinemax/presentation/searchresult/SearchResultFragment.kt,9\1\915d067317aa91ec9c7587329ac400fb169f7c37
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 
 Oapp/src/main/java/com/example/cinemax/presentation/adapter/CategoriesAdapter.kt,9\a\9adf5643dce46377b9ce9a306ad4a39c9a11a004

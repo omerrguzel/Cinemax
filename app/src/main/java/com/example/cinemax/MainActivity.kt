@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.languageFragment -> bottomNavigationView.gone()
                 R.id.editProfileFragment -> bottomNavigationView.gone()
                 R.id.policyFragment -> bottomNavigationView.gone()
+                R.id.videoFragment -> bottomNavigationView.gone()
                 else -> bottomNavigationView.show()
             }
         }

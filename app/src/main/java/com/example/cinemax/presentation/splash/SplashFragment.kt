@@ -1,4 +1,4 @@
-package com.example.cinemax.presentation
+package com.example.cinemax.presentation.splash
 
 import android.content.Context
 import android.os.Bundle

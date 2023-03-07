@@ -7,6 +7,7 @@ import com.example.cinemax.data.entity.movielist.MoviesResponse
 import com.example.cinemax.data.entity.search.SearchResponse
 import com.example.cinemax.data.entity.tvdetail.TvDetailItemResponse
 import com.example.cinemax.data.entity.tvdetail.TvSeasonItemResponse
+import com.example.cinemax.data.entity.video.MovieVideoResponse
 import com.example.cinemax.utils.Resource
 
 interface MovieRepository {
@@ -26,4 +27,7 @@ interface MovieRepository {
     suspend fun getSeasonDetails(id: Int,seasonNumber : Int) : Resource<TvSeasonItemResponse>
 
     suspend fun getMovieDetailResult(id: Int) : Resource<MovieDetailItemResponse>
+
+    suspend fun getMovieVideo(id: Int) : Resource<MovieVideoResponse>
+
 }
