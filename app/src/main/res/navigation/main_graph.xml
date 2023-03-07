@@ -125,7 +125,7 @@
     </fragment>
     <fragment
         android:id="@+id/wishlistFragment"
-        android:name="com.example.cinemax.presentation.WishlistFragment"
+        android:name="com.example.cinemax.presentation.wishlist.WishlistFragment"
         android:label="wishlistFragment"
         tools:layout="@layout/fragment_wishlist" >
         <action

@@ -98,7 +98,7 @@ class HomeFragment : Fragment() {
                 Log.d(TAG,"result : $it")
                 listAdapter.loadStateFlow.collect { loadStates ->
                     binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
-//                    binding.errorImageView.isVisible  = loadStates.refresh is LoadState.Error
+                    binding.errorImageView.isVisible  = loadStates.refresh is LoadState.Error
                     if(sourceName == "top_rated" && listAdapter.itemCount == 0){
                         binding.textViewTitleTopRated.gone()
                     }

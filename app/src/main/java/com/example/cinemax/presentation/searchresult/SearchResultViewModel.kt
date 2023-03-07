@@ -8,7 +8,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.example.cinemax.data.entity.search.SearchMediaItemUIModel
 import com.example.cinemax.data.entity.search.SearchPersonItemUIModel
-import com.example.cinemax.domain.usecase.search.SearchUseCase
+import com.example.cinemax.domain.usecase.searchresult.SearchResultUseCase
 import com.example.cinemax.presentation.paging.SearchMediaPagingSource
 import com.example.cinemax.presentation.paging.SearchPersonPagingSource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SearchResultViewModel @Inject constructor(
-    private val searchUseCase: SearchUseCase
+    private val searchResultUseCase: SearchResultUseCase
 ) : ViewModel() {
 
     fun getSearchMediaResults(searchQuery: String): Flow<PagingData<SearchMediaItemUIModel>> {
@@ -26,7 +26,7 @@ class SearchResultViewModel @Inject constructor(
                 pageSize = 20
             ),
             pagingSourceFactory = {
-                SearchMediaPagingSource(searchUseCase, searchQuery)
+                SearchMediaPagingSource(searchResultUseCase, searchQuery)
             }
         ).flow.cachedIn(viewModelScope)
     }
@@ -38,14 +38,14 @@ class SearchResultViewModel @Inject constructor(
                 pageSize = 20
             ),
             pagingSourceFactory = {
-                SearchPersonPagingSource(searchUseCase, searchQuery)
+                SearchPersonPagingSource(searchResultUseCase, searchQuery)
             }
         ).flow.cachedIn(viewModelScope)
     }
 
     fun getIfMediaEmpty(searchQuery: String): Boolean {
         var isEmpty: Boolean = false
-        SearchMediaPagingSource(searchUseCase, searchQuery).isEmptyCheck = {
+        SearchMediaPagingSource(searchResultUseCase, searchQuery).isEmptyCheck = {
             if (it) {
                 isEmpty = true
             }

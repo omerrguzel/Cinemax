@@ -10,8 +10,12 @@ class RemoteDataSource @Inject constructor(private val movieApiService: MovieApi
 
     suspend fun getGenreList(mediaType : String) = getResult { movieApiService.getGenreList(mediaType) }
 
+    suspend fun getNowPlayingItem() = getResult { movieApiService.getNowPlayingItem() }
     suspend fun getMoviesBySource(source: String, page: Int,genreId : Int?) : MoviesResponse =
         movieApiService.getMoviesBySource(source, page, genreId)
+
+    suspend fun getRecommendation(movieId : Int,page: Int) : MoviesResponse =
+        movieApiService.getRecommendation(movieId,page)
 
     suspend fun getSearchResult(searchQuery:String,page:Int) : SearchResponse =
         movieApiService.getSearchResult(searchQuery,page)

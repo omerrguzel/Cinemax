@@ -4,7 +4,7 @@ package com.example.cinemax.data.entity.movielist
 data class MovieItemUIModel(
     val id: Int,
     val overview: String,
-    val posterPath: String,
+    val posterPath: String? = null,
     val title: String,
     val voteAverage: Double,
     val releaseDate: String,

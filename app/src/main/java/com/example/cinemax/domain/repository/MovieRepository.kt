@@ -13,7 +13,11 @@ interface MovieRepository {
 
     suspend fun getGenreList(mediaType : String) : Resource<GenreListResponse>
 
+    suspend fun getNowPlayingItem() : Resource<MoviesResponse>
+
     suspend fun getMoviesBySource(source:String,page:Int,genreId : Int?) : MoviesResponse
+
+    suspend fun getRecommendations(movieId : Int,page : Int) : MoviesResponse
 
     suspend fun getSearchResult(searchQuery: String,page : Int) : SearchResponse
 

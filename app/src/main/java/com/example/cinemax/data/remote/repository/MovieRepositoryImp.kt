@@ -19,8 +19,16 @@ class MovieRepositoryImp @Inject constructor(
         return remoteDataSource.getGenreList(mediaType)
     }
 
+    override suspend fun getNowPlayingItem(): Resource<MoviesResponse> {
+        return remoteDataSource.getNowPlayingItem()
+    }
+
     override suspend fun getMoviesBySource(source:String,page:Int,genreId : Int?): MoviesResponse {
         return remoteDataSource.getMoviesBySource(source,page,genreId)
+    }
+
+    override suspend fun getRecommendations(movieId: Int, page: Int): MoviesResponse {
+        return remoteDataSource.getRecommendation(movieId,page)
     }
 
     override suspend fun getSearchResult(searchQuery: String, page: Int): SearchResponse {

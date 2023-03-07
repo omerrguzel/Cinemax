@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class TvDetailItemResponse(
     @SerializedName("id")
-    val id : Int?,
+    val id: Int?,
     @SerializedName("original_name")
     val tvName: String,
     @SerializedName("episode_run_time")
@@ -19,5 +19,7 @@ data class TvDetailItemResponse(
     @SerializedName("poster_path")
     val posterPath: String?,
     @SerializedName("overview")
-    val overview: String
+    val overview: String,
+    @SerializedName("backdrop_path")
+    val backdropPath: String?
 )

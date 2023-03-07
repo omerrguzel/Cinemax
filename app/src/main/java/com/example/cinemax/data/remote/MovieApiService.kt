@@ -16,9 +16,18 @@ interface MovieApiService {
     @GET("movie/{source}?api_key=$API_KEY&language=en-US&sort_by=popularity.desc")
     suspend fun getMoviesBySource(
         @Path("source") sourceName: String,
-        @Query("page") page: Int,
+        @Query("page") page: Int?,
         @Query("with_genres") genreId : Int?
     ): MoviesResponse
+
+    @GET("movie/{movieId}/recommendations?api_key=$API_KEY&language=en-US&sort_by=popularity.desc")
+    suspend fun getRecommendation(
+        @Path("movieId") movieId: Int,
+        @Query("page") page: Int?
+    ): MoviesResponse
+
+    @GET("movie/now_playing?api_key=$API_KEY&language=en-US&sort_by=popularity.desc")
+    suspend fun getNowPlayingItem(): Response<MoviesResponse>
 
     @GET("search/multi?api_key=$API_KEY&language=en-US&sort_by=vote_count.desc")
         suspend fun getSearchResult(

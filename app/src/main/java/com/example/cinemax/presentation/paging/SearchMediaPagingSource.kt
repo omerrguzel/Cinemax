@@ -3,13 +3,13 @@ package com.example.cinemax.presentation.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.cinemax.data.entity.search.SearchMediaItemUIModel
-import com.example.cinemax.domain.usecase.search.SearchUseCase
+import com.example.cinemax.domain.usecase.searchresult.SearchResultUseCase
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
 class SearchMediaPagingSource @Inject constructor(
-    private val searchUseCase: SearchUseCase,
+    private val searchResultUseCase: SearchResultUseCase,
     private val searchQuery : String
 ) : PagingSource<Int, SearchMediaItemUIModel>() {
 
@@ -21,7 +21,7 @@ class SearchMediaPagingSource @Inject constructor(
         try {
             // Start refresh at page 1 if undefined.
             val pageNumber  = params.key ?: 1
-            val response = searchUseCase.getSearchResult(searchQuery, pageNumber )
+            val response = searchResultUseCase.getSearchResult(searchQuery, pageNumber )
             return LoadResult.Page(
                 data = response.mediaList,
                 prevKey = if (pageNumber > 0) pageNumber - 1 else null,

@@ -1,15 +1,18 @@
 package com.example.cinemax.presentation.detail
 
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.cinemax.data.entity.wishlist.WishlistModel
 import com.example.cinemax.databinding.FragmentDetailBinding
 import com.example.cinemax.presentation.adapter.CrewAdapter
 import com.example.cinemax.presentation.adapter.EpisodeAdapter
@@ -24,6 +27,9 @@ class DetailFragment : Fragment() {
     private val navArgs: DetailFragmentArgs by navArgs()
     private var crewAdapter: CrewAdapter = CrewAdapter(arrayListOf())
     private var episodeAdapter: EpisodeAdapter = EpisodeAdapter(arrayListOf())
+    private var wishList: MutableList<WishlistModel> = mutableListOf()
+    private lateinit var sharedPrefManager: SharedPrefManager
+    private var selectedWishlistModel = WishlistModel()
 
 
     override fun onCreateView(
@@ -38,16 +44,33 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sharedPrefManager = SharedPrefManager(this.requireActivity())
+
         backButtonController()
         initDetailMediaType()
+        setFavButton()
+        binding.buttonTrailer.setOnClickListener {
+            emptyList()
+        }
     }
 
-    private fun initDetailMediaType(){
+    private fun emptyList() {
+        if (sharedPrefManager.ifContains(WISHL) == true) {
+            wishList = sharedPrefManager.readWishList(WISHL).toMutableList()
+        }
+        wishList.clear()
+        sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())
+        Toast.makeText(context, "clear from wishlist", Toast.LENGTH_SHORT).show()
+        Log.v(TAG, "cleared from wishList: $wishList")
+    }
+
+    private fun initDetailMediaType() {
         if (navArgs.mediaType == "tv") {
             getTVDetailResult(navArgs.id)
             getSeasonDetails(navArgs.id, 1)
         } else {
             getMovieDetails(navArgs.id)
+            saveLogToShared(navArgs.id)
         }
     }
 
@@ -58,10 +81,16 @@ class DetailFragment : Fragment() {
                     binding.progressBar.show()
                 }
                 Resource.Status.ERROR -> {
-                    Log.d(ContentValues.TAG, "Fetch Info Error: ${it.message}")
+                    Log.d(TAG, "Fetch Info Error: ${it.message}")
                 }
                 Resource.Status.SUCCESS -> {
                     Log.d(ContentValues.TAG, "TvDetailResult: ${it.data}")
+                    selectedWishlistModel.id = it.data?.id
+                    selectedWishlistModel.title = it.data?.tvName
+                    selectedWishlistModel.voteAverage = it.data?.voteRating
+                    selectedWishlistModel.backdropPath = it.data?.backdropPath
+                    selectedWishlistModel.mediaType = "TV"
+                    selectedWishlistModel.genre = it.data?.genres?.get(0)?.name
                     binding.progressBar.gone()
                     binding.apply {
                         textViewTitleDetail.text = it.data?.tvName
@@ -87,9 +116,10 @@ class DetailFragment : Fragment() {
                     binding.progressBar.show()
                 }
                 Resource.Status.ERROR -> {
-                    Log.d(ContentValues.TAG, "Fetch Info Error: ${it.message}")
+                    Log.d(TAG, "Fetch Info Error: ${it.message}")
                 }
                 Resource.Status.SUCCESS -> {
+//                    selectedWishlistModel.backdropPath = it.data.e
                     Log.d(ContentValues.TAG, "TvDetailResult: ${it.data}")
                     binding.progressBar.gone()
                     binding.apply {
@@ -126,6 +156,14 @@ class DetailFragment : Fragment() {
                     Log.d(ContentValues.TAG, "Fetch Info Error: ${it.message}")
                 }
                 Resource.Status.SUCCESS -> {
+
+                    selectedWishlistModel.id = it.data?.id
+                    selectedWishlistModel.title = it.data?.movieName
+                    selectedWishlistModel.voteAverage = it.data?.voteRating
+                    selectedWishlistModel.backdropPath = it.data?.backdropPath
+                    selectedWishlistModel.mediaType = "Movie"
+                    selectedWishlistModel.genre = it.data?.genres?.get(0)?.name
+
                     Log.d(ContentValues.TAG, "TvDetailResult: ${it.data}")
                     binding.progressBar.gone()
                     binding.apply {
@@ -145,9 +183,74 @@ class DetailFragment : Fragment() {
             }
         }
     }
+
+    private fun setFavButton() {
+        binding.imageViewWishListHome.setOnClickListener {
+            if (isSelected()) removeWishlist() else saveWishlistToShared()
+        }
+    }
+
     private fun backButtonController() {
         binding.buttonBackDetailScreen.setOnClickListener {
             findNavController().popBackStack()
         }
+    }
+
+    private fun saveLogToShared(id : Int) {
+        sharedPrefManager.writeLogData(RECO, id)
+        Toast.makeText(context, "$id Added to log", Toast.LENGTH_SHORT).show()
+        Log.v(TAG, "LOG DATA: ${sharedPrefManager.readLogData(RECO)}")
+    }
+
+    private fun saveWishlistToShared() {
+        if (sharedPrefManager.ifContains(WISHL) == true) {
+            wishList = sharedPrefManager.readWishList(WISHL).toMutableList()
+        }
+        wishList.add(
+            WishlistModel(
+                id = selectedWishlistModel.id,
+                title = selectedWishlistModel.title,
+                mediaType = selectedWishlistModel.mediaType,
+                voteAverage = selectedWishlistModel.voteAverage,
+                backdropPath = selectedWishlistModel.backdropPath,
+                genre = selectedWishlistModel.genre
+
+            )
+        )
+        sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())
+        Toast.makeText(context, "Add to wishlist", Toast.LENGTH_SHORT).show()
+        Log.v(TAG, "added to wishList: $wishList")
+    }
+
+    private fun removeWishlist() {
+        if (sharedPrefManager.ifContains(WISHL) == true) {
+            wishList = sharedPrefManager.readWishList(WISHL).toMutableList()
+        }
+        wishList.remove(
+            WishlistModel(
+                id = selectedWishlistModel.id,
+                title = selectedWishlistModel.title,
+                mediaType = selectedWishlistModel.mediaType,
+                voteAverage = selectedWishlistModel.voteAverage,
+                backdropPath = selectedWishlistModel.backdropPath,
+                genre = selectedWishlistModel.genre
+            )
+        )
+        sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())
+        Toast.makeText(context, "remove from wishlist", Toast.LENGTH_SHORT).show()
+        Log.v(TAG, "removed from wishList: $wishList")
+    }
+
+    private fun isSelected(): Boolean {
+        if (sharedPrefManager.ifContains(WISHL) == true) {
+            wishList = sharedPrefManager.readWishList(WISHL).toMutableList()
+        }
+        return !wishList.none { it.id == navArgs.id }
+    }
+
+
+    companion object {
+        const val RECO = "RECO"
+        const val WISHL = "WISHL"
     }
 }

@@ -3,11 +3,11 @@ package com.example.cinemax.presentation.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.cinemax.data.entity.search.SearchPersonItemUIModel
-import com.example.cinemax.domain.usecase.search.SearchUseCase
+import com.example.cinemax.domain.usecase.searchresult.SearchResultUseCase
 import javax.inject.Inject
 
 class SearchPersonPagingSource @Inject constructor(
-    private val searchUseCase: SearchUseCase,
+    private val searchResultUseCase: SearchResultUseCase,
     private val searchQuery : String,
 ) : PagingSource<Int, SearchPersonItemUIModel>() {
 
@@ -15,7 +15,7 @@ class SearchPersonPagingSource @Inject constructor(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, SearchPersonItemUIModel> {
         return try {
             val pageNumber = params.key ?: 1
-            val response = searchUseCase.getSearchResult(searchQuery, pageNumber)
+            val response = searchResultUseCase.getSearchResult(searchQuery, pageNumber)
             println("Person Response=$response")
 
             LoadResult.Page(

@@ -18,5 +18,7 @@ data class MovieDetailItemResponse(
     @SerializedName("genres")
     val genres: List<GenreResponse>,
     @SerializedName("overview")
-    val overview: String
+    val overview: String,
+    @SerializedName("backdrop_path")
+    val backdropPath : String?
 )
