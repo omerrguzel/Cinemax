@@ -4,12 +4,12 @@ import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -18,9 +18,10 @@ import com.example.cinemax.data.entity.wishlist.WishlistModel
 import com.example.cinemax.databinding.FragmentDetailBinding
 import com.example.cinemax.presentation.adapter.CrewAdapter
 import com.example.cinemax.presentation.adapter.EpisodeAdapter
+import com.example.cinemax.presentation.seasons.SeasonDialog
 import com.example.cinemax.utils.*
 import dagger.hilt.android.AndroidEntryPoint
-import okhttp3.MediaType
+import kotlin.concurrent.fixedRateTimer
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
@@ -33,6 +34,9 @@ class DetailFragment : Fragment() {
     private var wishList: MutableList<WishlistModel> = mutableListOf()
     private lateinit var sharedPrefManager: SharedPrefManager
     private var selectedWishlistModel = WishlistModel()
+    private val seasonDialog: SeasonDialog = SeasonDialog()
+    private val args = Bundle()
+
 
 
     override fun onCreateView(
@@ -51,13 +55,14 @@ class DetailFragment : Fragment() {
         backButtonController()
         initDetailMedia()
         navigateToVideo()
+        openSeasonDialog()
+        selectedSeasonListener()
     }
 
 
     private fun initDetailMedia() {
         if (navArgs.mediaType == "tv") {
             getTVDetailResult(navArgs.id)
-            getSeasonDetails(navArgs.id, 1)
         } else {
             getMovieDetails(navArgs.id)
             saveLogToShared(navArgs.id)
@@ -87,7 +92,8 @@ class DetailFragment : Fragment() {
                     binding.apply {
                         textViewTitleDetail.text = it.data?.tvName
                         textViewOverview.text = it.data?.overview
-                        if(it.data?.genres?.size != 0) textViewGenreDetail.text = it.data?.genres?.get(0)?.name.toString()
+                        if (it.data?.genres?.size != 0) textViewGenreDetail.text =
+                            it.data?.genres?.get(0)?.name.toString()
                         textViewRatingDetail.text = it.data?.voteRating?.roundRating()
                         textViewSeasonNumber.text = it.data?.seasonInfoList?.get(0)?.name
                         imageViewBackgroundDetailPoster.showImage(it.data?.posterPath ?: "null")
@@ -96,12 +102,17 @@ class DetailFragment : Fragment() {
                             textViewDuration.text = ""
                         } else textViewDuration.text = it.data?.runTime?.get(0).toString()
                     }
+                    getSeasonDetails(
+                        navArgs.id,
+                        it.data?.seasonInfoList?.get(0)?.seasonNumber ?: 0,
+                        it.data?.seasonInfoList?.get(0)?.name
+                    )
                 }
             }
         }
     }
 
-    private fun getSeasonDetails(id: Int, seasonNumber: Int) {
+    private fun getSeasonDetails(id: Int, seasonNumber: Int, name: String?) {
         viewModel.getSeasonDetails(id, seasonNumber).observe(viewLifecycleOwner) {
             when (it.status) {
                 Resource.Status.LOADING -> {
@@ -111,7 +122,6 @@ class DetailFragment : Fragment() {
                     Log.d(TAG, "Fetch Info Error: ${it.message}")
                 }
                 Resource.Status.SUCCESS -> {
-//                    selectedWishlistModel.backdropPath = it.data.e
                     Log.d(ContentValues.TAG, "TvDetailResult: ${it.data}")
                     binding.progressBar.gone()
                     binding.apply {
@@ -128,6 +138,7 @@ class DetailFragment : Fragment() {
                         episodeAdapter.setData(it.data?.episodeList)
                         recyclerViewCastAndCrew.adapter = crewAdapter
                         recyclerViewEpisodes.adapter = episodeAdapter
+                        textViewSeasonNumber.text = name
                         if (it.data?.episodeList?.get(0)?.crewList?.isEmpty() == true) {
                             recyclerViewCastAndCrew.gone()
                             textViewCastTitle.gone()
@@ -135,6 +146,13 @@ class DetailFragment : Fragment() {
                     }
                 }
             }
+        }
+    }
+
+    private fun selectedSeasonListener() {
+        seasonDialog.passSelectedSeasonListener = {
+            getSeasonDetails(navArgs.id, it?.seasonNumber ?: 0, it?.name)
+            it?.seasonNumber?.let { seasonNumber -> args.putInt("LAST_SEASON_NUMBER", seasonNumber) }
         }
     }
 
@@ -162,7 +180,8 @@ class DetailFragment : Fragment() {
                         textViewTitleDetail.text = it.data?.movieName
                         textViewReleaseDateDetail.text = it.data?.releaseDate?.showOnlyYear()
                         textViewDuration.text = it.data?.runtime?.toString()
-                        if(it.data?.genres?.size != 0) textViewGenreDetail.text = it.data?.genres?.get(0)?.name.toString()
+                        if (it.data?.genres?.size != 0) textViewGenreDetail.text =
+                            it.data?.genres?.get(0)?.name.toString()
                         imageViewBackgroundDetailPoster.showImage(it.data?.posterPath ?: "")
                         imageViewForegroundDetailPoster.showImage(it.data?.posterPath ?: "")
                         textViewOverview.makeExpandable(it.data?.overview)
@@ -288,6 +307,15 @@ class DetailFragment : Fragment() {
                     navArgs.id
                 )
             )
+        }
+    }
+
+    private fun openSeasonDialog() {
+        binding.textViewSeasonNumber.setOnClickListener {
+            args.putInt("ID", navArgs.id)
+            seasonDialog.arguments = args
+            childFragmentManager.let { seasonDialog.show(it, "TAG")
+            }
         }
     }
 

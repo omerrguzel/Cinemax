@@ -33,13 +33,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        detectLanguage()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         init()
     }
+
+//    var sharedPreferences: SharedPrefs? = null
+//
+//    override fun attachBaseContext(newBase: Context?) {
+//        sharedPreferences = SharedPrefs(newBase)
+//        val languageCode: String = sharedPreferences.getLocale()
+//        val context: Context = LanguageConfig.changeLanguage(newBase, languageCode)
+//        super.attachBaseContext(context)
+//    }
 
     private fun init() {
         supportActionBar?.hide()

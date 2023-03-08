@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textview.MaterialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textViewSeasonItem"
+    android:layout_width="300dp"
+    android:textSize="@dimen/_12ssp"
+    android:layout_height="wrap_content"
+    android:textColor="@color/dark_grey"
+    android:padding="@dimen/_12sdp"
+    android:fontFamily="@font/montserrat"
+    android:gravity="center"
+    tools:text="Season1">
+
+</com.google.android.material.textview.MaterialTextView>
