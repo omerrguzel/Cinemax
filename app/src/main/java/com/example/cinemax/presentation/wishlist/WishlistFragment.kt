@@ -16,6 +16,7 @@ import com.example.cinemax.presentation.adapter.WishlistAdapter
 import com.example.cinemax.presentation.detail.DetailFragment.Companion.WISHL
 import com.example.cinemax.presentation.search.SearchFragmentDirections
 import com.example.cinemax.utils.SharedPrefManager
+import com.example.cinemax.utils.show
 
 class WishlistFragment : Fragment() {
 
@@ -49,17 +50,15 @@ class WishlistFragment : Fragment() {
         if (sharedPrefManager.ifContains(WISHL) == true) {
             wishList = sharedPrefManager.readWishList(WISHL).toMutableList()
             setWishListAdapter(wishList)
-        } else initNoWishView()
+        }
     }
 
     private fun setWishListAdapter(wishList: List<WishlistModel>) {
         wishlistAdapter.setData(wishList)
+        if(wishlistAdapter.itemCount == 0) binding.viewNoWish.root.show()
         binding.recyclerViewWishlist.adapter = wishlistAdapter
     }
 
-    private fun initNoWishView() {
-        //TODO
-    }
 
     private fun setRemoveWishButton() {
         wishlistAdapter.removeWishClickListener = {

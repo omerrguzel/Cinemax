@@ -44,7 +44,7 @@
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginStart="@dimen/_24sdp"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -78,7 +78,7 @@
             android:id="@+id/imageViewWishListHome"
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_24sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_24sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:textColorHint="@color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
             app:boxCornerRadiusBottomStart="@dimen/_20sdp"
@@ -165,17 +165,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recyclerViewCategories" />
 
-        <TextView
-            android:id="@+id/textViewTitleSeeAllMostPopular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_24sdp"
-            android:fontFamily="@font/montserrat"
-            android:text="@string/see_all"
-            android:textColor="@color/blue_accent"
-            android:textSize="@dimen/_14ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textViewTitleMostPopular" />
+<!--        <TextView-->
+<!--            android:id="@+id/textViewTitleSeeAllMostPopular"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/_24sdp"-->
+<!--            android:fontFamily="@font/montserrat"-->
+<!--            android:text="@string/see_all"-->
+<!--            android:textColor="@color/blue_accent"-->
+<!--            android:textSize="@dimen/_14ssp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@id/textViewTitleMostPopular" />-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewMostPopular"
@@ -196,7 +196,7 @@
             android:layout_marginStart="@dimen/_24sdp"
             android:fontFamily="@font/montserrat"
             android:layout_marginTop="@dimen/_20sdp"
-            android:text="Top Rated"
+            android:text="@string/top_rated"
             android:textColor="@color/white"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintStart_toStartOf="parent"

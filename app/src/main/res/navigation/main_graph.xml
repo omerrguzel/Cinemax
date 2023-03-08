@@ -194,6 +194,9 @@
         android:label="fragment_video"
         tools:layout="@layout/fragment_video" >
         <argument
+            android:name = "mediaType"
+            app:argType="string"/>
+        <argument
             android:name = "id"
             app:argType="integer"/>
     </fragment>

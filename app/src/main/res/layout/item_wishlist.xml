@@ -40,21 +40,22 @@
             android:fontFamily="@font/montserrat"
             android:textColor="@color/white_grey"
             android:textSize="@dimen/_12ssp"
-            android:layout_marginStart="@dimen/_16sdp"
-            app:layout_constraintStart_toEndOf="@id/cardViewWishListImageHolder"
+            android:layout_marginStart="@dimen/_150sdp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/cardViewWishListImageHolder" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewTitleWishlistItem"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_200sdp"
             android:layout_height="wrap_content"
             tools:text="Spider-Man No Way Home"
+            android:layout_marginStart="@dimen/_150sdp"
             android:fontFamily="@font/montserrat_semibold"
             android:maxLines="2"
             android:textColor="@color/white_grey"
             android:textSize="@dimen/_14ssp"
             android:layout_marginTop="@dimen/_6sdp"
-            app:layout_constraintStart_toStartOf="@id/textViewGenreWishlistItem"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textViewGenreWishlistItem" />
 
         <com.google.android.material.textview.MaterialTextView

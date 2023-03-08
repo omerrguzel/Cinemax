@@ -79,4 +79,8 @@
     <string name="countries">Ülkeler</string>
     <string name="usa">ABD</string>
     <string name="t_rkiye">Türkiye</string>
+    <string name="search">Ara</string>
+    <string name="there_is_no_movie_in_your_wishlist_yet">İstek listenizde henüz film yok!</string>
+    <string name="the_movies_you_like_on_the_detail_screen_will_be_added_here">Detay ekranında beğendiğiniz filmler\n buraya eklenecektir</string>
+    <string name="top_rated">En Çok Oy Alanlar</string>
 </resources>

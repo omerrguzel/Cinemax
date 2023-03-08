@@ -88,14 +88,14 @@
                 tools:text="Spider-Man No Way Home" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageViewWishListHome"
+                android:id="@+id/imageViewWishDetail"
                 android:layout_width="@dimen/_32sdp"
                 android:layout_height="@dimen/_32sdp"
                 android:layout_marginTop="@dimen/_44sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                app:srcCompat="@drawable/wishlist_home" />
+                android:src="@drawable/white_heart" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageViewForegroundDetailPoster"

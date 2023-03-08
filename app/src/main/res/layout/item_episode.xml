@@ -27,40 +27,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/imageViewEpisode"
-            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_145sdp"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toEndOf="@id/imageViewEpisode"
+            app:layout_constraintStart_toStartOf="parent"
             tools:text="1h30m"/>
 
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewEpisodeNumber"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_200sdp"
             android:layout_height="wrap_content"
+            android:maxLines="2"
             app:layout_constraintTop_toBottomOf="@id/textViewEpisodeRuntime"
             app:layout_constraintBottom_toTopOf="@id/textViewEpisodeName"
-            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_145sdp"
             android:layout_marginTop="@dimen/_4sdp"
             android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/white"
             android:textSize="@dimen/_14ssp"
-            app:layout_constraintStart_toEndOf="@id/imageViewEpisode"
+            app:layout_constraintStart_toStartOf="parent"
             tools:text="Episode 1"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewEpisodeName"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_130sdp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/textViewEpisodeNumber"
             app:layout_constraintBottom_toBottomOf="@id/imageViewEpisode"
-            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_145sdp"
             android:layout_marginTop="@dimen/_4sdp"
             android:fontFamily="@font/montserrat_medium"
+            android:maxLines="2"
             android:textColor="@color/white"
             android:textSize="@dimen/_14ssp"
-            app:layout_constraintStart_toEndOf="@id/imageViewEpisode"
+            app:layout_constraintStart_toStartOf="parent"
             tools:text="Episode Name"/>
 
         <com.google.android.material.textview.MaterialTextView

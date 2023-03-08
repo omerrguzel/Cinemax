@@ -50,7 +50,7 @@ class SearchResultFragment : Fragment() {
         getSearchPersonResults(navArgs.searchQuery)
         getSearchMediaResults(navArgs.searchQuery)
         navigateToDetail()
-
+        navigateBack()
     }
 
     private fun getSearchMediaResults(searchQuery: String) {
@@ -119,6 +119,12 @@ class SearchResultFragment : Fragment() {
     private fun navigateToDetail(){
         mediaListAdapter.mediaClickListener = { mediaItem ->
             findNavController().navigate(SearchResultFragmentDirections.actionSearchResultFragmentToDetailFragment(mediaItem.mediaType,mediaItem.id))
+        }
+    }
+
+    private fun navigateBack(){
+        binding.searchBarTextBoxSearchResultScreen.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

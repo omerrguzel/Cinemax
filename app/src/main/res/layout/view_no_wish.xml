@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewNoResults"
+    android:visibility="gone"
+    tools:visibility="visible"
+    android:layout_width="match_parent"
+    android:background="@color/dark"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewNoResults"
+        android:layout_width="@dimen/_76sdp"
+        android:layout_height="@dimen/_76sdp"
+        android:src="@drawable/ic_arrow_heart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewNoResultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@id/imageViewNoResults"
+        android:text="@string/there_is_no_movie_in_your_wishlist_yet"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:letterSpacing="0.02" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/grey"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/the_movies_you_like_on_the_detail_screen_will_be_added_here"
+        app:layout_constraintTop_toBottomOf="@id/textViewNoResultTitle"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

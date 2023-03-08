@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_24sdp"
         android:layout_marginTop="@dimen/_20sdp"
+        android:focusable="false"
         android:textColorHint="@color/white"
         app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
         app:boxCornerRadiusBottomStart="@dimen/_20sdp"
@@ -36,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:startIconDrawable="@drawable/ic_search"
+        app:startIconDrawable="?attr/actionModeCloseDrawable"
         app:startIconTint="@color/grey">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -45,7 +46,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/soft"
             android:backgroundTintMode="add"
-            android:hint="Search"
+            android:focusable="false"
+            android:hint="@string/search"
             android:inputType="text"
             android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>

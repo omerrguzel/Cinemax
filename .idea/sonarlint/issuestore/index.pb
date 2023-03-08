@@ -163,8 +163,6 @@ Japp/src/main/java/com/example/cinemax/domain/usecase/tv/TvSeasonUseCase.kt,7\7
 Sapp/src/main/java/com/example/cinemax/presentation/authentication/SignUpFragment.kt,0\a\0a2032de36a06c43b6cdbbc7379378a8cd1a1b29
 à
 Xapp/src/main/java/com/example/cinemax/presentation/authentication/entry/EntryFragment.kt,0\4\0493d616cd794927b75cfb89040a717a43c50f69
-Ç
-Rapp/src/main/java/com/example/cinemax/data/entity/search/SearchMediaItemUIModel.kt,5\0\5018052e69d7dd490539e25dfba2f3d074b15cf1
 s
 Capp/src/main/java/com/example/cinemax/domain/mapper/MoviesMapper.kt,8\3\8312ea728b19a00fea8ff51d9316c8a94258548d
 y
@@ -185,10 +183,6 @@ Iapp/src/main/java/com/example/cinemax/domain/mapper/SearchResultMapper.kt,f\f\
 Lapp/src/main/java/com/example/cinemax/data/entity/movielist/MoviesUIModel.kt,a\6\a67d07cbb585ba6120ffa66787afbc76d9afc78e
 z
 Japp/src/main/java/com/example/cinemax/domain/usecase/movie/GenreUseCase.kt,1\5\1562d282086ff63e81dbfd0bf43b7494c189d6db
-á
-Wapp/src/main/java/com/example/cinemax/presentation/searchresult/SearchResultFragment.kt,9\1\915d067317aa91ec9c7587329ac400fb169f7c37
-{
-Kapp/src/main/java/com/example/cinemax/presentation/search/SearchFragment.kt,d\f\df84e3a857cf95280c1b01f2ae90a5aad6e3b73e
 i
 9app/src/main/java/com/example/cinemax/di/NetworkModule.kt,6\9\69700c9d694165f7e3d71ab6a213a7956095df93
 f
@@ -205,8 +199,6 @@ o
 ?app/src/main/java/com/example/cinemax/utils/RestartAppDialog.kt,1\0\10c0936e6739514b101ec519ced1735217256264
 ~
 Napp/src/main/java/com/example/cinemax/presentation/profile/LanguageFragment.kt,d\e\def91dea7ae242429d46eda76c9cb1e8cba8ff47
-|
-Lapp/src/main/java/com/example/cinemax/presentation/adapter/ProfileAdapter.kt,8\5\85e71fb7de5a656d3c27f8819d678667a9f819ff
 Å
 Qapp/src/main/java/com/example/cinemax/presentation/profile/EditProfileFragment.kt,d\c\dcfeebb1b1b6f54b232754d593aacf6b4b94409f
 z
@@ -217,11 +209,5 @@ Lapp/src/main/java/com/example/cinemax/presentation/profile/PolicyFragment.kt,6
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-t
-Dapp/src/main/java/com/example/cinemax/data/remote/MovieApiService.kt,e\a\ead369a6922675b92a7f1fb8d65092b720fb6a1b
-z
-Japp/src/main/java/com/example/cinemax/domain/repository/MovieRepository.kt,e\2\e230bcf7b6708247876ac836797dc006fb3fe7ca
-u
-Eapp/src/main/java/com/example/cinemax/data/remote/RemoteDataSource.kt,4\5\4548b1db42436e4f634658c85e4400a59c2217f7
 {
 Kapp/src/main/java/com/example/cinemax/presentation/splash/SplashFragment.kt,c\c\cca7c4744c4017323708a400ef16138a834b8aa1
