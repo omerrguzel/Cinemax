@@ -49,7 +49,7 @@ class VideoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        getMovieVideo(navArgs.id)
+        getMovieVideo(navArgs.mediaType,navArgs.id)
         backButtonController()
     }
 
@@ -99,8 +99,8 @@ class VideoFragment : Fragment() {
         }
     }
 
-    private fun getMovieVideo(id: Int) {
-        viewModel.getMovieVideo(id).observe(viewLifecycleOwner) {
+    private fun getMovieVideo(mediaType: String,id: Int) {
+        viewModel.getMovieVideo(mediaType,id).observe(viewLifecycleOwner) {
             when (it.status) {
                 Resource.Status.LOADING -> {
                     binding.progressBar.show()

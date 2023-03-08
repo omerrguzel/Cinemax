@@ -14,8 +14,8 @@ class VideoViewModel @Inject constructor(
 ) : ViewModel() {
 
 
-    fun getMovieVideo(id: Int): LiveData<Resource<MovieVideoResponse>> {
-        return movieVideoUseCase.invoke(id)
+    fun getMovieVideo(mediaType: String,id: Int): LiveData<Resource<MovieVideoResponse>> {
+        return movieVideoUseCase.invoke(mediaType,id)
     }
 
 }

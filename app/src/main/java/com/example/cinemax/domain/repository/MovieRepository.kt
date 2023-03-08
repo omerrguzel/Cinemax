@@ -28,6 +28,6 @@ interface MovieRepository {
 
     suspend fun getMovieDetailResult(id: Int) : Resource<MovieDetailItemResponse>
 
-    suspend fun getMovieVideo(id: Int) : Resource<MovieVideoResponse>
+    suspend fun getMovieVideo(mediaType: String,id: Int) : Resource<MovieVideoResponse>
 
 }

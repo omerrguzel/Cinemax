@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -19,6 +20,7 @@ import com.example.cinemax.presentation.adapter.CrewAdapter
 import com.example.cinemax.presentation.adapter.EpisodeAdapter
 import com.example.cinemax.utils.*
 import dagger.hilt.android.AndroidEntryPoint
+import okhttp3.MediaType
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
@@ -46,24 +48,13 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         sharedPrefManager = SharedPrefManager(this.requireActivity())
-
         backButtonController()
-        initDetailMediaType()
-        setFavButton()
+        initDetailMedia()
         navigateToVideo()
     }
 
-    private fun emptyList() {
-        if (sharedPrefManager.ifContains(WISHL) == true) {
-            wishList = sharedPrefManager.readWishList(WISHL).toMutableList()
-        }
-        wishList.clear()
-        sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())
-        Toast.makeText(context, "clear from wishlist", Toast.LENGTH_SHORT).show()
-        Log.v(TAG, "cleared from wishList: $wishList")
-    }
 
-    private fun initDetailMediaType() {
+    private fun initDetailMedia() {
         if (navArgs.mediaType == "tv") {
             getTVDetailResult(navArgs.id)
             getSeasonDetails(navArgs.id, 1)
@@ -71,6 +62,7 @@ class DetailFragment : Fragment() {
             getMovieDetails(navArgs.id)
             saveLogToShared(navArgs.id)
         }
+        setFavButton()
     }
 
     private fun getTVDetailResult(id: Int) {
@@ -90,11 +82,12 @@ class DetailFragment : Fragment() {
                     selectedWishlistModel.backdropPath = it.data?.backdropPath
                     selectedWishlistModel.mediaType = "TV"
                     selectedWishlistModel.genre = it.data?.genres?.get(0)?.name
+                    initFavButtonColor()
                     binding.progressBar.gone()
                     binding.apply {
                         textViewTitleDetail.text = it.data?.tvName
                         textViewOverview.text = it.data?.overview
-                        textViewGenreDetail.text = it.data?.genres?.get(0)?.name
+                        if(it.data?.genres?.size != 0) textViewGenreDetail.text = it.data?.genres?.get(0)?.name.toString()
                         textViewRatingDetail.text = it.data?.voteRating?.roundRating()
                         textViewSeasonNumber.text = it.data?.seasonInfoList?.get(0)?.name
                         imageViewBackgroundDetailPoster.showImage(it.data?.posterPath ?: "null")
@@ -162,14 +155,14 @@ class DetailFragment : Fragment() {
                     selectedWishlistModel.backdropPath = it.data?.backdropPath
                     selectedWishlistModel.mediaType = "Movie"
                     selectedWishlistModel.genre = it.data?.genres?.get(0)?.name
-
+                    initFavButtonColor()
                     Log.d(ContentValues.TAG, "TvDetailResult: ${it.data}")
                     binding.progressBar.gone()
                     binding.apply {
                         textViewTitleDetail.text = it.data?.movieName
                         textViewReleaseDateDetail.text = it.data?.releaseDate?.showOnlyYear()
                         textViewDuration.text = it.data?.runtime?.toString()
-                        textViewGenreDetail.text = it.data?.genres?.get(0)?.name.toString()
+                        if(it.data?.genres?.size != 0) textViewGenreDetail.text = it.data?.genres?.get(0)?.name.toString()
                         imageViewBackgroundDetailPoster.showImage(it.data?.posterPath ?: "")
                         imageViewForegroundDetailPoster.showImage(it.data?.posterPath ?: "")
                         textViewOverview.makeExpandable(it.data?.overview)
@@ -183,9 +176,33 @@ class DetailFragment : Fragment() {
         }
     }
 
+    private fun initFavButtonColor() {
+        if (checkIfInWishList()) {
+            binding.imageViewWishDetail.setImageDrawable(
+                ContextCompat.getDrawable(
+                    binding.root.context,
+                    R.drawable.wishlist_home
+                )
+            )
+        } else {
+            binding.imageViewWishDetail.setImageDrawable(
+                ContextCompat.getDrawable(
+                    binding.root.context,
+                    R.drawable.white_heart
+                )
+            )
+        }
+    }
+
     private fun setFavButton() {
-        binding.imageViewWishListHome.setOnClickListener {
-            if (isSelected()) removeWishlist() else saveWishlistToShared()
+        binding.imageViewWishDetail.setOnClickListener {
+            if (isSelected()) {
+                removeWishlist()
+                initFavButtonColor()
+            } else {
+                saveWishlistToShared()
+                initFavButtonColor()
+            }
         }
     }
 
@@ -195,7 +212,7 @@ class DetailFragment : Fragment() {
         }
     }
 
-    private fun saveLogToShared(id : Int) {
+    private fun saveLogToShared(id: Int) {
         sharedPrefManager.writeLogData(RECO, id)
         Toast.makeText(context, "$id Added to log", Toast.LENGTH_SHORT).show()
         Log.v(TAG, "LOG DATA: ${sharedPrefManager.readLogData(RECO)}")
@@ -218,6 +235,22 @@ class DetailFragment : Fragment() {
         sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())
         Toast.makeText(context, "Add to wishlist", Toast.LENGTH_SHORT).show()
         Log.v(TAG, "added to wishList: $wishList")
+    }
+
+    private fun checkIfInWishList(): Boolean {
+        if (sharedPrefManager.ifContains(WISHL) == true) {
+            wishList = sharedPrefManager.readWishList(WISHL).toMutableList()
+        }
+        return wishList.contains(
+            WishlistModel(
+                id = selectedWishlistModel.id,
+                title = selectedWishlistModel.title,
+                mediaType = selectedWishlistModel.mediaType,
+                voteAverage = selectedWishlistModel.voteAverage,
+                backdropPath = selectedWishlistModel.backdropPath,
+                genre = selectedWishlistModel.genre
+            )
+        )
     }
 
     private fun removeWishlist() {
@@ -247,9 +280,14 @@ class DetailFragment : Fragment() {
     }
 
 
-    private fun navigateToVideo(){
+    private fun navigateToVideo() {
         binding.buttonTrailer.setOnClickListener {
-            findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToVideoFragment(navArgs.id))
+            findNavController().navigate(
+                DetailFragmentDirections.actionDetailFragmentToVideoFragment(
+                    navArgs.mediaType,
+                    navArgs.id
+                )
+            )
         }
     }
 

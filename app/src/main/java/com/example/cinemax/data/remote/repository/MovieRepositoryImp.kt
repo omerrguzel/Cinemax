@@ -48,8 +48,8 @@ class MovieRepositoryImp @Inject constructor(
         return remoteDataSource.getMovieDetailResult(id)
     }
 
-    override suspend fun getMovieVideo(id: Int): Resource<MovieVideoResponse> {
-        return remoteDataSource.getMovieVideo(id)
+    override suspend fun getMovieVideo(mediaType: String,id: Int): Resource<MovieVideoResponse> {
+        return remoteDataSource.getMovieVideo(mediaType,id)
     }
 
 }

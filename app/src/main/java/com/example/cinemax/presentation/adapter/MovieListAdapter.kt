@@ -80,7 +80,7 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
         fun bindMovies(moviesItem: MovieItemUIModel) = with(binding) {
             cardViewMostPopular.setOnClickListener { movieClickListener?.invoke(moviesItem.id) }
             textViewTitleMovie.text = moviesItem.title
-            if(moviesItem.genreIds?.size == 0) textViewGenre.text = "" else moviesItem.genreIds?.get(0)
+            if(moviesItem.genreIds?.size != 0) textViewGenre.text = moviesItem.genreIds?.get(0)
             textViewRatingMostPopular.text = moviesItem.voteAverage.roundRating()
             imageViewMostPopularPoster.showImage(moviesItem.posterPath ?:"")
         }

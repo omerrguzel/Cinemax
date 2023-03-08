@@ -51,8 +51,9 @@ interface MovieApiService {
         @Path("mediaType") mediaType : String
     ) : Response<GenreListResponse>
 
-    @GET("movie/{movieId}/videos?api_key=$API_KEY")
+    @GET("{mediaType}/{movieId}/videos?api_key=$API_KEY")
     suspend fun getMovieVideo(
+        @Path("mediaType") mediaType: String,
         @Path("movieId") movieId : Int
     ) : Response<MovieVideoResponse>
 

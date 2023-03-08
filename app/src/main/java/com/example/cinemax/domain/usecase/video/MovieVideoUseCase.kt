@@ -8,7 +8,7 @@ import javax.inject.Inject
 class MovieVideoUseCase @Inject constructor(
     private val movieRepository: MovieRepository
 ) {
-    operator fun invoke(id:Int) = performNetworkOperation {
-        movieRepository.getMovieVideo(id)
+    operator fun invoke(mediaType: String,id:Int) = performNetworkOperation {
+        movieRepository.getMovieVideo(mediaType,id)
     }
 }
