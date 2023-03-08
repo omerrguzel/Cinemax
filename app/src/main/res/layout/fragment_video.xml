@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/dark">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dark"
@@ -48,6 +48,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
+            android:id="@+id/linearLayoutVideo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_100sdp"
@@ -78,5 +79,5 @@
         </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 </androidx.core.widget.NestedScrollView>

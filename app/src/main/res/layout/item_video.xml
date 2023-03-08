@@ -13,7 +13,7 @@
 
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageViewLogoMember"
+            android:id="@+id/imageViewPlay"
             android:layout_width="@dimen/_32sdp"
             android:layout_height="@dimen/_32sdp"
             android:background="@drawable/ic_profile_drawable_background"
@@ -33,9 +33,9 @@
             android:fontFamily="@font/montserrat"
             android:textColor="@color/white"
             android:textSize="@dimen/_14ssp"
-            app:layout_constraintBottom_toBottomOf="@id/imageViewLogoMember"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewPlay"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/imageViewLogoMember"
+            app:layout_constraintTop_toTopOf="@id/imageViewPlay"
             tools:text="Video Title" />
 
 

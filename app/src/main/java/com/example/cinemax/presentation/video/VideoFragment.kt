@@ -12,10 +12,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.cinemax.R
 import com.example.cinemax.databinding.FragmentVideoBinding
 import com.example.cinemax.presentation.adapter.VideoListAdapter
 import com.example.cinemax.utils.Resource
 import com.example.cinemax.utils.gone
+import com.example.cinemax.utils.setMargins
 import com.example.cinemax.utils.show
 import com.example.cinemax.utils.video.FullScreenHelper
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
@@ -80,14 +82,20 @@ class VideoFragment : Fragment() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
 
-        val fullScreenHelper = FullScreenHelper(requireActivity())
+        val fullScreenHelper = FullScreenHelper(this,
+            binding.recyclerViewVideoList,
+            binding.buttonBackVideoScreen
+        )
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             fullScreenHelper.enterFullScreen()
-//            FullScreenHelper(requireActivity()).enterFullScreen()
+            binding.youtubePlayerView.enterFullScreen()
+            binding.linearLayoutVideo.setMargins(top=0)
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             fullScreenHelper.exitFullScreen()
+            binding.youtubePlayerView.exitFullScreen()
+            binding.linearLayoutVideo.setMargins(top = resources.getDimensionPixelSize(R.dimen._100sdp))
         }
     }
 

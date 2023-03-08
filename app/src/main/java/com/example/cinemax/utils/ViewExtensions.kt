@@ -3,8 +3,13 @@ package com.example.cinemax.utils
 import android.content.Context
 import android.text.TextUtils
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.marginBottom
+import androidx.core.view.marginLeft
+import androidx.core.view.marginRight
+import androidx.core.view.marginTop
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
@@ -32,6 +37,17 @@ fun View.hide() {
 
 fun View.gone() {
     visibility = View.GONE
+}
+
+fun View.setMargins(
+    left: Int = this.marginLeft,
+    top: Int = this.marginTop,
+    right: Int = this.marginRight,
+    bottom: Int = this.marginBottom,
+) {
+    layoutParams = (layoutParams as ViewGroup.MarginLayoutParams).apply {
+        setMargins(left, top, right, bottom)
+    }
 }
 
 fun RecyclerView.scrollToStart(context: Context): SmoothScroller {

@@ -203,8 +203,6 @@ Mapp/src/main/java/com/example/cinemax/presentation/profile/CountryFragment.kt,
 Mapp/src/main/java/com/example/cinemax/presentation/profile/ProfileFragment.kt,e\d\ed9383f5819f39ff7f95d60abd3cb3c4ee32573b
 o
 ?app/src/main/java/com/example/cinemax/utils/RestartAppDialog.kt,1\0\10c0936e6739514b101ec519ced1735217256264
-m
-=app/src/main/java/com/example/cinemax/utils/ViewExtensions.kt,1\a\1ac972339edc5ae1889606829d6378a5c7a07af8
 ~
 Napp/src/main/java/com/example/cinemax/presentation/profile/LanguageFragment.kt,d\e\def91dea7ae242429d46eda76c9cb1e8cba8ff47
 |
