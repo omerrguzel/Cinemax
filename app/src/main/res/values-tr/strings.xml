@@ -85,4 +85,9 @@
     <string name="top_rated">En Çok Oy Alanlar</string>
     <string name="are_you_sure">Emin misin ?</string>
     <string name="cancel">İptal</string>
+    <string name="fullname_email_password_can_not_be_empty">İsim, mail adresi veya parola bölümleri boş olamaz!</string>
+    <string name="email_password_can_not_be_empty">Mail adresi veya parola bölümleri boş olamaz!</string>
+    <string name="need_to_accept">You need to accept terms</string>
+    <string name="registration_successful">Kayıt Başarılı!</string>
+    <string name="press_back_again">Çıkış yapmak için geri tuşuna 2 saniye içinde 2 kere basmanız gerekir</string>
 </resources>

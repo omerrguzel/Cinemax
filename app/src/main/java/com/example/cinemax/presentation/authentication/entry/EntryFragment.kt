@@ -27,6 +27,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class EntryFragment : Fragment() {
@@ -80,7 +81,7 @@ class EntryFragment : Fragment() {
         }
     }
 
-    fun startFacebookSignIn() {
+    private fun startFacebookSignIn() {
         with(LoginManager.getInstance()) {
             logIn(
                 this@EntryFragment,

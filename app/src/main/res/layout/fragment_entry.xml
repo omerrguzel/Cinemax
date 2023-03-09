@@ -69,8 +69,8 @@
         android:text="@string/i_already_have_an_account"
         android:textColor="@color/grey"
         android:textSize="@dimen/_12ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/textViewLoginEntry"
+        app:layout_constraintStart_toStartOf="@id/signUpButton"
         app:layout_constraintTop_toBottomOf="@id/signUpButton"
         app:lineHeight="@dimen/_14ssp" />
 
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
         android:fontFamily="@font/montserrat"
-        android:gravity="center"
+        android:gravity="start"
         android:text="@string/login"
         android:textColor="@color/blue_accent"
         android:textSize="@dimen/_12ssp"

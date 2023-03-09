@@ -79,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@id/textViewLatestMovies">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autoLink="email"
@@ -109,6 +110,7 @@
         app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmailAddressLoginScreen">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"

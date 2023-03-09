@@ -1,5 +1,6 @@
 package com.example.cinemax.presentation.profile
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -9,12 +10,14 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
+import com.example.cinemax.MainActivity
 import com.example.cinemax.R
 import com.example.cinemax.databinding.DialogLogoutBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
+
 
 @AndroidEntryPoint
 class LogOutDialog() : DialogFragment() {
@@ -48,7 +51,9 @@ class LogOutDialog() : DialogFragment() {
         binding.buttonLogOutDialog.setOnClickListener {
             val auth = Firebase.auth
             auth.signOut()
-            findNavController().navigate(R.id.action_profileFragment_to_entryFragment)
+            val intent = Intent(activity, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
     }
 

@@ -116,7 +116,7 @@ class VideoFragment : Fragment() {
                     videoAdapter.setData(reversedVideoList)
                     binding.recyclerViewVideoList.adapter = videoAdapter
 
-                    initVideo(reversedVideoList?.get(0)?.key)
+                    if (!reversedVideoList.isNullOrEmpty()) initVideo(reversedVideoList[0].key)
                 }
             }
         }

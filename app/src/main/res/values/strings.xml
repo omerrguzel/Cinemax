@@ -12,7 +12,6 @@
 </string>
     <string name="body_onboarding_third">With multiple seasons and episodes available, you\'ll never have to wait to see what happens next. Follow your favorite characters on their epic journeys
 </string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="cinemax">CINEMAX</string>
     <string name="enter_your_registered_n_phone_number_to_sign_up">Enter your registered \n Phone number to sign up</string>
     <string name="sign_up">Sign Up</string>
@@ -52,13 +51,11 @@
     <string name="see_all">See All</string>
     <string name="now_playing">Now Playing</string>
     <string name="recommended_for_you">Recommended for you</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="movie_related">Results</string>
     <string name="we_are_sorry_we_can_not_find_the_movie">We Are Sorry, We Can\n Not Find The Movie :(</string>
     <string name="find_your_movie_by_type_title_categories_years_etc">Find your movie by typing its title</string>
     <string name="actors">Actors</string>
     <string name="wishlist">Wishlist</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="trailer">Trailer</string>
     <string name="overview">Overview</string>
     <string name="cast_and_crew">Cast and Crew</string>
@@ -95,5 +92,9 @@
     <string name="are_you_sure">Are you sure ?</string>
     <string name="ullamcorper" translatable="false">Ullamcorper imperdiet urna id non sed est sem. Rhoncus amet, enim purus gravida donec aliquet.</string>
     <string name="cancel">Cancel</string>
-
+    <string name="fullname_email_password_can_not_be_empty">Full Name, Email or password cannot be empty!</string>
+    <string name="email_password_can_not_be_empty">Email or password cannot be empty!</string>
+    <string name="need_to_accept">You need to accept the terms!</string>
+    <string name="registration_successful">Registration is successful</string>
+    <string name="press_back_again">Please press back again to exit</string>
 </resources>

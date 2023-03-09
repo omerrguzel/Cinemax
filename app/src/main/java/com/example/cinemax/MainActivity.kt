@@ -30,6 +30,14 @@ class MainActivity : AppCompatActivity() {
     private var doubleBackToExitPressedOnce = false
     private lateinit var bottomNavigationView : BottomNavigationView
 
+    private val bottomNavFragments = setOf(
+        R.id.homeFragment,
+        R.id.searchFragment,
+        R.id.wishlistFragment,
+        R.id.profileFragment
+    )
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -58,38 +66,24 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setupWithNavController(navController)
 
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.homeFragment,
-                R.id.searchFragment,
-                R.id.wishlistFragment,
-                R.id.profileFragment
-            )
-        )
+        appBarConfiguration = AppBarConfiguration(bottomNavFragments)
+
         setupActionBarWithNavController(navController,appBarConfiguration)
 
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.entryFragment -> bottomNavigationView.gone()
-                R.id.verificationFragment-> bottomNavigationView.gone()
-                R.id.loginFragment ->bottomNavigationView.gone()
-                R.id.newPasswordFragment -> bottomNavigationView.gone()
-                R.id.resetPasswordFragment -> bottomNavigationView.gone()
-                R.id.signUpFragment -> bottomNavigationView.gone()
-                R.id.splashFragment -> bottomNavigationView.gone()
-                R.id.viewPagerFragment -> bottomNavigationView.gone()
-                R.id.searchResultFragment -> bottomNavigationView.gone()
-                R.id.detailFragment -> bottomNavigationView.gone()
-                R.id.countryFragment -> bottomNavigationView.gone()
-                R.id.languageFragment -> bottomNavigationView.gone()
-                R.id.editProfileFragment -> bottomNavigationView.gone()
-                R.id.policyFragment -> bottomNavigationView.gone()
-                R.id.videoFragment -> bottomNavigationView.gone()
-                else -> bottomNavigationView.show()
+            // check if destination is in the bottomNavFragments set
+            if (bottomNavFragments.contains(destination.id)) {
+                bottomNavigationView.show()
+            } else {
+                bottomNavigationView.gone()
             }
         }
 
+
+
     }
+
 
     override fun onBackPressed() {
         if (bottomNavigationView.isVisible){
@@ -97,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
             this.doubleBackToExitPressedOnce = true
-            Toast.makeText(this, "Please press back again to exit", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.press_back_again), Toast.LENGTH_SHORT).show()
 
             Handler(Looper.myLooper()!!).postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
         } else {
@@ -106,7 +100,7 @@ class MainActivity : AppCompatActivity() {
             if (backStackEntryCount > 0) {
                 fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             } else {
-                super.onBackPressed()
+                super.getOnBackPressedDispatcher().onBackPressed()
             }
         }
     }
@@ -150,5 +144,4 @@ class MainActivity : AppCompatActivity() {
 //        Locale.setDefault(Locale.ENGLISH)
 
     }
-
 }

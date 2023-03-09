@@ -1,5 +1,6 @@
 package com.example.cinemax.utils
 
+import android.app.Dialog
 import android.content.Context
 import android.text.TextUtils
 import android.view.View
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.cinemax.R
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -110,6 +112,10 @@ fun TextView.makeExpandable(text: String?) {
         }
     }
 }
+
+fun View.showSnack(text: String) = Snackbar.make(this, text, 1000).show()
+
+fun Dialog.showSnack(text: String) = window?.decorView?.showSnack(text)
 
 fun LifecycleOwner.observe(state: Lifecycle.State = Lifecycle.State.RESUMED, action: suspend () -> Unit) {
     lifecycleScope.launch {

@@ -79,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@id/textViewLatestMovies">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="name"
@@ -106,6 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullNameSignUpScreen">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autoLink="email"
@@ -136,6 +138,7 @@
         app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmailAddressSignUpScreen">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autoLink="email"
@@ -147,28 +150,30 @@
 
     <CheckBox
         android:id="@+id/checkBoxSignUpScreen"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_width="@dimen/_48sdp"
+        android:layout_height="@dimen/_48sdp"
         android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="@id/textInputLayoutPasswordSignUpScreen"
         app:layout_constraintTop_toBottomOf="@id/textInputLayoutPasswordSignUpScreen" />
 
     <TextView
         android:id="@+id/textViewAgreement"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_205sdp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
+        android:maxLines="2"
         android:text="@string/i_agree_to_the_terms_and_services_and_privacy_policy"
         android:textColor="@color/grey"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="@id/checkBoxSignUpScreen"
         app:layout_constraintStart_toEndOf="@id/checkBoxSignUpScreen"
-        app:layout_constraintTop_toTopOf="@id/checkBoxSignUpScreen" />
+        app:layout_constraintTop_toTopOf="@id/checkBoxSignUpScreen"
+        tools:ignore="TextSizeCheck" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSignUpSignUpScreen"
         android:layout_width="@dimen/_267sdp"
-        android:layout_height="@dimen/_47sdp"
+        android:layout_height="@dimen/_48sdp"
         android:layout_marginTop="@dimen/_33sdp"
         android:backgroundTint="@color/blue_accent"
         android:fontFamily="@font/montserrat"
@@ -177,6 +182,7 @@
         app:cornerRadius="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAgreement" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAgreement"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

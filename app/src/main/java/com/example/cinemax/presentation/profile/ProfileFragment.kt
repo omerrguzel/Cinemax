@@ -1,6 +1,7 @@
 package com.example.cinemax.presentation.profile
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import com.example.cinemax.data.entity.profile.ProfileModel
 import com.example.cinemax.databinding.FragmentProfileBinding
 import com.example.cinemax.presentation.adapter.ProfileAdapter
 import com.example.cinemax.utils.showProfileImage
+import com.facebook.AccessToken
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -20,10 +22,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
-    private var accountListAdapter : ProfileAdapter = ProfileAdapter(arrayListOf())
-    private var generalListAdapter : ProfileAdapter = ProfileAdapter(arrayListOf())
-    private var moreListAdapter : ProfileAdapter = ProfileAdapter(arrayListOf())
-    private val logOutDialog : LogOutDialog = LogOutDialog()
+    private var accountListAdapter: ProfileAdapter = ProfileAdapter(arrayListOf())
+    private var generalListAdapter: ProfileAdapter = ProfileAdapter(arrayListOf())
+    private var moreListAdapter: ProfileAdapter = ProfileAdapter(arrayListOf())
+    private val logOutDialog: LogOutDialog = LogOutDialog()
 
 
     override fun onCreateView(
@@ -45,16 +47,18 @@ class ProfileFragment : Fragment() {
         setLogOutButton()
     }
 
-    private fun setUserView(){
-        val auth : FirebaseAuth = Firebase.auth
+    private fun setUserView() {
+        val auth: FirebaseAuth = Firebase.auth
         binding.apply {
-            imageViewProfile.showProfileImage(auth.currentUser?.photoUrl.toString())
+            imageViewProfile.showProfileImage(
+                "${auth.currentUser?.photoUrl}?access_token=${AccessToken.getCurrentAccessToken()?.token}"
+            )
             textViewUserName.text = auth.currentUser?.displayName
             textViewEmail.text = auth.currentUser?.email
         }
     }
 
-    private fun bindViewAdapters(){
+    private fun bindViewAdapters() {
         val accountViewList = listOf(
             ProfileModel(R.drawable.ic_member, getString(R.string.member)),
             ProfileModel(R.drawable.ic_padlock, getString(R.string.changePassword))
@@ -85,26 +89,28 @@ class ProfileFragment : Fragment() {
         setNavForItems()
     }
 
-    private fun setLogOutButton(){
+    private fun setLogOutButton() {
         binding.buttonLogOut.setOnClickListener {
-            childFragmentManager.let { logOutDialog.show(it,null)  }
+            childFragmentManager.let { logOutDialog.show(it, null) }
         }
     }
 
-    private fun setNavForItems(){
-        accountListAdapter.profileItemClickLListener = {it ->
-            if(it == 0) {
+    private fun setNavForItems() {
+        accountListAdapter.profileItemClickLListener = { it ->
+            if (it == 0) {
                 findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
             }
         }
-        generalListAdapter.profileItemClickLListener = {it ->
-            when(it){
+        generalListAdapter.profileItemClickLListener = { it ->
+            when (it) {
                 1 -> findNavController().navigate(R.id.action_profileFragment_to_languageFragment)
                 2 -> findNavController().navigate(R.id.action_profileFragment_to_countryFragment)
+                3 -> context?.cacheDir?.deleteRecursively()
+
             }
         }
-        moreListAdapter.profileItemClickLListener = {it->
-            if(it == 0 ){
+        moreListAdapter.profileItemClickLListener = { it ->
+            if (it == 0) {
                 findNavController().navigate(R.id.action_profileFragment_to_policyFragment)
             }
         }

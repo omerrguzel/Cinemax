@@ -3,6 +3,7 @@ package com.example.cinemax.di
 import com.example.cinemax.domain.repository.AuthRepository
 import com.example.cinemax.domain.repository.AuthRepositoryImp
 import com.example.cinemax.domain.usecase.auth.SignInWithCredentialUseCase
+import com.example.cinemax.utils.AuthOperationHelper
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
 import dagger.Provides
@@ -34,5 +35,9 @@ object AuthModule {
         return SignInWithCredentialUseCase(authRepository)
     }
 
+    @Provides
+    @Singleton
+    fun provideAuthOperationHelper(firebaseAuth: FirebaseAuth) =
+        AuthOperationHelper(firebaseAuth)
 
 }
