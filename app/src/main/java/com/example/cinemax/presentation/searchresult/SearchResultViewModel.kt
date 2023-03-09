@@ -42,14 +42,4 @@ class SearchResultViewModel @Inject constructor(
             }
         ).flow.cachedIn(viewModelScope)
     }
-
-    fun getIfMediaEmpty(searchQuery: String): Boolean {
-        var isEmpty: Boolean = false
-        SearchMediaPagingSource(searchResultUseCase, searchQuery).isEmptyCheck = {
-            if (it) {
-                isEmpty = true
-            }
-        }
-        return isEmpty
-    }
 }

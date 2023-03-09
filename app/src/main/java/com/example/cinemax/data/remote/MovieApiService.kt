@@ -1,5 +1,6 @@
 package com.example.cinemax.data.remote
 
+import com.example.cinemax.BuildConfig
 import com.example.cinemax.data.entity.moviedetail.GenreListResponse
 import com.example.cinemax.data.entity.moviedetail.MovieDetailItemResponse
 import com.example.cinemax.data.entity.movielist.MoviesResponse
@@ -59,7 +60,7 @@ interface MovieApiService {
 
 
     companion object{
-        const val API_KEY = "721a8eed90ae677f0f8e7b6b81b314f7"
+        const val API_KEY = BuildConfig.API_KEY
     }
 
 }
