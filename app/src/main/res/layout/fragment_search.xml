@@ -59,29 +59,18 @@
             android:backgroundTint="@color/soft"
             android:backgroundTintMode="add"
             android:imeOptions="actionSearch"
-            android:hint="Search"
+            android:hint="@string/search"
             android:inputType="text"
             android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCategoriesSearchScreen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/searchBarSearchScreen"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:orientation="horizontal"
-        tools:listitem="@layout/item_genres"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     <TextView
         android:id="@+id/textViewNowPlaying"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewCategoriesSearchScreen"
+        app:layout_constraintTop_toBottomOf="@id/searchBarSearchScreen"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:layout_marginStart="@dimen/_24sdp"
         android:text="@string/now_playing"
         android:fontFamily="@font/montserrat"

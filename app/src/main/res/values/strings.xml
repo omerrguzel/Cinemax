@@ -97,4 +97,13 @@
     <string name="need_to_accept">You need to accept the terms!</string>
     <string name="registration_successful">Registration is successful</string>
     <string name="press_back_again">Please press back again to exit</string>
+    <string name="cleared_cache">Cache cleared</string>
+
+    <string name="this_option_restart">This option will restart the device.Do you agree?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="release_date">Release Date:</string>
+    <string name="all">All</string>
+    <string name="movie">Movie</string>
+    <string name="series">Series</string>
 </resources>

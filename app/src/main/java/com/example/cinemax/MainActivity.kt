@@ -2,6 +2,7 @@ package com.example.cinemax
 
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
@@ -15,6 +16,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.cinemax.databinding.ActivityMainBinding
+import com.example.cinemax.utils.LanguageConfig
+import com.example.cinemax.utils.SharedPrefManager
 import com.example.cinemax.utils.gone
 import com.example.cinemax.utils.show
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -25,6 +28,7 @@ import java.util.*
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var sharedPrefManager: SharedPrefManager
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
     private var doubleBackToExitPressedOnce = false
@@ -48,14 +52,13 @@ class MainActivity : AppCompatActivity() {
         init()
     }
 
-//    var sharedPreferences: SharedPrefs? = null
-//
-//    override fun attachBaseContext(newBase: Context?) {
-//        sharedPreferences = SharedPrefs(newBase)
-//        val languageCode: String = sharedPreferences.getLocale()
-//        val context: Context = LanguageConfig.changeLanguage(newBase, languageCode)
-//        super.attachBaseContext(context)
-//    }
+
+    override fun attachBaseContext(newBase: Context) {
+        sharedPrefManager = SharedPrefManager(newBase)
+        val languageCode: String = sharedPrefManager.getLocale()
+        val context: Context = LanguageConfig.changeLanguage(newBase, languageCode)
+        super.attachBaseContext(context)
+    }
 
     private fun init() {
         supportActionBar?.hide()

@@ -125,7 +125,7 @@ class HomeFragment : Fragment() {
                     Log.d(TAG,"Genres: ${it.data}")
                     binding.progressBar.gone()
                     val list : MutableList<GenreResponse>? = it.data?.genres?.toMutableList()
-                    list?.add(0,GenreResponse(name = "All"))
+                    list?.add(0,GenreResponse(name = getString(R.string.all)))
                     genreAdapter.setData(list?.toList())
                     binding.recyclerViewCategories.adapter = genreAdapter
                 }

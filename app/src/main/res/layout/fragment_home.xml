@@ -112,7 +112,7 @@
                 android:backgroundTint="@color/soft"
                 android:backgroundTintMode="add"
                 android:imeOptions="actionSearch"
-                android:hint="Search"
+                android:hint="@string/search"
                 android:inputType="text"
                 android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>

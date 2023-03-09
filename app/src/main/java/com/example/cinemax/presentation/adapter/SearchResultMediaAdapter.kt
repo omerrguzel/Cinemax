@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cinemax.R
 import com.example.cinemax.data.entity.search.SearchMediaItemUIModel
 import com.example.cinemax.databinding.ItemMovieGenericBinding
 import com.example.cinemax.utils.roundRating
@@ -40,12 +41,12 @@ class SearchResultMediaAdapter(
                 if(mediaItem.mediaType == MOVIE_MEDIA_TYPE){
                     textViewTitle.text = mediaItem.movieName
                     textViewReleaseDate.text = mediaItem.releaseDate
-                    textViewMediaType.text = MOVIE
+                    textViewMediaType.text = root.context.getString(R.string.movie)
                     textViewGenre.text = mediaItem.genreMovieIds?.get(0)
                 }else{
                     textViewTitle.text = mediaItem.seriesName
                     textViewReleaseDate.text = mediaItem.firstAirDate
-                    textViewMediaType.text = TV
+                    textViewMediaType.text = root.context.getString(R.string.series)
                     textViewGenre.text = mediaItem.genreTvIds?.get(0)
                 }
                 imageViewGenericPoster.showImage(mediaItem.posterPath.toString())
@@ -74,8 +75,6 @@ class SearchResultMediaAdapter(
     }
 
     companion object{
-        const val MOVIE = "Movie"
-        const val TV = "TV"
         const val MOVIE_MEDIA_TYPE = "movie"
     }
 }

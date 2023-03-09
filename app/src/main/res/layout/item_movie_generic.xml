@@ -101,7 +101,7 @@
                     android:textColor="@color/white"
                     android:fontFamily="@font/montserrat"
                     android:textSize="@dimen/_12ssp"
-                    android:text="Movie"/>
+                    android:text="@string/movie"/>
             </LinearLayout>
 
         </LinearLayout>

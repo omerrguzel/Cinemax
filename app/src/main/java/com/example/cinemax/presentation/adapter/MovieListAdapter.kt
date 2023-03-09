@@ -5,10 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.cinemax.R
-import com.example.cinemax.data.entity.movielist.MovieItemResponse
 import com.example.cinemax.data.entity.movielist.MovieItemUIModel
 import com.example.cinemax.databinding.ItemMostpopularhomeBinding
 import com.example.cinemax.databinding.ItemUpcomingBinding
@@ -69,7 +66,8 @@ class MovieListAdapter : PagingDataAdapter<MovieItemUIModel,
                 outputFormat.format(inputFormat.parse(moviesItem.releaseDate))
 
             textViewUpcomingMovieTitle.text = moviesItem.title
-            textViewUpcomingReleaseDate.text = "Release Date: $outputDateStr"
+            textViewUpcomingReleaseDate.text =
+                "${root.context.getString(R.string.release_date)}$outputDateStr"
             imageViewUpcoming.showImage(moviesItem.backdropPath ?:"")
         }
     }

@@ -5,14 +5,15 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.example.cinemax.data.entity.wishlist.WishlistModel
 import com.google.gson.Gson
+import java.util.*
 
 
 class SharedPrefManager {
 
     private var sharedPref: SharedPreferences? = null
 
-    constructor(activity: Activity) {
-        sharedPref = activity.getPreferences(Context.MODE_PRIVATE) ?: return
+    constructor(activity: Context) {
+        sharedPref = activity.getSharedPreferences("MyAppPreferences",Context.MODE_PRIVATE) ?: return
     }
 
     fun ifContains(key: String): Boolean? {
@@ -59,5 +60,22 @@ class SharedPrefManager {
             }
         }
         return false
+    }
+
+    fun getLocale(): String {
+        return if (this.sharedPref?.contains("language") == true) {
+            sharedPref?.getString("language", "").toString()
+        } else {
+            Locale.getDefault().language
+        }
+    }
+
+    fun setLocale(lang: String?) {
+        sharedPref?.let {
+            with(it.edit()) {
+                putString("locale", lang).toString()
+                apply()
+            }
+        }
     }
 }

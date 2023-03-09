@@ -12,6 +12,7 @@ import com.example.cinemax.data.entity.profile.ProfileModel
 import com.example.cinemax.databinding.FragmentProfileBinding
 import com.example.cinemax.presentation.adapter.ProfileAdapter
 import com.example.cinemax.utils.showProfileImage
+import com.example.cinemax.utils.showSnack
 import com.facebook.AccessToken
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -105,7 +106,10 @@ class ProfileFragment : Fragment() {
             when (it) {
                 1 -> findNavController().navigate(R.id.action_profileFragment_to_languageFragment)
                 2 -> findNavController().navigate(R.id.action_profileFragment_to_countryFragment)
-                3 -> context?.cacheDir?.deleteRecursively()
+                3 -> {
+                    context?.cacheDir?.deleteRecursively()
+                    requireView().showSnack("Cache is ")
+                }
 
             }
         }
