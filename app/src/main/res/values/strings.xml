@@ -99,7 +99,7 @@
     <string name="press_back_again">Please press back again to exit</string>
     <string name="cleared_cache">Cache cleared</string>
 
-    <string name="this_option_restart">This option will restart the device.Do you agree?</string>
+    <string name="this_option_restart">This option will restart the app.Do you agree?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="release_date">Release Date:</string>

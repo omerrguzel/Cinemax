@@ -92,7 +92,7 @@
     <string name="press_back_again">Çıkış yapmak için geri tuşuna 2 saniye içinde 2 kere basmanız gerekir</string>
     <string name="cleared_cache">Önbellek temizlendi</string>
 
-    <string name="this_option_restart">Cihazınız yeniden başlatılacaktır. Kabul ediyor musunuz?</string>
+    <string name="this_option_restart">Uygulama yeniden başlatılacaktır. Kabul ediyor musunuz?</string>
     <string name="yes">Evet</string>
     <string name="no">Hayır</string>
     <string name="release_date">Çıkış Tarihi:</string>
