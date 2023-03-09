@@ -23,6 +23,7 @@ class ProfileFragment : Fragment() {
     private var accountListAdapter : ProfileAdapter = ProfileAdapter(arrayListOf())
     private var generalListAdapter : ProfileAdapter = ProfileAdapter(arrayListOf())
     private var moreListAdapter : ProfileAdapter = ProfileAdapter(arrayListOf())
+    private val logOutDialog : LogOutDialog = LogOutDialog()
 
 
     override fun onCreateView(
@@ -41,6 +42,7 @@ class ProfileFragment : Fragment() {
 
         bindViewAdapters()
         setUserView()
+        setLogOutButton()
     }
 
     private fun setUserView(){
@@ -81,6 +83,12 @@ class ProfileFragment : Fragment() {
         binding.recyclerViewMore.adapter = moreListAdapter
 
         setNavForItems()
+    }
+
+    private fun setLogOutButton(){
+        binding.buttonLogOut.setOnClickListener {
+            childFragmentManager.let { logOutDialog.show(it,null)  }
+        }
     }
 
     private fun setNavForItems(){

@@ -1,0 +1,93 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/_32sdp"
+    app:cardElevation="4dp"
+    android:layout_width="@dimen/_327sdp"
+    android:layout_gravity="center"
+    android:backgroundTint="@color/soft"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialogLogOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageviewQuestionMark"
+            android:layout_width="@dimen/_125sdp"
+            android:layout_height="@dimen/_125sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_29sdp"
+            android:layout_marginHorizontal="@dimen/_101sdp"
+            android:src="@drawable/ic_logout" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageviewQuestionMark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:textSize="@dimen/_18ssp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white"
+            android:text="@string/are_you_sure" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewBody"
+            android:layout_width="@dimen/_271sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/grey"
+            android:text="@string/ullamcorper" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLogOutDialog"
+            android:layout_width="@dimen/_130sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/blue_accent"
+            android:layout_marginHorizontal="@dimen/_24sdp"
+            app:layout_constraintTop_toBottomOf="@id/textViewBody"
+            app:strokeWidth="@dimen/_1sdp"
+            app:strokeColor="@color/blue_accent"
+            android:backgroundTint="@color/dark"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/logOut"
+            app:cornerRadius="@dimen/_32sdp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCancel"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:backgroundTint="@color/blue_accent"
+            app:layout_constraintTop_toBottomOf="@id/textViewBody"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/cancel"
+            android:textSize="@dimen/_13ssp"
+            app:cornerRadius="32dp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/buttonLogOutDialog" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

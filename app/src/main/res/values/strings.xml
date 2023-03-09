@@ -75,8 +75,6 @@
     <string name="helpFeedback">Help&amp;Feedback</string>
     <string name="aboutUs">About Us</string>
     <string name="logOut">Log Out</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="noneditablepassword" translatable="false">................</string>
     <string name="save_changes">Save Changes</string>
@@ -94,5 +92,8 @@
     <string name="there_is_no_movie_in_your_wishlist_yet">There Is No Movie In Your Wishlist Yet!</string>
     <string name="the_movies_you_like_on_the_detail_screen_will_be_added_here">The movies you like on the detail\n screen will be added here</string>
     <string name="top_rated">Top Rated</string>
+    <string name="are_you_sure">Are you sure ?</string>
+    <string name="ullamcorper" translatable="false">Ullamcorper imperdiet urna id non sed est sem. Rhoncus amet, enim purus gravida donec aliquet.</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
