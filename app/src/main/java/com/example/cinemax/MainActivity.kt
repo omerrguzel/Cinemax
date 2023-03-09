@@ -75,16 +75,12 @@ class MainActivity : AppCompatActivity() {
 
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            // check if destination is in the bottomNavFragments set
             if (bottomNavFragments.contains(destination.id)) {
                 bottomNavigationView.show()
             } else {
                 bottomNavigationView.gone()
             }
         }
-
-
-
     }
 
 
@@ -106,45 +102,5 @@ class MainActivity : AppCompatActivity() {
                 super.getOnBackPressedDispatcher().onBackPressed()
             }
         }
-    }
-
-    private fun detectLanguage(){
-        val sharedPreferences = getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
-        val language = sharedPreferences?.getString("language", null) // default value is "en"
-        if(language == "tr"){
-            // Current language is Turkish
-            changeToTurkish()
-        } else if ( language == "en"){
-            // Current language is English
-         changeToEnglish()
-        }
-    }
-
-    private fun changeToTurkish(){
-//        val locale = Locale("tr")
-//        val resources = context?.resources
-//        val configuration = resources?.configuration
-//        configuration?.setLocale(locale)
-
-        val locale = Locale("tr")
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        applicationContext.resources.updateConfiguration(config, resources.displayMetrics)
-    }
-
-    private fun changeToEnglish(){
-
-        val locale = Locale("en")
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        applicationContext.resources.updateConfiguration(config, resources.displayMetrics)
-
-//        val locale = Locale("en")
-//        val resources = context?.resources
-//        val configuration = resources?.configuration
-//        Locale.setDefault(Locale.ENGLISH)
-
     }
 }

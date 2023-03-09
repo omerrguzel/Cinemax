@@ -24,7 +24,7 @@ class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
 
     @Inject
-    lateinit var authOperations : AuthOperationHelper
+    lateinit var authOperations: AuthOperationHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +42,7 @@ class SignUpFragment : Fragment() {
                 findNavController().popBackStack()
             }
             buttonSignUpSignUpScreen.setOnClickListener {
-                if(checkBoxSignUpScreen.isChecked){
+                if (checkBoxSignUpScreen.isChecked) {
                     checkEmailAndPassword { fullName, email, password ->
                         authOperations.signUpWithEmailAndPassword(email, password,
                             onSuccess = {
@@ -63,8 +63,7 @@ class SignUpFragment : Fragment() {
                                 view.showSnack(it)
                             })
                     }
-                }
-                view.showSnack(getString(R.string.need_to_accept))
+                } else view.showSnack(getString(R.string.need_to_accept))
             }
         }
     }

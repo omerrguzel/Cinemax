@@ -153,7 +153,7 @@ class SearchFragment : Fragment() {
         } else {
             fetchedLogId = 500
         }
-        Toast.makeText(context, "$fetchedLogId read from log", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "$fetchedLogId read from log", Toast.LENGTH_SHORT).show()
         return fetchedLogId
     }
 

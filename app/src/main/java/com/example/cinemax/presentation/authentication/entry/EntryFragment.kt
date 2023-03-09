@@ -173,7 +173,7 @@ class EntryFragment : Fragment() {
         if (user != null) {
             findNavController().navigate(R.id.action_entryFragment_to_homeFragment)
         } else {
-            Toast.makeText(context, "Please sign in to continue.", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Please sign in to continue.", Toast.LENGTH_SHORT).show()
         }
     }
 }

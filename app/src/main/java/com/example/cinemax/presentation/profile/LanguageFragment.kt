@@ -32,7 +32,7 @@ class LanguageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         backButtonController()
-        Toast.makeText(requireContext(),"default language is ${Locale.getDefault().language}",Toast.LENGTH_SHORT).show()
+//        Toast.makeText(requireContext(),"default language is ${Locale.getDefault().language}",Toast.LENGTH_SHORT).show()
         detectLanguage()
         setOption()
     }

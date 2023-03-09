@@ -23,7 +23,9 @@
         android:label="viewPagerFragment" >
         <action
             android:id="@+id/action_viewPagerFragment_to_entryFragment"
-            app:destination="@id/entryFragment" />
+            app:destination="@id/entryFragment"
+            app:popUpTo="@id/entryFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/entryFragment"

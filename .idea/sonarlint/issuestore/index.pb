@@ -61,12 +61,8 @@ Xapp/src/main/java/com/example/cinemax/presentation/authentication/NewPasswordFr
 Zapp/src/main/java/com/example/cinemax/presentation/authentication/ResetPasswordFragment.kt,2\8\28b98374a1e1b251f1ba4c96efafc26bdf32a4cb
 …
 Uapp/src/main/java/com/example/cinemax/presentation/onboarding/screens/SecondScreen.kt,8\2\820eed09ddc1bcdf0f48d01574f78c4403ce2961
-„
-Tapp/src/main/java/com/example/cinemax/presentation/onboarding/screens/ThirdScreen.kt,9\d\9dc6061ac831cbbcc0ecfa68e07ab12872a308e3
 ‰
 Yapp/src/main/java/com/example/cinemax/presentation/authentication/VerificationFragment.kt,9\0\90e71031678bb6ce467c8350e13925d6d5e02186
-‚
-Rapp/src/main/java/com/example/cinemax/presentation/onboarding/ViewPagerFragment.kt,1\e\1ed9f50a6abac9bc9edf400dc1e207726280ae43
 w
 G.idea/sonarlint/issuestore/0/a/0a2032de36a06c43b6cdbbc7379378a8cd1a1b29,c\f\cf4df54e8c6327ab8d1dd7f88cb187d2201a9ea5
 w
@@ -177,8 +173,6 @@ Qapp/src/main/java/com/example/cinemax/data/entity/video/MovieVideoItemResponse.
 Oapp/src/main/java/com/example/cinemax/domain/usecase/video/MovieVideoUseCase.kt,f\a\fa209f3c273c9c2cf6a2300b754173fe267e4a06
 z
 Japp/src/main/java/com/example/cinemax/presentation/video/VideoViewModel.kt,5\5\55d7f97af6f6fd7aad48c2e6cf926c4352cb9a61
-
-Oapp/src/main/java/com/example/cinemax/presentation/wishlist/WishlistFragment.kt,9\1\913d88cdf2090b05ec6ea55e61ea946c15241b2c
 ‚
 Rapp/src/main/java/com/example/cinemax/data/remote/repository/MovieRepositoryImp.kt,7\5\756a21f98d9b9b6ae9864cbfe811f07e97ef3fd0
 ‚
@@ -223,12 +217,8 @@ y
 Iapp/src/main/java/com/example/cinemax/domain/mapper/SearchResultMapper.kt,f\f\ff7f44dc6a4d29651da61a5bd847de591071512e
 „
 Tapp/src/main/java/com/example/cinemax/presentation/paging/SearchMediaPagingSource.kt,6\5\65e14e528be198c7f4ab0d189c8c9ce2057aea10
-ˆ
-Xapp/src/main/java/com/example/cinemax/presentation/authentication/entry/EntryFragment.kt,0\4\0493d616cd794927b75cfb89040a717a43c50f69
 z
 Japp/src/main/java/com/example/cinemax/presentation/profile/LogOutDialog.kt,a\7\a7192a44942a0d0b88c6f29ca5e354454d39346b
-ƒ
-Sapp/src/main/java/com/example/cinemax/presentation/authentication/SignUpFragment.kt,0\a\0a2032de36a06c43b6cdbbc7379378a8cd1a1b29
 y
 Iapp/src/main/java/com/example/cinemax/presentation/video/VideoFragment.kt,2\e\2e011b4b919d4b29f75b080231513962df6ef74e
 m

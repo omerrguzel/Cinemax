@@ -233,7 +233,7 @@ class DetailFragment : Fragment() {
 
     private fun saveLogToShared(id: Int) {
         sharedPrefManager.writeLogData(RECO, id)
-        Toast.makeText(context, "$id Added to log", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "$id Added to log", Toast.LENGTH_SHORT).show()
         Log.v(TAG, "LOG DATA: ${sharedPrefManager.readLogData(RECO)}")
     }
 
@@ -252,7 +252,7 @@ class DetailFragment : Fragment() {
             )
         )
         sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())
-        Toast.makeText(context, "Add to wishlist", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "Add to wishlist", Toast.LENGTH_SHORT).show()
         Log.v(TAG, "added to wishList: $wishList")
     }
 
@@ -287,7 +287,7 @@ class DetailFragment : Fragment() {
             )
         )
         sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())
-        Toast.makeText(context, "remove from wishlist", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "remove from wishlist", Toast.LENGTH_SHORT).show()
         Log.v(TAG, "removed from wishList: $wishList")
     }
 

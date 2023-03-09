@@ -108,7 +108,7 @@ class ProfileFragment : Fragment() {
                 2 -> findNavController().navigate(R.id.action_profileFragment_to_countryFragment)
                 3 -> {
                     context?.cacheDir?.deleteRecursively()
-                    requireView().showSnack("Cache is ")
+                    requireView().showSnack(getString(R.string.cleared_cache))
                 }
 
             }

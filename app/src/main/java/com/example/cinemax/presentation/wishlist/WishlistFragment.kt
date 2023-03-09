@@ -50,7 +50,7 @@ class WishlistFragment : Fragment() {
         if (sharedPrefManager.ifContains(WISHL) == true) {
             wishList = sharedPrefManager.readWishList(WISHL).toMutableList()
             setWishListAdapter(wishList)
-        }
+        } else binding.viewNoWish.root.show()
     }
 
     private fun setWishListAdapter(wishList: List<WishlistModel>) {
@@ -88,7 +88,7 @@ class WishlistFragment : Fragment() {
         )
         sharedPrefManager.writeWishList(WISHL, wishList.toTypedArray())
         setWishListAdapter(wishList)
-        Toast.makeText(context, "remove from wishlist", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "remove from wishlist", Toast.LENGTH_SHORT).show()
         Log.v(ContentValues.TAG, "removed from wishList: $wishList")
     }
 
