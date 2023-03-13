@@ -44,7 +44,6 @@ class ViewPagerFragment : Fragment() {
 
         with(binding){
             viewPager.adapter = adapter
-            viewPager.isUserInputEnabled = false
             TabLayoutMediator(pageIndicator,viewPager) {_,_ ->}.attach()
         }
     }

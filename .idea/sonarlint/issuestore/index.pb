@@ -15,8 +15,6 @@ w
 G.idea/sonarlint/issuestore/9/9/99437a72e53e3372cda2bff4e9e442b296b81b2e,2\3\23d47b6ab081defac271d7758d18dfc06af79241
 h
 8app/src/main/java/com/example/cinemax/HiltApplication.kt,1\9\193c90861f107a498426b2a13902e3d6643f1cd9
-Å
-Qapp/src/main/java/com/example/cinemax/presentation/onboarding/ViewPagerAdapter.kt,c\e\cebedcc2a4cdc9afc6046cd3263ac3066a69da85
 |
 Lapp/src/main/java/com/example/cinemax/domain/repository/AuthRepositoryImp.kt,1\c\1c771e8d07aab605af04378f7a5ffcbddd872170
 â
@@ -39,8 +37,6 @@ w
 G.idea/sonarlint/issuestore/2/0/20e55c64dd6e43bdc5ca2e239765c3454d64c6fa,8\c\8c45262ebb681a3ddf9d80325b3f15e82bd80494
 w
 G.idea/sonarlint/issuestore/d/0/d0704c789e415bd8c34e48808e7edbd3a12f79c0,0\1\0113e8264ce94ef7178649e7840f40b958c78481
-w
-G.idea/sonarlint/issuestore/3/8/388f638c2a7b75bb5d66d4d416f0419bcccd8393,8\7\8778b1578dd1a81107f8661a3a8eb0e870df77df
 w
 G.idea/sonarlint/issuestore/3/f/3f18c12d3c9a28facd6deb80c2e9326031f8d89a,2\0\20b16029d6f2c5933dc2792e232f1f856fce5491
 w
@@ -92,8 +88,6 @@ G.idea/sonarlint/issuestore/d/f/df031d27d5d03a59efac896f375eb3872b693667,e\3\e3
 w
 G.idea/sonarlint/issuestore/8/c/8c45262ebb681a3ddf9d80325b3f15e82bd80494,c\9\c9f454eedf3ea1c0b104ab5f95a76033e4f2560d
 w
-G.idea/sonarlint/issuestore/9/d/9dc6061ac831cbbcc0ecfa68e07ab12872a308e3,c\f\cf538fb58d8e62eade25ef28170627c25e4896e5
-w
 G.idea/sonarlint/issuestore/a/b/ab7bdcd8859ad14d2516361cc0f2cb46d4364bc2,8\c\8cc25b96cbcc3dd4625f246906a155aca0bdf58a
 w
 G.idea/sonarlint/issuestore/6/b/6bc84d77c71d101e727623037b55444d8bde0ff0,4\2\424e98c01e1c96959c48df299a539d049c0142ff
@@ -103,8 +97,6 @@ w
 G.idea/sonarlint/issuestore/8/2/820eed09ddc1bcdf0f48d01574f78c4403ce2961,3\f\3f46b538bbedc4c81abcb8bf04fd9ba388a15320
 w
 G.idea/sonarlint/issuestore/9/0/90e71031678bb6ce467c8350e13925d6d5e02186,c\8\c8fd16913e29e387636ee565179e11c214c23d4a
-w
-G.idea/sonarlint/issuestore/1/e/1ed9f50a6abac9bc9edf400dc1e207726280ae43,3\8\388f638c2a7b75bb5d66d4d416f0419bcccd8393
 w
 G.idea/sonarlint/issuestore/2/8/28b98374a1e1b251f1ba4c96efafc26bdf32a4cb,d\0\d0704c789e415bd8c34e48808e7edbd3a12f79c0
 à
@@ -246,8 +238,6 @@ A
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-z
-Japp/src/main/java/com/example/cinemax/presentation/seasons/SeasonDialog.kt,5\5\5580d1d70edef04e296a127aa57f7c544a1a9237
 Ç
 Rapp/src/main/java/com/example/cinemax/presentation/authentication/LoginFragment.kt,e\e\eed9d437205666d93acb785f7c4977c0c78a9324
 P
@@ -284,3 +274,13 @@ Xapp/src/main/java/com/example/cinemax/presentation/authentication/entry/EntryFr
 Napp/src/main/java/com/example/cinemax/presentation/profile/LanguageFragment.kt,d\e\def91dea7ae242429d46eda76c9cb1e8cba8ff47
 {
 Kapp/src/main/java/com/example/cinemax/presentation/search/SearchFragment.kt,d\f\df84e3a857cf95280c1b01f2ae90a5aad6e3b73e
+Ñ
+Tapp/src/main/java/com/example/cinemax/presentation/onboarding/screens/ThirdScreen.kt,9\d\9dc6061ac831cbbcc0ecfa68e07ab12872a308e3
+
+Oapp/src/main/java/com/example/cinemax/presentation/wishlist/WishlistFragment.kt,9\1\913d88cdf2090b05ec6ea55e61ea946c15241b2c
+e
+5app/src/main/java/com/example/cinemax/MainActivity.kt,2\5\252a6ed083a83b01b7e59a49c4a38c470a719dac
+É
+Sapp/src/main/java/com/example/cinemax/presentation/authentication/SignUpFragment.kt,0\a\0a2032de36a06c43b6cdbbc7379378a8cd1a1b29
+{
+Kapp/src/main/java/com/example/cinemax/presentation/detail/DetailFragment.kt,f\5\f57d73ce6cc7273e2f244a847062bc549f19fa7c
