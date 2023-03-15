@@ -9,6 +9,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.NavHostFragment
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         supportActionBar?.hide()
+        window.statusBarColor = ContextCompat.getColor(this, R.color.dark)
 
         bottomNavigationView = binding.bottomNavigationViewMain
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
