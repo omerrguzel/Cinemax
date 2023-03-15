@@ -44,7 +44,7 @@ class SeasonsAdapter(
             textViewSeasonItem.text = seasonItem.name
             if (position == lastPosition){
                 textViewSeasonItem.setTextColor(root.context.resources.getColor(R.color.white))
-                textViewSeasonItem.setTextSize(TypedValue.COMPLEX_UNIT_PX,root.context.resources.getDimensionPixelSize(R.dimen._14ssp).toFloat())
+                textViewSeasonItem.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14F)
             }
             textViewSeasonItem.setOnClickListener {
                 selectSeasonListener?.invoke(seasonItem)

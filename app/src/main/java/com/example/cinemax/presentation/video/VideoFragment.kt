@@ -95,7 +95,7 @@ class VideoFragment : Fragment() {
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             fullScreenHelper.exitFullScreen()
             binding.youtubePlayerView.exitFullScreen()
-            binding.linearLayoutVideo.setMargins(top = resources.getDimensionPixelSize(R.dimen._100sdp))
+            binding.linearLayoutVideo.setMargins(top = 100)
         }
     }
 

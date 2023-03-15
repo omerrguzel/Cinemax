@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="@dimen/_92sdp"
+    android:layout_height="92dp"
     app:cardCornerRadius="0dp"
     app:cardElevation="0dp"
-    android:layout_marginEnd="@dimen/_20sdp"
+    android:layout_marginEnd="20dp"
     android:backgroundTint="@color/dark"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -15,8 +15,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageViewActor"
-            android:layout_width="@dimen/_55sdp"
-            android:layout_height="@dimen/_64sdp"
+            android:layout_width="55dp"
+            android:layout_height="64dp"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
             tools:src="@mipmap/ic_launcher"
             android:scaleType="fitXY"
@@ -32,11 +32,11 @@
             app:layout_constraintTop_toBottomOf="@id/imageViewActor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="8dp"
             android:textColor="@color/white"
-            android:paddingHorizontal="@dimen/_3sdp"
+            android:paddingHorizontal="3dp"
             android:fontFamily="@font/montserrat_semibold"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="12sp"
             tools:text="John Wilson"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

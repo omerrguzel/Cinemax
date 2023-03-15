@@ -64,8 +64,6 @@ G.idea/sonarlint/issuestore/0/a/0a2032de36a06c43b6cdbbc7379378a8cd1a1b29,c\f\cf
 w
 G.idea/sonarlint/issuestore/0/a/0a5caa8d09dd8d57d64c3b67a851967bbc7b38d0,5\8\58c836890494a359a2076116ea7799dde97754b2
 w
-G.idea/sonarlint/issuestore/8/7/8778b1578dd1a81107f8661a3a8eb0e870df77df,b\3\b3d6079d387ef2973bab528016a3f3bb99f281cb
-w
 G.idea/sonarlint/issuestore/f/b/fb9f9dae1d0dbae53e11f34710cbd8e5d24068eb,8\2\82fe7295d08c39dc56b7a6f037d3578fff7b23b0
 w
 G.idea/sonarlint/issuestore/2/0/20b16029d6f2c5933dc2792e232f1f856fce5491,7\6\76d35229c16aacbc48d1758b1cc85062b39cc617
@@ -181,8 +179,6 @@ Oapp/src/main/java/com/example/cinemax/presentation/adapter/CategoriesAdapter.kt
 Rapp/src/main/java/com/example/cinemax/data/entity/tvdetail/TvDetailItemResponse.kt,4\b\4ba3325849d4fbee5646176984b18603c300f245
 €
 Papp/src/main/java/com/example/cinemax/data/entity/tvdetail/SeasonInfoResponse.kt,f\e\fe9def0f9718e386d343e524ccb92ef806178ad1
-|
-Lapp/src/main/java/com/example/cinemax/presentation/adapter/SeasonsAdapter.kt,6\1\61818aa6be561d9a85110fbe42f35cc28aae6f4b
 ƒ
 Sapp/src/main/java/com/example/cinemax/presentation/seasons/SeasonDialogViewModel.kt,f\2\f29ebf3d5125b4f43097a53462a48b0f2cf73a55
 ‚
@@ -211,8 +207,6 @@ Iapp/src/main/java/com/example/cinemax/domain/mapper/SearchResultMapper.kt,f\f\
 Tapp/src/main/java/com/example/cinemax/presentation/paging/SearchMediaPagingSource.kt,6\5\65e14e528be198c7f4ab0d189c8c9ce2057aea10
 z
 Japp/src/main/java/com/example/cinemax/presentation/profile/LogOutDialog.kt,a\7\a7192a44942a0d0b88c6f29ca5e354454d39346b
-y
-Iapp/src/main/java/com/example/cinemax/presentation/video/VideoFragment.kt,2\e\2e011b4b919d4b29f75b080231513962df6ef74e
 m
 =app/src/main/java/com/example/cinemax/utils/ViewExtensions.kt,1\a\1ac972339edc5ae1889606829d6378a5c7a07af8
 …
@@ -278,8 +272,6 @@ Kapp/src/main/java/com/example/cinemax/presentation/search/SearchFragment.kt,d\
 Tapp/src/main/java/com/example/cinemax/presentation/onboarding/screens/ThirdScreen.kt,9\d\9dc6061ac831cbbcc0ecfa68e07ab12872a308e3
 
 Oapp/src/main/java/com/example/cinemax/presentation/wishlist/WishlistFragment.kt,9\1\913d88cdf2090b05ec6ea55e61ea946c15241b2c
-e
-5app/src/main/java/com/example/cinemax/MainActivity.kt,2\5\252a6ed083a83b01b7e59a49c4a38c470a719dac
 ƒ
 Sapp/src/main/java/com/example/cinemax/presentation/authentication/SignUpFragment.kt,0\a\0a2032de36a06c43b6cdbbc7379378a8cd1a1b29
 {

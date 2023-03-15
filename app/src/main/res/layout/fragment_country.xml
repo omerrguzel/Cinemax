@@ -19,8 +19,8 @@
             android:id="@+id/buttonBackCountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_44sdp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="44dp"
             android:src="@drawable/button_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,10 +33,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginTop="40dp"
             android:text="@string/country"
             android:fontFamily="@font/montserrat_medium"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="16sp"
             android:textColor="@color/white"/>
 
 
@@ -44,12 +44,12 @@
             android:id="@+id/cardViewAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_24sdp"
-            android:layout_marginTop="@dimen/_25sdp"
-            app:cardCornerRadius="@dimen/_16sdp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="16dp"
             android:backgroundTint="@color/dark"
             app:strokeColor="@color/soft"
-            app:strokeWidth="@dimen/_2sdp"
+            app:strokeWidth="2dp"
             app:cardElevation="0dp"
             app:layout_constraintTop_toBottomOf="@id/textViewLanguageTitle"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,11 +65,11 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="16dp"
                     android:text="@string/countries"
                     android:fontFamily="@font/montserrat"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="12sp"
                     android:textColor="@color/dark_grey"/>
 
                 <com.google.android.material.card.MaterialCardView
@@ -77,7 +77,7 @@
                     android:layout_width="match_parent"
                     android:backgroundTint="@color/dark"
                     app:layout_constraintTop_toBottomOf="@id/textViewLanguages"
-                    android:layout_height="@dimen/_71sdp">
+                    android:layout_height="71dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -86,10 +86,10 @@
                             android:id="@+id/textViewEnglish"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_33sdp"
+                            android:layout_marginStart="33dp"
                             android:fontFamily="@font/montserrat"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_14ssp"
+                            android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             android:text="@string/usa"
@@ -97,11 +97,11 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/checkEnglish"
-                            android:layout_width="@dimen/_32sdp"
-                            android:layout_height="@dimen/_32sdp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:src="@drawable/ic_check"
-                            android:layout_marginEnd="@dimen/_27sdp"
-                            app:contentPadding="@dimen/_5sdp"
+                            android:layout_marginEnd="27dp"
+                            app:contentPadding="5dp"
                             android:visibility="gone"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -109,9 +109,9 @@
 
                         <com.google.android.material.divider.MaterialDivider
                             android:id="@+id/dividerBetweenLanguage"
-                            android:layout_width="@dimen/_327sdp"
-                            android:layout_height="@dimen/_1sdp"
-                            android:layout_marginBottom="@dimen/_1sdp"
+                            android:layout_width="327dp"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="1dp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:dividerColor="@color/soft"
@@ -125,7 +125,7 @@
                     android:layout_width="match_parent"
                     android:backgroundTint="@color/dark"
                     app:layout_constraintTop_toBottomOf="@id/cardViewEnglish"
-                    android:layout_height="@dimen/_71sdp">
+                    android:layout_height="71dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -134,10 +134,10 @@
                             android:id="@+id/textViewTurkish"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_33sdp"
+                            android:layout_marginStart="33dp"
                             android:fontFamily="@font/montserrat"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_14ssp"
+                            android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             android:text="@string/t_rkiye"
@@ -145,11 +145,11 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/checkTurkish"
-                            android:layout_width="@dimen/_32sdp"
-                            android:layout_height="@dimen/_32sdp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:src="@drawable/ic_check"
-                            android:layout_marginEnd="@dimen/_27sdp"
-                            app:contentPadding="@dimen/_5sdp"
+                            android:layout_marginEnd="27dp"
+                            app:contentPadding="5dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />

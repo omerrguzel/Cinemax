@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:backgroundTint="@color/dark"
-    android:layout_height="@dimen/_71sdp">
+    android:layout_height="71dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,12 +14,12 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageViewLogoMember"
-            android:layout_width="@dimen/_32sdp"
-            android:layout_height="@dimen/_32sdp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:background="@drawable/ic_profile_drawable_background"
             android:src="@drawable/ic_member"
-            android:layout_marginStart="@dimen/_18sdp"
-            app:contentPadding="@dimen/_5sdp"
+            android:layout_marginStart="18dp"
+            app:contentPadding="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
 
@@ -29,10 +29,10 @@
             android:id="@+id/textViewProfileItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_66sdp"
+            android:layout_marginStart="66dp"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/imageViewLogoMember"
             app:layout_constraintStart_toStartOf="parent"
 
@@ -40,20 +40,20 @@
             tools:text="Member" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="@dimen/_32sdp"
-            android:layout_height="@dimen/_32sdp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:src="@drawable/ic_arrow_right_profile"
-            android:layout_marginEnd="@dimen/_27sdp"
-            app:contentPadding="@dimen/_5sdp"
+            android:layout_marginEnd="27dp"
+            app:contentPadding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/dividerBetweenMemberPassword"
-            android:layout_width="@dimen/_327sdp"
-            android:layout_height="@dimen/_1sdp"
-            android:layout_marginBottom="@dimen/_1sdp"
+            android:layout_width="327dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="1dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:dividerColor="@color/soft"

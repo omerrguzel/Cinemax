@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:backgroundTint="@color/dark"
     android:id="@+id/cardViewUpcomingMovie"
-    android:layout_width="@dimen/_240sdp"
-    android:layout_height="@dimen/_120sdp"
-    android:layout_marginHorizontal="@dimen/_12sdp"
-    app:cardCornerRadius="@dimen/_16sdp">
+    android:layout_width="240dp"
+    android:layout_height="120dp"
+    android:layout_marginHorizontal="12dp"
+    app:cardCornerRadius="16dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,13 +24,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/textViewUpcomingReleaseDate"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/montserrat"
-            android:maxWidth="@dimen/_220sdp"
+            android:maxWidth="220dp"
             android:maxLines="2"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="12sp"
             tools:text="Movie Name"
             tools:textColor="@color/dark" />
 
@@ -40,11 +40,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginBottom="@dimen/_16sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/white_grey"
-            android:textSize="@dimen/_10ssp"
+            android:textSize="10sp"
             tools:text="Release Date"
             tools:textColor="@color/dark" />
 

@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@color/dark"
     android:id="@+id/cardViewMovieGeneric"
-    android:layout_marginBottom="@dimen/_16sdp"
-    android:layout_width="@dimen/_350sdp"
-    android:layout_height="@dimen/_147sdp">
+    android:layout_marginBottom="16dp"
+    android:layout_width="350dp"
+    android:layout_height="147dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:orientation="horizontal">
         
         <RelativeLayout
-            android:layout_width="@dimen/_112sdp"
+            android:layout_width="112dp"
             android:background="@color/dark"
             android:layout_height="match_parent">
 
@@ -30,17 +30,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/imageViewGenericPoster"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/background_rating_textview"
-                android:drawablePadding="@dimen/_8sdp"
+                android:drawablePadding="8dp"
                 android:fontFamily="@font/montserrat"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_4sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:paddingBottom="@dimen/_4sdp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
                 android:textColor="@color/orange"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="12sp"
                 app:drawableLeftCompat="@drawable/ic_star"
                 app:drawableTint="@color/orange"
                 tools:text="4.5" />
@@ -50,8 +50,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@color/dark"
-            android:paddingHorizontal="@dimen/_16sdp"
-            android:paddingTop="@dimen/_5sdp">
+            android:paddingHorizontal="16dp"
+            android:paddingTop="5dp">
 
 
             <com.google.android.material.textview.MaterialTextView
@@ -61,46 +61,46 @@
                 tools:text="Spider-Man No Way Home"
                 android:maxLines="2"
                 android:fontFamily="@font/montserrat"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
-                android:paddingEnd="@dimen/_8sdp"/>
+                android:paddingEnd="8dp"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewReleaseDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_calendar"
-                android:drawablePadding="@dimen/_6sdp"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:drawablePadding="6dp"
+                android:layout_marginTop="30dp"
                 android:textColor="@color/grey"
                 android:fontFamily="@font/montserrat"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="12sp"
                 tools:text="2021"/>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content">
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textViewGenre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_genre"
-                    android:drawablePadding="@dimen/_6sdp"
+                    android:drawablePadding="6dp"
                     android:textColor="@color/grey"
                     android:fontFamily="@font/montserrat"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="12sp"
                     tools:text="Action  |"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textViewMediaType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="@dimen/_6sdp"
-                    android:layout_marginStart="@dimen/_8sdp"
+                    android:drawablePadding="6dp"
+                    android:layout_marginStart="8dp"
                     android:textColor="@color/white"
                     android:fontFamily="@font/montserrat"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="12sp"
                     android:text="@string/movie"/>
             </LinearLayout>
 

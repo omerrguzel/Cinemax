@@ -11,8 +11,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageViewNoResults"
-        android:layout_width="@dimen/_76sdp"
-        android:layout_height="@dimen/_76sdp"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
         android:src="@drawable/ic_arrow_heart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,12 +27,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/imageViewNoResults"
         android:text="@string/there_is_no_movie_in_your_wishlist_yet"
         android:fontFamily="@font/montserrat_semibold"
         android:textColor="@color/white"
-        android:textSize="@dimen/_16ssp"
+        android:textSize="16sp"
         android:letterSpacing="0.02" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -41,7 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@color/grey"
-        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginTop="8dp"
         android:textAlignment="center"
         android:fontFamily="@font/montserrat_medium"
         android:text="@string/the_movies_you_like_on_the_detail_screen_will_be_added_here"

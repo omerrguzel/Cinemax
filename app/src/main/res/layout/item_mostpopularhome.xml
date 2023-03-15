@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardViewMostPopular"
     android:backgroundTint="@color/soft"
-    android:layout_marginHorizontal="@dimen/_10sdp"
-    android:layout_width="@dimen/_135sdp"
-    android:layout_height="@dimen/_231sdp"
-    app:cardCornerRadius="@dimen/_12sdp">
+    android:layout_marginHorizontal="10dp"
+    android:layout_width="135dp"
+    android:layout_height="231dp"
+    app:cardCornerRadius="12dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_178sdp" >
+            android:layout_height="178dp" >
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageViewMostPopularPoster"
@@ -28,17 +28,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@id/imageViewMostPopularPoster"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/background_rating_textview"
-                android:drawablePadding="@dimen/_8sdp"
+                android:drawablePadding="8dp"
                 android:fontFamily="@font/montserrat"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_4sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:paddingBottom="@dimen/_4sdp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
                 android:textColor="@color/orange"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="12sp"
                 app:drawableLeftCompat="@drawable/ic_star"
                 app:drawableTint="@color/orange"
                 tools:text="4.5" />
@@ -49,20 +49,20 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
             android:maxLines="1"
-            android:layout_marginHorizontal="@dimen/_8sdp"
-            android:textSize="@dimen/_12ssp"
+            android:layout_marginHorizontal="8dp"
+            android:textSize="12sp"
             android:textColor="@color/white"
             tools:text="Movie Title"
-            android:layout_marginTop="@dimen/_7sdp" />
+            android:layout_marginTop="7dp" />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewGenre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:layout_marginHorizontal="@dimen/_8sdp"
-            android:textSize="@dimen/_9ssp"
+            android:layout_marginHorizontal="8dp"
+            android:textSize="9sp"
             android:textColor="@color/grey"
             tools:text="Genre"
-            android:layout_marginTop="@dimen/_2sdp" />
+            android:layout_marginTop="2dp" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardViewEpisode"
     android:backgroundTint="@color/soft"
-    android:layout_marginBottom="@dimen/_16sdp"
-    app:cardCornerRadius="@dimen/_16sdp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="16dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -15,53 +15,53 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageViewEpisode"
-            android:layout_width="@dimen/_121sdp"
-            android:layout_height="@dimen/_83sdp"
+            android:layout_width="121dp"
+            android:layout_height="83dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginStart="@dimen/_12sdp"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewEpisodeRuntime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/imageViewEpisode"
-            android:layout_marginStart="@dimen/_145sdp"
+            android:layout_marginStart="145dp"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/grey"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="1h30m"/>
 
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewEpisodeNumber"
-            android:layout_width="@dimen/_200sdp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:maxLines="2"
             app:layout_constraintTop_toBottomOf="@id/textViewEpisodeRuntime"
             app:layout_constraintBottom_toTopOf="@id/textViewEpisodeName"
-            android:layout_marginStart="@dimen/_145sdp"
-            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="Episode 1"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewEpisodeName"
-            android:layout_width="@dimen/_130sdp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/textViewEpisodeNumber"
             app:layout_constraintBottom_toBottomOf="@id/imageViewEpisode"
-            android:layout_marginStart="@dimen/_145sdp"
-            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/montserrat_medium"
             android:maxLines="2"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="Episode Name"/>
 
@@ -72,13 +72,13 @@
             app:layout_constraintTop_toBottomOf="@id/imageViewEpisode"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="@dimen/_11sdp"
-            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="11dp"
+            android:layout_marginStart="12dp"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/white_grey"
-            android:layout_marginBottom="@dimen/_18sdp"
+            android:layout_marginBottom="18dp"
             tools:text="Football player who longs to write his own music. It’s not all smiles for this hunk though after he gets involved with his music teacher."
-            android:layout_marginEnd="@dimen/_33sdp" />
+            android:layout_marginEnd="33dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

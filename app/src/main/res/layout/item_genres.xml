@@ -5,14 +5,14 @@
     android:id="@+id/chipGenres"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="@dimen/_8sdp"
+    android:layout_marginHorizontal="8dp"
     android:checkable="true"
     android:includeFontPadding="false"
-    android:textSize="@dimen/_12ssp"
+    android:textSize="12sp"
     app:checkedIconVisible="false"
-    app:chipCornerRadius="@dimen/_8sdp"
-    app:textEndPadding="@dimen/_20sdp"
-    app:textStartPadding="@dimen/_20sdp"
+    app:chipCornerRadius="8dp"
+    app:textEndPadding="20dp"
+    app:textStartPadding="20dp"
     tools:text="All">
 
 </com.google.android.material.chip.Chip>

@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/textViewSeasonItem"
     android:layout_width="300dp"
-    android:textSize="@dimen/_12ssp"
+    android:textSize="12sp"
     android:layout_height="wrap_content"
     android:textColor="@color/dark_grey"
-    android:padding="@dimen/_12sdp"
+    android:padding="12dp"
     android:fontFamily="@font/montserrat"
     android:gravity="center"
     tools:text="Season1">
