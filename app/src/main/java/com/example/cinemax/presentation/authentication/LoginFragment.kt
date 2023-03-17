@@ -9,6 +9,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.cinemax.R
 import com.example.cinemax.databinding.FragmentLoginBinding
 import com.example.cinemax.utils.AuthOperationHelper
+import com.example.cinemax.utils.gone
+import com.example.cinemax.utils.show
 import com.example.cinemax.utils.showSnack
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -34,6 +36,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             buttonLoginLoginScreen.setOnClickListener {
+                progressBar.show()
                 checkEmailAndPassword { email, password ->
                     authOperations.signInWithEmailAndPassword(email, password,
                         onSuccess = {
@@ -43,6 +46,7 @@ class LoginFragment : Fragment() {
                             requireView().showSnack(it)
                         })
                 }
+                progressBar.gone()
             }
             textViewForgotPassword.setOnClickListener {
                 findNavController().navigate(R.id.action_loginFragment_to_resetPasswordFragment)

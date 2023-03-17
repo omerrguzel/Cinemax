@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.cinemax.R
 import com.example.cinemax.databinding.FragmentSignUpBinding
 import com.example.cinemax.utils.AuthOperationHelper
+import com.example.cinemax.utils.gone
+import com.example.cinemax.utils.show
 import com.example.cinemax.utils.showSnack
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
@@ -42,6 +44,7 @@ class SignUpFragment : Fragment() {
                 findNavController().popBackStack()
             }
             buttonSignUpSignUpScreen.setOnClickListener {
+                progressBar.show()
                 if (checkBoxSignUpScreen.isChecked) {
                     checkEmailAndPassword { fullName, email, password ->
                         authOperations.signUpWithEmailAndPassword(email, password,
@@ -64,6 +67,7 @@ class SignUpFragment : Fragment() {
                             })
                     }
                 } else view.showSnack(getString(R.string.need_to_accept))
+                progressBar.gone()
             }
         }
     }
