@@ -26,7 +26,7 @@
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/sign_up"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/let_s_get_started"
         android:textColor="@color/white"
-        android:textSize="19sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewSignUpSignUpScreen" />
@@ -54,7 +54,7 @@
         android:letterSpacing="0.01"
         android:text="@string/the_latest_movies_and_series_are_here"
         android:textColor="@color/white"
-        android:textSize="10sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewGetStarted" />
@@ -62,7 +62,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutFullNameSignUpScreen"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="253dp"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="58dp"
         android:textColorHint="@color/white"
@@ -90,7 +90,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmailAddressSignUpScreen"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="253dp"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColorHint="@color/white"
@@ -119,7 +119,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPasswordSignUpScreen"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="253dp"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColorHint="@color/white"
@@ -158,13 +158,13 @@
 
     <TextView
         android:id="@+id/textViewAgreement"
-        android:layout_width="205dp"
+        android:layout_width="258dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
         android:maxLines="2"
         android:text="@string/i_agree_to_the_terms_and_services_and_privacy_policy"
         android:textColor="@color/grey"
-        android:textSize="10sp"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@id/checkBoxSignUpScreen"
         app:layout_constraintStart_toEndOf="@id/checkBoxSignUpScreen"
         app:layout_constraintTop_toTopOf="@id/checkBoxSignUpScreen"
@@ -172,7 +172,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSignUpSignUpScreen"
-        android:layout_width="267dp"
+        android:layout_width="327dp"
         android:layout_height="48dp"
         android:layout_marginTop="33dp"
         android:backgroundTint="@color/blue_accent"

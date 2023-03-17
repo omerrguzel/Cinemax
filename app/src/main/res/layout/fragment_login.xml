@@ -26,7 +26,7 @@
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/login"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,9 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="Hi"
+        android:text="@string/hi"
         android:textColor="@color/white"
-        android:textSize="19sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewLoginLoginScreen" />
@@ -54,7 +54,7 @@
         android:letterSpacing="0.01"
         android:text="@string/welcome_back_please_enter_your_details"
         android:textColor="@color/white"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewGetStarted" />
@@ -62,7 +62,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmailAddressLoginScreen"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="253dp"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="58dp"
         android:textColorHint="@color/white"
@@ -91,7 +91,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPasswordLoginScreen"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="253dp"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColorHint="@color/white"
@@ -126,13 +126,13 @@
         android:fontFamily="@font/montserrat_medium"
         android:text="@string/forgot_password"
         android:textColor="@color/blue_accent"
-        android:textSize="10sp"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="@id/textInputLayoutPasswordLoginScreen"
         app:layout_constraintTop_toBottomOf="@id/textInputLayoutPasswordLoginScreen" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonLoginLoginScreen"
-        android:layout_width="267dp"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
         android:backgroundTint="@color/blue_accent"
